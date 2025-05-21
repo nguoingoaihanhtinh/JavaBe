@@ -1,26 +1,33 @@
 package com.foodapp.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.Set;
-
-import com.foodapp.model.Food;
 
 @Entity
 @Table(name = "food_types")
-@Getter
-@Setter
 public class FoodType {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public  Long typeId;
+    private Long typeId;
 
     @Column(nullable = false, unique = true)
-    public  String nameType;
+    private String nameType;
+
+    private Long parentId;
 
     @OneToMany(mappedBy = "foodType", cascade = CascadeType.ALL)
-    public  Set<Food> foods;
+    private Set<Food> foods;
+
+    public Long getTypeId() { return typeId; }
+    public void setTypeId(Long typeId) { this.typeId = typeId; }
+
+    public String getNameType() { return nameType; }
+    public void setNameType(String nameType) { this.nameType = nameType; }
+
+    public Long getParentId() { return parentId; }
+    public void setParentId(Long parentId) { this.parentId = parentId; }
+
+    public Set<Food> getFoods() { return foods; }
+    public void setFoods(Set<Food> foods) { this.foods = foods; }
 }
