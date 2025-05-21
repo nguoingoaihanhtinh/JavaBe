@@ -1,0 +1,1609 @@
+[1mApache Maven 3.8.7[m
+Maven home: /usr/share/maven
+Java version: 17.0.12, vendor: Oracle Corporation, runtime: /usr/lib/jvm/jdk-17.0.12-oracle-x64
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "6.11.0-19-generic", arch: "amd64", family: "unix"
+[[1;36mDEBUG[m] Created new class realm maven.api
+[[1;36mDEBUG[m] Importing foreign packages into class realm maven.api
+[[1;36mDEBUG[m]   Imported: javax.annotation.* < plexus.core
+[[1;36mDEBUG[m]   Imported: javax.annotation.security.* < plexus.core
+[[1;36mDEBUG[m]   Imported: javax.inject.* < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.* < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.artifact < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.classrealm < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.cli < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.configuration < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.exception < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.execution < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.execution.scope < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.lifecycle < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.model < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.monitor < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.plugin < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.profiles < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.project < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.reporting < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.repository < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.rtinfo < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.settings < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.toolchain < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.usability < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.wagon.* < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.wagon.authentication < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.wagon.authorization < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.wagon.events < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.wagon.observers < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.wagon.proxy < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.wagon.repository < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.wagon.resource < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.classworlds < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.* < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.classworlds < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.component < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.configuration < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.container < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.context < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.lifecycle < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.logging < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.personality < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.util.xml.Xpp3Dom < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParser < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParserException < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.util.xml.pull.XmlSerializer < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.* < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.artifact < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.collection < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.deployment < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.graph < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.impl < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.installation < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.internal.impl < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.metadata < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.repository < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.resolution < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.spi < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.transfer < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.version < plexus.core
+[[1;36mDEBUG[m]   Imported: org.fusesource.jansi.* < plexus.core
+[[1;36mDEBUG[m]   Imported: org.slf4j.* < plexus.core
+[[1;36mDEBUG[m]   Imported: org.slf4j.event.* < plexus.core
+[[1;36mDEBUG[m]   Imported: org.slf4j.helpers.* < plexus.core
+[[1;36mDEBUG[m]   Imported: org.slf4j.spi.* < plexus.core
+[[1;36mDEBUG[m] Populating class realm maven.api
+[[1;34mINFO[m] Error stacktraces are turned on.
+[[1;36mDEBUG[m] Message scheme: color
+[[1;36mDEBUG[m] Message styles: [1;36mdebug[m [1;34minfo[m [1;33mwarning[m [1;31merror[m [1;32msuccess[m [1;31mfailure[m [1mstrong[m [32mmojo[m [36mproject[m
+[[1;36mDEBUG[m] Reading global settings from /usr/share/maven/conf/settings.xml
+[[1;36mDEBUG[m] Reading user settings from /home/khoaphan/.m2/settings.xml
+[[1;36mDEBUG[m] Reading global toolchains from /usr/share/maven/conf/toolchains.xml
+[[1;36mDEBUG[m] Reading user toolchains from /home/khoaphan/.m2/toolchains.xml
+[[1;36mDEBUG[m] Using local repository at /home/khoaphan/.m2/repository
+[[1;36mDEBUG[m] Using manager EnhancedLocalRepositoryManager with priority 10.0 for /home/khoaphan/.m2/repository
+[[1;34mINFO[m] Scanning for projects...
+[[1;36mDEBUG[m] Extension realms for project com.foodapp:food-app:jar:0.0.1-SNAPSHOT: (none)
+[[1;36mDEBUG[m] Looking up lifecycle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[[1;36mDEBUG[m] Extension realms for project org.springframework.boot:spring-boot-starter-parent:pom:3.2.1: (none)
+[[1;36mDEBUG[m] Looking up lifecycle mappings for packaging pom from ClassRealm[plexus.core, parent: null]
+[[1;36mDEBUG[m] Extension realms for project org.springframework.boot:spring-boot-dependencies:pom:3.2.1: (none)
+[[1;36mDEBUG[m] Looking up lifecycle mappings for packaging pom from ClassRealm[plexus.core, parent: null]
+[[1;36mDEBUG[m] Resolving plugin prefix spring-boot from [org.apache.maven.plugins, org.codehaus.mojo]
+[[1;36mDEBUG[m] Resolved plugin prefix spring-boot to org.springframework.boot:spring-boot-maven-plugin from POM com.foodapp:food-app:jar:0.0.1-SNAPSHOT
+[[1;36mDEBUG[m] === REACTOR BUILD PLAN ================================================
+[[1;36mDEBUG[m] Project: com.foodapp:food-app:jar:0.0.1-SNAPSHOT
+[[1;36mDEBUG[m] Tasks:   [spring-boot:run]
+[[1;36mDEBUG[m] Style:   Regular
+[[1;36mDEBUG[m] =======================================================================
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------< [0;36mcom.foodapp:food-app[0;1m >------------------------[m
+[[1;34mINFO[m] [1mBuilding food-app 0.0.1-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;36mDEBUG[m] Resolving plugin prefix spring-boot from [org.apache.maven.plugins, org.codehaus.mojo]
+[[1;36mDEBUG[m] Resolved plugin prefix spring-boot to org.springframework.boot:spring-boot-maven-plugin from POM com.foodapp:food-app:jar:0.0.1-SNAPSHOT
+[[1;36mDEBUG[m] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[[1;36mDEBUG[m] Lifecycle clean -> [pre-clean, clean, post-clean]
+[[1;36mDEBUG[m] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[[1;36mDEBUG[m] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[[1;36mDEBUG[m] Lifecycle clean -> [pre-clean, clean, post-clean]
+[[1;36mDEBUG[m] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[[1;36mDEBUG[m] === PROJECT BUILD PLAN ================================================
+[[1;36mDEBUG[m] Project:       com.foodapp:food-app:0.0.1-SNAPSHOT
+[[1;36mDEBUG[m] Dependencies (collect): []
+[[1;36mDEBUG[m] Dependencies (resolve): [test]
+[[1;36mDEBUG[m] Repositories (dependencies): [central (https://repo.maven.apache.org/maven2, default, releases)]
+[[1;36mDEBUG[m] Repositories (plugins)     : [central (https://repo.maven.apache.org/maven2, default, releases)]
+[[1;36mDEBUG[m] --- init fork of com.foodapp:food-app:0.0.1-SNAPSHOT for org.springframework.boot:spring-boot-maven-plugin:3.2.1:run (default-cli) ---
+[[1;36mDEBUG[m] Dependencies (collect): []
+[[1;36mDEBUG[m] Dependencies (resolve): [compile, test]
+[[1;36mDEBUG[m] -----------------------------------------------------------------------
+[[1;36mDEBUG[m] Goal:          org.apache.maven.plugins:maven-resources-plugin:3.3.1:resources (default-resources)
+[[1;36mDEBUG[m] Style:         Regular
+[[1;36mDEBUG[m] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addDefaultExcludes default-value="true"/>
+  <buildFilters default-value="${project.build.filters}"/>
+  <delimiters>
+    <delimiter>@</delimiter>
+  </delimiters>
+  <encoding default-value="${project.build.sourceEncoding}"/>
+  <escapeWindowsPaths default-value="true"/>
+  <fileNameFiltering default-value="false"/>
+  <includeEmptyDirs default-value="false"/>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <overwrite default-value="false"/>
+  <project default-value="${project}"/>
+  <propertiesEncoding>UTF-8</propertiesEncoding>
+  <resources default-value="${project.resources}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.resources.skip}</skip>
+  <supportMultiLineFiltering default-value="false"/>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true">false</useDefaultDelimiters>
+</configuration>
+[[1;36mDEBUG[m] -----------------------------------------------------------------------
+[[1;36mDEBUG[m] Goal:          org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile)
+[[1;36mDEBUG[m] Style:         Regular
+[[1;36mDEBUG[m] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <compilePath default-value="${project.compileClasspathElements}"/>
+  <compileSourceRoots default-value="${project.compileSourceRoots}"/>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerReuseStrategy default-value="${reuseCreated}">${maven.compiler.compilerReuseStrategy}</compilerReuseStrategy>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <createMissingPackageInfoClass default-value="true">${maven.compiler.createMissingPackageInfoClass}</createMissingPackageInfoClass>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debugFileName default-value="javac"/>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <enablePreview default-value="false">${maven.compiler.enablePreview}</enablePreview>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <failOnWarning default-value="false">${maven.compiler.failOnWarning}</failOnWarning>
+  <forceJavacCompilerUse default-value="false">${maven.compiler.forceJavacCompilerUse}</forceJavacCompilerUse>
+  <fork default-value="false">${maven.compiler.fork}</fork>
+  <generatedSourcesDirectory default-value="${project.build.directory}/generated-sources/annotations"/>
+  <implicit>${maven.compiler.implicit}</implicit>
+  <maxmem>${maven.compiler.maxmem}</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <mojoExecution default-value="${mojoExecution}"/>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <parameters default-value="false">true</parameters>
+  <project default-value="${project}"/>
+  <projectArtifact default-value="${project.artifact}"/>
+  <release>${maven.compiler.release}</release>
+  <session default-value="${session}"/>
+  <showCompilationChanges default-value="false">${maven.compiler.showCompilationChanges}</showCompilationChanges>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="true">${maven.compiler.showWarnings}</showWarnings>
+  <skipMain>${maven.main.skip}</skipMain>
+  <skipMultiThreadWarning default-value="false">${maven.compiler.skipMultiThreadWarning}</skipMultiThreadWarning>
+  <source default-value="1.8">${maven.compiler.source}</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.8">${maven.compiler.target}</target>
+  <useIncrementalCompilation default-value="true">${maven.compiler.useIncrementalCompilation}</useIncrementalCompilation>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+</configuration>
+[[1;36mDEBUG[m] -----------------------------------------------------------------------
+[[1;36mDEBUG[m] Goal:          org.apache.maven.plugins:maven-resources-plugin:3.3.1:testResources (default-testResources)
+[[1;36mDEBUG[m] Style:         Regular
+[[1;36mDEBUG[m] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addDefaultExcludes default-value="true"/>
+  <buildFilters default-value="${project.build.filters}"/>
+  <delimiters>
+    <delimiter>@</delimiter>
+  </delimiters>
+  <encoding default-value="${project.build.sourceEncoding}"/>
+  <escapeWindowsPaths default-value="true"/>
+  <fileNameFiltering default-value="false"/>
+  <includeEmptyDirs default-value="false"/>
+  <outputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <overwrite default-value="false"/>
+  <project default-value="${project}"/>
+  <propertiesEncoding>UTF-8</propertiesEncoding>
+  <resources default-value="${project.testResources}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.test.skip}</skip>
+  <supportMultiLineFiltering default-value="false"/>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true">false</useDefaultDelimiters>
+</configuration>
+[[1;36mDEBUG[m] -----------------------------------------------------------------------
+[[1;36mDEBUG[m] Goal:          org.apache.maven.plugins:maven-compiler-plugin:3.11.0:testCompile (default-testCompile)
+[[1;36mDEBUG[m] Style:         Regular
+[[1;36mDEBUG[m] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <compileSourceRoots default-value="${project.testCompileSourceRoots}"/>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerReuseStrategy default-value="${reuseCreated}">${maven.compiler.compilerReuseStrategy}</compilerReuseStrategy>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <createMissingPackageInfoClass default-value="true">${maven.compiler.createMissingPackageInfoClass}</createMissingPackageInfoClass>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debugFileName default-value="javac-test"/>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <enablePreview default-value="false">${maven.compiler.enablePreview}</enablePreview>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <failOnWarning default-value="false">${maven.compiler.failOnWarning}</failOnWarning>
+  <forceJavacCompilerUse default-value="false">${maven.compiler.forceJavacCompilerUse}</forceJavacCompilerUse>
+  <fork default-value="false">${maven.compiler.fork}</fork>
+  <generatedTestSourcesDirectory default-value="${project.build.directory}/generated-test-sources/test-annotations"/>
+  <implicit>${maven.compiler.implicit}</implicit>
+  <maxmem>${maven.compiler.maxmem}</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <mojoExecution default-value="${mojoExecution}"/>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <parameters default-value="false">true</parameters>
+  <project default-value="${project}"/>
+  <release>${maven.compiler.release}</release>
+  <session default-value="${session}"/>
+  <showCompilationChanges default-value="false">${maven.compiler.showCompilationChanges}</showCompilationChanges>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="true">${maven.compiler.showWarnings}</showWarnings>
+  <skip>${maven.test.skip}</skip>
+  <skipMultiThreadWarning default-value="false">${maven.compiler.skipMultiThreadWarning}</skipMultiThreadWarning>
+  <source default-value="1.8">${maven.compiler.source}</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.8">${maven.compiler.target}</target>
+  <testPath default-value="${project.testClasspathElements}"/>
+  <testRelease>${maven.compiler.testRelease}</testRelease>
+  <testSource>${maven.compiler.testSource}</testSource>
+  <testTarget>${maven.compiler.testTarget}</testTarget>
+  <useIncrementalCompilation default-value="true">${maven.compiler.useIncrementalCompilation}</useIncrementalCompilation>
+  <useModulePath default-value="true"/>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+</configuration>
+[[1;36mDEBUG[m] --- exit fork of com.foodapp:food-app:0.0.1-SNAPSHOT for org.springframework.boot:spring-boot-maven-plugin:3.2.1:run (default-cli) ---
+[[1;36mDEBUG[m] -----------------------------------------------------------------------
+[[1;36mDEBUG[m] Goal:          org.springframework.boot:spring-boot-maven-plugin:3.2.1:run (default-cli)
+[[1;36mDEBUG[m] Style:         Regular
+[[1;36mDEBUG[m] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addResources default-value="false">${spring-boot.run.addResources}</addResources>
+  <additionalClasspathElements>${spring-boot.run.additional-classpath-elements}</additionalClasspathElements>
+  <agents>${spring-boot.run.agents}</agents>
+  <classesDirectory default-value="${project.build.outputDirectory}"/>
+  <commandlineArguments>${spring-boot.run.arguments}</commandlineArguments>
+  <directories>${spring-boot.run.directories}</directories>
+  <excludeGroupIds default-value="">${spring-boot.excludeGroupIds}</excludeGroupIds>
+  <excludes>
+    <exclude>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </exclude>${spring-boot.excludes}</excludes>
+  <includes>${spring-boot.includes}</includes>
+  <jvmArguments>${spring-boot.run.jvmArguments}</jvmArguments>
+  <mainClass>${start-class}</mainClass>
+  <noverify>${spring-boot.run.noverify}</noverify>
+  <optimizedLaunch default-value="true">${spring-boot.run.optimizedLaunch}</optimizedLaunch>
+  <profiles>${spring-boot.run.profiles}</profiles>
+  <project default-value="${project}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${spring-boot.run.skip}</skip>
+  <useTestClasspath default-value="false">${spring-boot.run.useTestClasspath}</useTestClasspath>
+  <workingDirectory>${spring-boot.run.workingDirectory}</workingDirectory>
+</configuration>
+[[1;36mDEBUG[m] =======================================================================
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mspring-boot-maven-plugin:3.2.1:run[m [1m(default-cli)[0;1m > [0;1mtest-compile[m @ [36mfood-app[0;1m >>>[m
+[[1;36mDEBUG[m] Dependency collection stats {ConflictMarker.analyzeTime=1103751, ConflictMarker.markTime=458693, ConflictMarker.nodeCount=162, ConflictIdSorter.graphTime=590795, ConflictIdSorter.topsortTime=287036, ConflictIdSorter.conflictIdCount=76, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=6841700, ConflictResolver.conflictItemCount=158, DefaultDependencyCollector.collectTime=224228937, DefaultDependencyCollector.transformTime=11181319}
+[[1;36mDEBUG[m] com.foodapp:food-app:jar:0.0.1-SNAPSHOT
+[[1;36mDEBUG[m]    org.springframework.boot:spring-boot-starter-web:jar:3.2.1:compile
+[[1;36mDEBUG[m]       org.springframework.boot:spring-boot-starter:jar:3.2.1:compile (version managed from 3.2.1)
+[[1;36mDEBUG[m]          org.springframework.boot:spring-boot:jar:3.2.1:compile (version managed from 3.2.1)
+[[1;36mDEBUG[m]          org.springframework.boot:spring-boot-autoconfigure:jar:3.2.1:compile (version managed from 3.2.1)
+[[1;36mDEBUG[m]          org.springframework.boot:spring-boot-starter-logging:jar:3.2.1:compile (version managed from 3.2.1)
+[[1;36mDEBUG[m]             ch.qos.logback:logback-classic:jar:1.4.14:compile (version managed from 1.4.14)
+[[1;36mDEBUG[m]                ch.qos.logback:logback-core:jar:1.4.14:compile (version managed from 1.4.14)
+[[1;36mDEBUG[m]             org.apache.logging.log4j:log4j-to-slf4j:jar:2.21.1:compile (version managed from 2.21.1)
+[[1;36mDEBUG[m]                org.apache.logging.log4j:log4j-api:jar:2.21.1:compile (version managed from 2.21.1)
+[[1;36mDEBUG[m]             org.slf4j:jul-to-slf4j:jar:2.0.9:compile (version managed from 2.0.9)
+[[1;36mDEBUG[m]          jakarta.annotation:jakarta.annotation-api:jar:2.1.1:compile (version managed from 2.1.1)
+[[1;36mDEBUG[m]          org.springframework:spring-core:jar:6.1.2:compile (version managed from 6.1.2)
+[[1;36mDEBUG[m]             org.springframework:spring-jcl:jar:6.1.2:compile (version managed from 6.1.2)
+[[1;36mDEBUG[m]          org.yaml:snakeyaml:jar:2.2:compile (version managed from 2.2)
+[[1;36mDEBUG[m]       org.springframework.boot:spring-boot-starter-json:jar:3.2.1:compile (version managed from 3.2.1)
+[[1;36mDEBUG[m]          com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar:2.15.3:compile (version managed from 2.15.3)
+[[1;36mDEBUG[m]          com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.15.3:compile (version managed from 2.15.3)
+[[1;36mDEBUG[m]          com.fasterxml.jackson.module:jackson-module-parameter-names:jar:2.15.3:compile (version managed from 2.15.3)
+[[1;36mDEBUG[m]       org.springframework.boot:spring-boot-starter-tomcat:jar:3.2.1:compile (version managed from 3.2.1)
+[[1;36mDEBUG[m]          org.apache.tomcat.embed:tomcat-embed-core:jar:10.1.17:compile (version managed from 10.1.17)
+[[1;36mDEBUG[m]          org.apache.tomcat.embed:tomcat-embed-websocket:jar:10.1.17:compile (version managed from 10.1.17)
+[[1;36mDEBUG[m]       org.springframework:spring-web:jar:6.1.2:compile (version managed from 6.1.2)
+[[1;36mDEBUG[m]          org.springframework:spring-beans:jar:6.1.2:compile (version managed from 6.1.2)
+[[1;36mDEBUG[m]          io.micrometer:micrometer-observation:jar:1.12.1:compile (version managed from 1.12.1)
+[[1;36mDEBUG[m]             io.micrometer:micrometer-commons:jar:1.12.1:compile (version managed from 1.12.1)
+[[1;36mDEBUG[m]       org.springframework:spring-webmvc:jar:6.1.2:compile (version managed from 6.1.2)
+[[1;36mDEBUG[m]          org.springframework:spring-context:jar:6.1.2:compile (version managed from 6.1.2)
+[[1;36mDEBUG[m]          org.springframework:spring-expression:jar:6.1.2:compile (version managed from 6.1.2)
+[[1;36mDEBUG[m]    org.springframework.boot:spring-boot-starter-data-jpa:jar:3.2.1:compile
+[[1;36mDEBUG[m]       org.springframework.boot:spring-boot-starter-aop:jar:3.2.1:compile (version managed from 3.2.1)
+[[1;36mDEBUG[m]          org.aspectj:aspectjweaver:jar:1.9.21:compile (version managed from 1.9.21)
+[[1;36mDEBUG[m]       org.springframework.boot:spring-boot-starter-jdbc:jar:3.2.1:compile (version managed from 3.2.1)
+[[1;36mDEBUG[m]          com.zaxxer:HikariCP:jar:5.0.1:compile (version managed from 5.0.1)
+[[1;36mDEBUG[m]          org.springframework:spring-jdbc:jar:6.1.2:compile (version managed from 6.1.2)
+[[1;36mDEBUG[m]       org.hibernate.orm:hibernate-core:jar:6.4.1.Final:compile (version managed from 6.4.1.Final)
+[[1;36mDEBUG[m]          jakarta.persistence:jakarta.persistence-api:jar:3.1.0:compile (version managed from 3.1.0)
+[[1;36mDEBUG[m]          jakarta.transaction:jakarta.transaction-api:jar:2.0.1:compile (version managed from 2.0.1)
+[[1;36mDEBUG[m]          org.jboss.logging:jboss-logging:jar:3.5.3.Final:compile (version managed from 3.5.0.Final)
+[[1;36mDEBUG[m]          org.hibernate.common:hibernate-commons-annotations:jar:6.0.6.Final:runtime
+[[1;36mDEBUG[m]          io.smallrye:jandex:jar:3.1.2:runtime
+[[1;36mDEBUG[m]          com.fasterxml:classmate:jar:1.6.0:compile (version managed from 1.5.1)
+[[1;36mDEBUG[m]          net.bytebuddy:byte-buddy:jar:1.14.10:runtime (version managed from 1.14.7)
+[[1;36mDEBUG[m]          jakarta.xml.bind:jakarta.xml.bind-api:jar:4.0.1:runtime (version managed from 4.0.0)
+[[1;36mDEBUG[m]             jakarta.activation:jakarta.activation-api:jar:2.1.2:runtime (version managed from 2.1.2)
+[[1;36mDEBUG[m]          org.glassfish.jaxb:jaxb-runtime:jar:4.0.4:runtime (version managed from 4.0.2)
+[[1;36mDEBUG[m]             org.glassfish.jaxb:jaxb-core:jar:4.0.4:runtime (version managed from 4.0.4)
+[[1;36mDEBUG[m]                org.eclipse.angus:angus-activation:jar:2.0.1:runtime (version managed from 2.0.1)
+[[1;36mDEBUG[m]                org.glassfish.jaxb:txw2:jar:4.0.4:runtime (version managed from 4.0.4)
+[[1;36mDEBUG[m]                com.sun.istack:istack-commons-runtime:jar:4.1.2:runtime (version managed from 4.1.2)
+[[1;36mDEBUG[m]          jakarta.inject:jakarta.inject-api:jar:2.0.1:runtime
+[[1;36mDEBUG[m]          org.antlr:antlr4-runtime:jar:4.13.0:compile
+[[1;36mDEBUG[m]       org.springframework.data:spring-data-jpa:jar:3.2.1:compile (version managed from 3.2.1)
+[[1;36mDEBUG[m]          org.springframework.data:spring-data-commons:jar:3.2.1:compile (version managed from 3.2.1)
+[[1;36mDEBUG[m]          org.springframework:spring-orm:jar:6.1.2:compile (version managed from 6.1.2)
+[[1;36mDEBUG[m]          org.springframework:spring-tx:jar:6.1.2:compile (version managed from 6.1.2)
+[[1;36mDEBUG[m]          org.slf4j:slf4j-api:jar:2.0.9:compile (version managed from 2.0.2)
+[[1;36mDEBUG[m]       org.springframework:spring-aspects:jar:6.1.2:compile (version managed from 6.1.2)
+[[1;36mDEBUG[m]    org.springframework.boot:spring-boot-starter-security:jar:3.2.1:compile
+[[1;36mDEBUG[m]       org.springframework:spring-aop:jar:6.1.2:compile (version managed from 6.1.2)
+[[1;36mDEBUG[m]       org.springframework.security:spring-security-config:jar:6.2.1:compile (version managed from 6.2.1)
+[[1;36mDEBUG[m]          org.springframework.security:spring-security-core:jar:6.2.1:compile (version managed from 6.2.1)
+[[1;36mDEBUG[m]             org.springframework.security:spring-security-crypto:jar:6.2.1:compile (version managed from 6.2.1)
+[[1;36mDEBUG[m]       org.springframework.security:spring-security-web:jar:6.2.1:compile (version managed from 6.2.1)
+[[1;36mDEBUG[m]    org.springframework.boot:spring-boot-starter-validation:jar:3.2.1:compile
+[[1;36mDEBUG[m]       org.apache.tomcat.embed:tomcat-embed-el:jar:10.1.17:compile (version managed from 10.1.17)
+[[1;36mDEBUG[m]       org.hibernate.validator:hibernate-validator:jar:8.0.1.Final:compile (version managed from 8.0.1.Final)
+[[1;36mDEBUG[m]          jakarta.validation:jakarta.validation-api:jar:3.0.2:compile (version managed from 3.0.2)
+[[1;36mDEBUG[m]    com.mysql:mysql-connector-j:jar:8.1.0:runtime (exclusions managed from [com.google.protobuf:protobuf-java:*:*])
+[[1;36mDEBUG[m]    io.jsonwebtoken:jjwt-api:jar:0.11.5:compile
+[[1;36mDEBUG[m]    io.jsonwebtoken:jjwt-impl:jar:0.11.5:runtime
+[[1;36mDEBUG[m]    io.jsonwebtoken:jjwt-jackson:jar:0.11.5:runtime
+[[1;36mDEBUG[m]       com.fasterxml.jackson.core:jackson-databind:jar:2.15.3:compile (version managed from 2.12.6.1)
+[[1;36mDEBUG[m]          com.fasterxml.jackson.core:jackson-annotations:jar:2.15.3:compile (version managed from 2.15.3)
+[[1;36mDEBUG[m]          com.fasterxml.jackson.core:jackson-core:jar:2.15.3:compile (version managed from 2.15.3)
+[[1;36mDEBUG[m]    org.projectlombok:lombok:jar:1.18.30:compile (optional)
+[[1;36mDEBUG[m]    org.springframework.boot:spring-boot-configuration-processor:jar:3.2.1:compile (optional)
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:resources[m [1m(default-resources)[m @ [36mfood-app[0;1m ---[m
+[[1;36mDEBUG[m] Dependency collection stats {ConflictMarker.analyzeTime=65435, ConflictMarker.markTime=52570, ConflictMarker.nodeCount=13, ConflictIdSorter.graphTime=15489, ConflictIdSorter.topsortTime=15309, ConflictIdSorter.conflictIdCount=9, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=189250, ConflictResolver.conflictItemCount=13, DefaultDependencyCollector.collectTime=31240362, DefaultDependencyCollector.transformTime=387337}
+[[1;36mDEBUG[m] org.apache.maven.plugins:maven-resources-plugin:jar:3.3.1
+[[1;36mDEBUG[m]    org.codehaus.plexus:plexus-interpolation:jar:1.26:runtime
+[[1;36mDEBUG[m]    org.codehaus.plexus:plexus-utils:jar:3.5.1:compile
+[[1;36mDEBUG[m]    org.apache.maven.shared:maven-filtering:jar:3.3.1:compile
+[[1;36mDEBUG[m]       javax.inject:javax.inject:jar:1:compile
+[[1;36mDEBUG[m]       org.slf4j:slf4j-api:jar:1.7.36:compile
+[[1;36mDEBUG[m]       org.sonatype.plexus:plexus-build-api:jar:0.0.7:compile
+[[1;36mDEBUG[m]    commons-io:commons-io:jar:2.11.0:compile
+[[1;36mDEBUG[m]    org.apache.commons:commons-lang3:jar:3.12.0:compile
+[[1;36mDEBUG[m] Created new class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1
+[[1;36mDEBUG[m] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1
+[[1;36mDEBUG[m]   Imported:  < maven.api
+[[1;36mDEBUG[m] Populating class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1
+[[1;36mDEBUG[m]   Included: org.apache.maven.plugins:maven-resources-plugin:jar:3.3.1
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.26
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-utils:jar:3.5.1
+[[1;36mDEBUG[m]   Included: org.apache.maven.shared:maven-filtering:jar:3.3.1
+[[1;36mDEBUG[m]   Included: org.sonatype.plexus:plexus-build-api:jar:0.0.7
+[[1;36mDEBUG[m]   Included: commons-io:commons-io:jar:2.11.0
+[[1;36mDEBUG[m]   Included: org.apache.commons:commons-lang3:jar:3.12.0
+[[1;36mDEBUG[m] Configuring mojo org.apache.maven.plugins:maven-resources-plugin:3.3.1:resources from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@46fbb2c1]
+[[1;36mDEBUG[m] Configuring mojo 'org.apache.maven.plugins:maven-resources-plugin:3.3.1:resources' with basic configurator -->
+[[1;36mDEBUG[m]   (f) addDefaultExcludes = true
+[[1;36mDEBUG[m]   (f) buildFilters = []
+[[1;36mDEBUG[m]   (s) delimiters = [@]
+[[1;36mDEBUG[m]   (f) encoding = UTF-8
+[[1;36mDEBUG[m]   (f) escapeWindowsPaths = true
+[[1;36mDEBUG[m]   (f) fileNameFiltering = false
+[[1;36mDEBUG[m]   (s) includeEmptyDirs = false
+[[1;36mDEBUG[m]   (s) outputDirectory = /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/classes
+[[1;36mDEBUG[m]   (s) overwrite = false
+[[1;36mDEBUG[m]   (f) project = MavenProject: com.foodapp:food-app:0.0.1-SNAPSHOT @ /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/pom.xml
+[[1;36mDEBUG[m]   (f) propertiesEncoding = UTF-8
+[[1;36mDEBUG[m]   (s) resources = [Resource {targetPath: null, filtering: true, FileSet {directory: /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/src/main/resources, PatternSet [includes: {**/application*.yml, **/application*.yaml, **/application*.properties}, excludes: {}]}}, Resource {targetPath: null, filtering: false, FileSet {directory: /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/src/main/resources, PatternSet [includes: {}, excludes: {**/application*.yml, **/application*.yaml, **/application*.properties}]}}]
+[[1;36mDEBUG[m]   (f) session = org.apache.maven.execution.MavenSession@4ae263bf
+[[1;36mDEBUG[m]   (f) skip = false
+[[1;36mDEBUG[m]   (f) supportMultiLineFiltering = false
+[[1;36mDEBUG[m]   (f) useBuildFilters = true
+[[1;36mDEBUG[m]   (s) useDefaultDelimiters = false
+[[1;36mDEBUG[m] -- end configuration --
+[[1;36mDEBUG[m] properties used:
+[[1;36mDEBUG[m] activemq.version: 5.18.3
+[[1;36mDEBUG[m] angus-mail.version: 2.0.2
+[[1;36mDEBUG[m] artemis.version: 2.31.2
+[[1;36mDEBUG[m] aspectj.version: 1.9.21
+[[1;36mDEBUG[m] assertj.version: 3.24.2
+[[1;36mDEBUG[m] awaitility.version: 4.2.0
+[[1;36mDEBUG[m] brave.version: 5.16.0
+[[1;36mDEBUG[m] build-helper-maven-plugin.version: 3.4.0
+[[1;36mDEBUG[m] byte-buddy.version: 1.14.10
+[[1;36mDEBUG[m] cache2k.version: 2.6.1.Final
+[[1;36mDEBUG[m] caffeine.version: 3.1.8
+[[1;36mDEBUG[m] cassandra-driver.version: 4.17.0
+[[1;36mDEBUG[m] classmate.version: 1.6.0
+[[1;36mDEBUG[m] classworlds.conf: /usr/share/maven/bin/m2.conf
+[[1;36mDEBUG[m] commons-codec.version: 1.16.0
+[[1;36mDEBUG[m] commons-dbcp2.version: 2.10.0
+[[1;36mDEBUG[m] commons-lang3.version: 3.13.0
+[[1;36mDEBUG[m] commons-pool.version: 1.6
+[[1;36mDEBUG[m] commons-pool2.version: 2.12.0
+[[1;36mDEBUG[m] couchbase-client.version: 3.4.11
+[[1;36mDEBUG[m] crac.version: 1.4.0
+[[1;36mDEBUG[m] db2-jdbc.version: 11.5.9.0
+[[1;36mDEBUG[m] dependency-management-plugin.version: 1.1.4
+[[1;36mDEBUG[m] derby.version: 10.16.1.1
+[[1;36mDEBUG[m] dropwizard-metrics.version: 4.2.23
+[[1;36mDEBUG[m] ehcache3.version: 3.10.8
+[[1;36mDEBUG[m] elasticsearch-client.version: 8.10.4
+[[1;36mDEBUG[m] env.ANDROID_HOME: /home/khoaphan/Android/Sdk
+[[1;36mDEBUG[m] env.CHROME_DESKTOP: code.desktop
+[[1;36mDEBUG[m] env.COLORTERM: truecolor
+[[1;36mDEBUG[m] env.DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+[[1;36mDEBUG[m] env.DEBUGINFOD_URLS: https://debuginfod.ubuntu.com 
+[[1;36mDEBUG[m] env.DESKTOP_SESSION: ubuntu
+[[1;36mDEBUG[m] env.DISPLAY: :0
+[[1;36mDEBUG[m] env.GDK_BACKEND: x11
+[[1;36mDEBUG[m] env.GDMSESSION: ubuntu
+[[1;36mDEBUG[m] env.GIO_LAUNCHED_DESKTOP_FILE: /usr/share/applications/code.desktop
+[[1;36mDEBUG[m] env.GIO_LAUNCHED_DESKTOP_FILE_PID: 5164
+[[1;36mDEBUG[m] env.GIT_ASKPASS: /usr/share/code/resources/app/extensions/git/dist/askpass.sh
+[[1;36mDEBUG[m] env.GJS_DEBUG_OUTPUT: stderr
+[[1;36mDEBUG[m] env.GJS_DEBUG_TOPICS: JS ERROR;JS LOG
+[[1;36mDEBUG[m] env.GNOME_DESKTOP_SESSION_ID: this-is-deprecated
+[[1;36mDEBUG[m] env.GNOME_SETUP_DISPLAY: :1
+[[1;36mDEBUG[m] env.GNOME_SHELL_SESSION_MODE: ubuntu
+[[1;36mDEBUG[m] env.GSM_SKIP_SSH_AGENT_WORKAROUND: true
+[[1;36mDEBUG[m] env.GTK_MODULES: gail:atk-bridge
+[[1;36mDEBUG[m] env.HOME: /home/khoaphan
+[[1;36mDEBUG[m] env.IM_CONFIG_PHASE: 1
+[[1;36mDEBUG[m] env.INVOCATION_ID: 035de45ab3f6432d99a1b14e7a927230
+[[1;36mDEBUG[m] env.JOURNAL_STREAM: 9:23125
+[[1;36mDEBUG[m] env.LANG: en_US.UTF-8
+[[1;36mDEBUG[m] env.LESSCLOSE: /usr/bin/lesspipe %s %s
+[[1;36mDEBUG[m] env.LESSOPEN: | /usr/bin/lesspipe %s
+[[1;36mDEBUG[m] env.LOGNAME: khoaphan
+[[1;36mDEBUG[m] env.LS_COLORS: rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:
+[[1;36mDEBUG[m] env.MANAGERPID: 3146
+[[1;36mDEBUG[m] env.MAVEN_CMD_LINE_ARGS:  spring-boot:run -e -X
+[[1;36mDEBUG[m] env.MAVEN_PROJECTBASEDIR: /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend
+[[1;36mDEBUG[m] env.MEMORY_PRESSURE_WATCH: /sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure
+[[1;36mDEBUG[m] env.MEMORY_PRESSURE_WRITE: c29tZSAyMDAwMDAgMjAwMDAwMAA=
+[[1;36mDEBUG[m] env.NODE_OPTIONS: --dns-result-order=ipv4first
+[[1;36mDEBUG[m] env.NVM_BIN: /home/khoaphan/.nvm/versions/node/v18.20.8/bin
+[[1;36mDEBUG[m] env.NVM_CD_FLAGS: 
+[[1;36mDEBUG[m] env.NVM_DIR: /home/khoaphan/.nvm
+[[1;36mDEBUG[m] env.NVM_INC: /home/khoaphan/.nvm/versions/node/v18.20.8/include/node
+[[1;36mDEBUG[m] env.OLDPWD: /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend
+[[1;36mDEBUG[m] env.ORIGINAL_XDG_CURRENT_DESKTOP: Unity
+[[1;36mDEBUG[m] env.PATH: /home/khoaphan/Android/Sdk/emulator:/home/khoaphan/Android/Sdk/tools:/home/khoaphan/Android/Sdk/tools/bin:/home/khoaphan/Android/Sdk/platform-tools:/snap/bin:/home/khoaphan/.nvm/versions/node/v18.20.8/bin:/home/khoaphan/.npm-global/bin:/home/khoaphan/.spicetify:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/khoaphan/.dotnet/tools:/home/khoaphan/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/khoaphan/.spicetify:/home/khoaphan/.yarn/bin
+[[1;36mDEBUG[m] env.PWD: /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend
+[[1;36mDEBUG[m] env.QT_ACCESSIBILITY: 1
+[[1;36mDEBUG[m] env.QT_IM_MODULE: ibus
+[[1;36mDEBUG[m] env.SESSION_MANAGER: local/khoaphan-Aspire-A715-42G:@/tmp/.ICE-unix/3397,unix/khoaphan-Aspire-A715-42G:/tmp/.ICE-unix/3397
+[[1;36mDEBUG[m] env.SHELL: /bin/bash
+[[1;36mDEBUG[m] env.SHLVL: 1
+[[1;36mDEBUG[m] env.SSH_AUTH_SOCK: /run/user/1000/keyring/ssh
+[[1;36mDEBUG[m] env.SYSTEMD_EXEC_PID: 3434
+[[1;36mDEBUG[m] env.TERM: xterm-256color
+[[1;36mDEBUG[m] env.TERM_PROGRAM: vscode
+[[1;36mDEBUG[m] env.TERM_PROGRAM_VERSION: 1.98.2
+[[1;36mDEBUG[m] env.USER: khoaphan
+[[1;36mDEBUG[m] env.USERNAME: khoaphan
+[[1;36mDEBUG[m] env.VSCODE_GIT_ASKPASS_EXTRA_ARGS: 
+[[1;36mDEBUG[m] env.VSCODE_GIT_ASKPASS_MAIN: /usr/share/code/resources/app/extensions/git/dist/askpass-main.js
+[[1;36mDEBUG[m] env.VSCODE_GIT_ASKPASS_NODE: /usr/share/code/code
+[[1;36mDEBUG[m] env.VSCODE_GIT_IPC_HANDLE: /run/user/1000/vscode-git-6de272521c.sock
+[[1;36mDEBUG[m] env.WAYLAND_DISPLAY: wayland-0
+[[1;36mDEBUG[m] env.XAUTHORITY: /run/user/1000/.mutter-Xwaylandauth.Z2RH62
+[[1;36mDEBUG[m] env.XDG_CONFIG_DIRS: /etc/xdg/xdg-ubuntu:/etc/xdg
+[[1;36mDEBUG[m] env.XDG_CURRENT_DESKTOP: Unity
+[[1;36mDEBUG[m] env.XDG_DATA_DIRS: /usr/share/ubuntu:/usr/share/gnome:/home/khoaphan/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+[[1;36mDEBUG[m] env.XDG_MENU_PREFIX: gnome-
+[[1;36mDEBUG[m] env.XDG_RUNTIME_DIR: /run/user/1000
+[[1;36mDEBUG[m] env.XDG_SESSION_CLASS: user
+[[1;36mDEBUG[m] env.XDG_SESSION_DESKTOP: ubuntu
+[[1;36mDEBUG[m] env.XDG_SESSION_TYPE: wayland
+[[1;36mDEBUG[m] env.XMODIFIERS: @im=ibus
+[[1;36mDEBUG[m] env._: /usr/bin/mvn
+[[1;36mDEBUG[m] file.encoding: UTF-8
+[[1;36mDEBUG[m] file.separator: /
+[[1;36mDEBUG[m] flyway.version: 9.22.3
+[[1;36mDEBUG[m] freemarker.version: 2.3.32
+[[1;36mDEBUG[m] git-commit-id-maven-plugin.version: 6.0.0
+[[1;36mDEBUG[m] glassfish-jaxb.version: 4.0.4
+[[1;36mDEBUG[m] glassfish-jstl.version: 3.0.1
+[[1;36mDEBUG[m] graphql-java.version: 21.3
+[[1;36mDEBUG[m] groovy.version: 4.0.16
+[[1;36mDEBUG[m] gson.version: 2.10.1
+[[1;36mDEBUG[m] h2.version: 2.2.224
+[[1;36mDEBUG[m] hamcrest.version: 2.2
+[[1;36mDEBUG[m] hazelcast.version: 5.3.6
+[[1;36mDEBUG[m] hibernate-validator.version: 8.0.1.Final
+[[1;36mDEBUG[m] hibernate.version: 6.4.1.Final
+[[1;36mDEBUG[m] hikaricp.version: 5.0.1
+[[1;36mDEBUG[m] hsqldb.version: 2.7.2
+[[1;36mDEBUG[m] htmlunit.version: 2.70.0
+[[1;36mDEBUG[m] httpasyncclient.version: 4.1.5
+[[1;36mDEBUG[m] httpclient5.version: 5.2.3
+[[1;36mDEBUG[m] httpcore.version: 4.4.16
+[[1;36mDEBUG[m] httpcore5.version: 5.2.4
+[[1;36mDEBUG[m] infinispan.version: 14.0.21.Final
+[[1;36mDEBUG[m] influxdb-java.version: 2.23
+[[1;36mDEBUG[m] jackson-bom.version: 2.15.3
+[[1;36mDEBUG[m] jakarta-activation.version: 2.1.2
+[[1;36mDEBUG[m] jakarta-annotation.version: 2.1.1
+[[1;36mDEBUG[m] jakarta-jms.version: 3.1.0
+[[1;36mDEBUG[m] jakarta-json-bind.version: 3.0.0
+[[1;36mDEBUG[m] jakarta-json.version: 2.1.3
+[[1;36mDEBUG[m] jakarta-mail.version: 2.1.2
+[[1;36mDEBUG[m] jakarta-management.version: 1.1.4
+[[1;36mDEBUG[m] jakarta-persistence.version: 3.1.0
+[[1;36mDEBUG[m] jakarta-servlet-jsp-jstl.version: 3.0.0
+[[1;36mDEBUG[m] jakarta-servlet.version: 6.0.0
+[[1;36mDEBUG[m] jakarta-transaction.version: 2.0.1
+[[1;36mDEBUG[m] jakarta-validation.version: 3.0.2
+[[1;36mDEBUG[m] jakarta-websocket.version: 2.1.1
+[[1;36mDEBUG[m] jakarta-ws-rs.version: 3.1.0
+[[1;36mDEBUG[m] jakarta-xml-bind.version: 4.0.1
+[[1;36mDEBUG[m] jakarta-xml-soap.version: 3.0.1
+[[1;36mDEBUG[m] jakarta-xml-ws.version: 4.0.1
+[[1;36mDEBUG[m] janino.version: 3.1.11
+[[1;36mDEBUG[m] jansi.mode: force
+[[1;36mDEBUG[m] java.class.path: /usr/share/maven/boot/plexus-classworlds-2.x.jar
+[[1;36mDEBUG[m] java.class.version: 61.0
+[[1;36mDEBUG[m] java.home: /usr/lib/jvm/jdk-17.0.12-oracle-x64
+[[1;36mDEBUG[m] java.io.tmpdir: /tmp
+[[1;36mDEBUG[m] java.library.path: /usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+[[1;36mDEBUG[m] java.runtime.name: Java(TM) SE Runtime Environment
+[[1;36mDEBUG[m] java.runtime.version: 17.0.12+8-LTS-286
+[[1;36mDEBUG[m] java.specification.name: Java Platform API Specification
+[[1;36mDEBUG[m] java.specification.vendor: Oracle Corporation
+[[1;36mDEBUG[m] java.specification.version: 17
+[[1;36mDEBUG[m] java.vendor: Oracle Corporation
+[[1;36mDEBUG[m] java.vendor.url: https://java.oracle.com/
+[[1;36mDEBUG[m] java.vendor.url.bug: https://bugreport.java.com/bugreport/
+[[1;36mDEBUG[m] java.version: 17.0.12
+[[1;36mDEBUG[m] java.version.date: 2024-07-16
+[[1;36mDEBUG[m] java.vm.compressedOopsMode: Zero based
+[[1;36mDEBUG[m] java.vm.info: mixed mode, sharing
+[[1;36mDEBUG[m] java.vm.name: Java HotSpot(TM) 64-Bit Server VM
+[[1;36mDEBUG[m] java.vm.specification.name: Java Virtual Machine Specification
+[[1;36mDEBUG[m] java.vm.specification.vendor: Oracle Corporation
+[[1;36mDEBUG[m] java.vm.specification.version: 17
+[[1;36mDEBUG[m] java.vm.vendor: Oracle Corporation
+[[1;36mDEBUG[m] java.vm.version: 17.0.12+8-LTS-286
+[[1;36mDEBUG[m] javax-cache.version: 1.1.1
+[[1;36mDEBUG[m] javax-money.version: 1.1
+[[1;36mDEBUG[m] jaxen.version: 2.0.0
+[[1;36mDEBUG[m] jaybird.version: 5.0.3.java11
+[[1;36mDEBUG[m] jboss-logging.version: 3.5.3.Final
+[[1;36mDEBUG[m] jdk.debug: release
+[[1;36mDEBUG[m] jdom2.version: 2.0.6.1
+[[1;36mDEBUG[m] jedis.version: 5.0.2
+[[1;36mDEBUG[m] jersey.version: 3.1.5
+[[1;36mDEBUG[m] jetty-reactive-httpclient.version: 4.0.1
+[[1;36mDEBUG[m] jetty.version: 12.0.5
+[[1;36mDEBUG[m] jjwt.version: 0.11.5
+[[1;36mDEBUG[m] jmustache.version: 1.15
+[[1;36mDEBUG[m] jooq.version: 3.18.7
+[[1;36mDEBUG[m] json-path.version: 2.8.0
+[[1;36mDEBUG[m] json-smart.version: 2.5.0
+[[1;36mDEBUG[m] jsonassert.version: 1.5.1
+[[1;36mDEBUG[m] jtds.version: 1.3.1
+[[1;36mDEBUG[m] junit-jupiter.version: 5.10.1
+[[1;36mDEBUG[m] junit.version: 4.13.2
+[[1;36mDEBUG[m] kafka.version: 3.6.1
+[[1;36mDEBUG[m] kotlin-coroutines.version: 1.7.3
+[[1;36mDEBUG[m] kotlin-serialization.version: 1.6.2
+[[1;36mDEBUG[m] kotlin.version: 1.9.21
+[[1;36mDEBUG[m] lettuce.version: 6.3.0.RELEASE
+[[1;36mDEBUG[m] library.jansi.path: /usr/share/maven/lib/jansi-native
+[[1;36mDEBUG[m] line.separator: 
+
+[[1;36mDEBUG[m] liquibase.version: 4.24.0
+[[1;36mDEBUG[m] log4j2.version: 2.21.1
+[[1;36mDEBUG[m] logback.version: 1.4.14
+[[1;36mDEBUG[m] lombok.version: 1.18.30
+[[1;36mDEBUG[m] mariadb.version: 3.2.0
+[[1;36mDEBUG[m] maven-antrun-plugin.version: 3.1.0
+[[1;36mDEBUG[m] maven-assembly-plugin.version: 3.6.0
+[[1;36mDEBUG[m] maven-clean-plugin.version: 3.3.2
+[[1;36mDEBUG[m] maven-compiler-plugin.version: 3.11.0
+[[1;36mDEBUG[m] maven-dependency-plugin.version: 3.6.1
+[[1;36mDEBUG[m] maven-deploy-plugin.version: 3.1.1
+[[1;36mDEBUG[m] maven-enforcer-plugin.version: 3.4.1
+[[1;36mDEBUG[m] maven-failsafe-plugin.version: 3.1.2
+[[1;36mDEBUG[m] maven-help-plugin.version: 3.4.0
+[[1;36mDEBUG[m] maven-install-plugin.version: 3.1.1
+[[1;36mDEBUG[m] maven-invoker-plugin.version: 3.6.0
+[[1;36mDEBUG[m] maven-jar-plugin.version: 3.3.0
+[[1;36mDEBUG[m] maven-javadoc-plugin.version: 3.6.3
+[[1;36mDEBUG[m] maven-resources-plugin.version: 3.3.1
+[[1;36mDEBUG[m] maven-shade-plugin.version: 3.5.1
+[[1;36mDEBUG[m] maven-source-plugin.version: 3.3.0
+[[1;36mDEBUG[m] maven-surefire-plugin.version: 3.1.2
+[[1;36mDEBUG[m] maven-war-plugin.version: 3.4.0
+[[1;36mDEBUG[m] maven.build.timestamp: 2025-05-21T06:29:35Z
+[[1;36mDEBUG[m] maven.build.version: Apache Maven 3.8.7
+[[1;36mDEBUG[m] maven.compiler.release: 17
+[[1;36mDEBUG[m] maven.conf: /usr/share/maven/conf
+[[1;36mDEBUG[m] maven.home: /usr/share/maven
+[[1;36mDEBUG[m] maven.multiModuleProjectDirectory: /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend
+[[1;36mDEBUG[m] maven.version: 3.8.7
+[[1;36mDEBUG[m] micrometer-tracing.version: 1.2.1
+[[1;36mDEBUG[m] micrometer.version: 1.12.1
+[[1;36mDEBUG[m] mockito.version: 5.7.0
+[[1;36mDEBUG[m] mongodb.version: 4.11.1
+[[1;36mDEBUG[m] mssql-jdbc.version: 12.4.2.jre11
+[[1;36mDEBUG[m] mysql.version: 8.1.0
+[[1;36mDEBUG[m] native-build-tools-plugin.version: 0.9.28
+[[1;36mDEBUG[m] native.encoding: UTF-8
+[[1;36mDEBUG[m] nekohtml.version: 1.9.22
+[[1;36mDEBUG[m] neo4j-java-driver.version: 5.13.0
+[[1;36mDEBUG[m] netty.version: 4.1.104.Final
+[[1;36mDEBUG[m] okhttp.version: 4.12.0
+[[1;36mDEBUG[m] opentelemetry.version: 1.31.0
+[[1;36mDEBUG[m] oracle-database.version: 23.3.0.23.09
+[[1;36mDEBUG[m] oracle-r2dbc.version: 1.1.1
+[[1;36mDEBUG[m] os.arch: amd64
+[[1;36mDEBUG[m] os.name: Linux
+[[1;36mDEBUG[m] os.version: 6.11.0-19-generic
+[[1;36mDEBUG[m] path.separator: :
+[[1;36mDEBUG[m] pooled-jms.version: 3.1.5
+[[1;36mDEBUG[m] postgresql.version: 42.6.0
+[[1;36mDEBUG[m] project.baseUri: file:/home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/
+[[1;36mDEBUG[m] project.build.sourceEncoding: UTF-8
+[[1;36mDEBUG[m] project.reporting.outputEncoding: UTF-8
+[[1;36mDEBUG[m] prometheus-client.version: 0.16.0
+[[1;36mDEBUG[m] pulsar-reactive.version: 0.5.1
+[[1;36mDEBUG[m] pulsar.version: 3.1.1
+[[1;36mDEBUG[m] quartz.version: 2.3.2
+[[1;36mDEBUG[m] querydsl.version: 5.0.0
+[[1;36mDEBUG[m] r2dbc-h2.version: 1.0.0.RELEASE
+[[1;36mDEBUG[m] r2dbc-mariadb.version: 1.1.4
+[[1;36mDEBUG[m] r2dbc-mssql.version: 1.0.2.RELEASE
+[[1;36mDEBUG[m] r2dbc-mysql.version: 1.0.5
+[[1;36mDEBUG[m] r2dbc-pool.version: 1.0.1.RELEASE
+[[1;36mDEBUG[m] r2dbc-postgresql.version: 1.0.3.RELEASE
+[[1;36mDEBUG[m] r2dbc-proxy.version: 1.1.3.RELEASE
+[[1;36mDEBUG[m] r2dbc-spi.version: 1.0.0.RELEASE
+[[1;36mDEBUG[m] rabbit-amqp-client.version: 5.19.0
+[[1;36mDEBUG[m] rabbit-stream-client.version: 0.14.0
+[[1;36mDEBUG[m] reactive-streams.version: 1.0.4
+[[1;36mDEBUG[m] reactor-bom.version: 2023.0.1
+[[1;36mDEBUG[m] resource.delimiter: @
+[[1;36mDEBUG[m] rest-assured.version: 5.3.2
+[[1;36mDEBUG[m] rsocket.version: 1.1.3
+[[1;36mDEBUG[m] rxjava3.version: 3.1.8
+[[1;36mDEBUG[m] saaj-impl.version: 3.0.3
+[[1;36mDEBUG[m] selenium-htmlunit.version: 4.13.0
+[[1;36mDEBUG[m] selenium.version: 4.14.1
+[[1;36mDEBUG[m] sendgrid.version: 4.9.3
+[[1;36mDEBUG[m] slf4j.version: 2.0.9
+[[1;36mDEBUG[m] snakeyaml.version: 2.2
+[[1;36mDEBUG[m] spring-amqp.version: 3.1.1
+[[1;36mDEBUG[m] spring-authorization-server.version: 1.2.1
+[[1;36mDEBUG[m] spring-batch.version: 5.1.0
+[[1;36mDEBUG[m] spring-data-bom.version: 2023.1.1
+[[1;36mDEBUG[m] spring-framework.version: 6.1.2
+[[1;36mDEBUG[m] spring-graphql.version: 1.2.4
+[[1;36mDEBUG[m] spring-hateoas.version: 2.2.0
+[[1;36mDEBUG[m] spring-integration.version: 6.2.1
+[[1;36mDEBUG[m] spring-kafka.version: 3.1.1
+[[1;36mDEBUG[m] spring-ldap.version: 3.2.1
+[[1;36mDEBUG[m] spring-pulsar.version: 1.0.1
+[[1;36mDEBUG[m] spring-restdocs.version: 3.0.1
+[[1;36mDEBUG[m] spring-retry.version: 2.0.5
+[[1;36mDEBUG[m] spring-security.version: 6.2.1
+[[1;36mDEBUG[m] spring-session.version: 3.2.1
+[[1;36mDEBUG[m] spring-ws.version: 4.0.9
+[[1;36mDEBUG[m] sqlite-jdbc.version: 3.43.2.0
+[[1;36mDEBUG[m] sun.arch.data.model: 64
+[[1;36mDEBUG[m] sun.boot.library.path: /usr/lib/jvm/jdk-17.0.12-oracle-x64/lib
+[[1;36mDEBUG[m] sun.cpu.endian: little
+[[1;36mDEBUG[m] sun.io.unicode.encoding: UnicodeLittle
+[[1;36mDEBUG[m] sun.java.command: org.codehaus.plexus.classworlds.launcher.Launcher spring-boot:run -e -X
+[[1;36mDEBUG[m] sun.java.launcher: SUN_STANDARD
+[[1;36mDEBUG[m] sun.jnu.encoding: UTF-8
+[[1;36mDEBUG[m] sun.management.compiler: HotSpot 64-Bit Tiered Compilers
+[[1;36mDEBUG[m] sun.stderr.encoding: UTF-8
+[[1;36mDEBUG[m] testcontainers.version: 1.19.3
+[[1;36mDEBUG[m] thymeleaf-extras-data-attribute.version: 2.0.1
+[[1;36mDEBUG[m] thymeleaf-extras-springsecurity.version: 3.1.2.RELEASE
+[[1;36mDEBUG[m] thymeleaf-layout-dialect.version: 3.3.0
+[[1;36mDEBUG[m] thymeleaf.version: 3.1.2.RELEASE
+[[1;36mDEBUG[m] tomcat.version: 10.1.17
+[[1;36mDEBUG[m] unboundid-ldapsdk.version: 6.0.11
+[[1;36mDEBUG[m] undertow.version: 2.3.10.Final
+[[1;36mDEBUG[m] user.country: US
+[[1;36mDEBUG[m] user.dir: /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend
+[[1;36mDEBUG[m] user.home: /home/khoaphan
+[[1;36mDEBUG[m] user.language: en
+[[1;36mDEBUG[m] user.name: khoaphan
+[[1;36mDEBUG[m] versions-maven-plugin.version: 2.16.2
+[[1;36mDEBUG[m] webjars-locator-core.version: 0.55
+[[1;36mDEBUG[m] wsdl4j.version: 1.6.3
+[[1;36mDEBUG[m] xml-maven-plugin.version: 1.1.0
+[[1;36mDEBUG[m] xmlunit2.version: 2.9.1
+[[1;36mDEBUG[m] yasson.version: 3.0.3
+[[1;36mDEBUG[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;36mDEBUG[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;36mDEBUG[m] resource with targetPath null
+directory /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/src/main/resources
+excludes []
+includes [**/application*.yml, **/application*.yaml, **/application*.properties]
+[[1;36mDEBUG[m] ignoreDelta true
+[[1;34mINFO[m] Copying 2 resources from src/main/resources to target/classes
+[[1;36mDEBUG[m] Copying file application.yml
+[[1;36mDEBUG[m] file application.yml has a filtered file extension
+[[1;36mDEBUG[m] Using 'UTF-8' encoding to copy filtered resource 'application.yml'.
+[[1;36mDEBUG[m] filtering /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/src/main/resources/application.yml to /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/classes/application.yml
+[[1;36mDEBUG[m] Copying file application.properties
+[[1;36mDEBUG[m] file application.properties has a filtered file extension
+[[1;36mDEBUG[m] Using 'UTF-8' encoding to copy filtered resource 'application.properties'.
+[[1;36mDEBUG[m] filtering /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/src/main/resources/application.properties to /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/classes/application.properties
+[[1;36mDEBUG[m] resource with targetPath null
+directory /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/src/main/resources
+excludes [**/application*.yml, **/application*.yaml, **/application*.properties]
+includes []
+[[1;36mDEBUG[m] ignoreDelta true
+[[1;34mINFO[m] Copying 0 resource from src/main/resources to target/classes
+[[1;36mDEBUG[m] no user filter components
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:compile[m [1m(default-compile)[m @ [36mfood-app[0;1m ---[m
+[[1;36mDEBUG[m] Using mirror maven-default-http-blocker (http://0.0.0.0/) for apache.snapshots (http://repository.apache.org/snapshots).
+[[1;36mDEBUG[m] Dependency collection stats {ConflictMarker.analyzeTime=60635, ConflictMarker.markTime=29426, ConflictMarker.nodeCount=17, ConflictIdSorter.graphTime=19056, ConflictIdSorter.topsortTime=14598, ConflictIdSorter.conflictIdCount=12, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=201513, ConflictResolver.conflictItemCount=17, DefaultDependencyCollector.collectTime=43948196, DefaultDependencyCollector.transformTime=347681}
+[[1;36mDEBUG[m] org.apache.maven.plugins:maven-compiler-plugin:jar:3.11.0
+[[1;36mDEBUG[m]    org.apache.maven.shared:maven-shared-utils:jar:3.3.4:compile
+[[1;36mDEBUG[m]       commons-io:commons-io:jar:2.6:compile
+[[1;36mDEBUG[m]    org.apache.maven.shared:maven-shared-incremental:jar:1.1:compile
+[[1;36mDEBUG[m]       org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile
+[[1;36mDEBUG[m]    org.codehaus.plexus:plexus-java:jar:1.1.2:compile
+[[1;36mDEBUG[m]       org.ow2.asm:asm:jar:9.4:compile
+[[1;36mDEBUG[m]       com.thoughtworks.qdox:qdox:jar:2.0.3:compile (version managed from default)
+[[1;36mDEBUG[m]    org.codehaus.plexus:plexus-compiler-api:jar:2.13.0:compile
+[[1;36mDEBUG[m]       org.codehaus.plexus:plexus-utils:jar:3.5.0:compile (version managed from default)
+[[1;36mDEBUG[m]    org.codehaus.plexus:plexus-compiler-manager:jar:2.13.0:compile
+[[1;36mDEBUG[m]    org.codehaus.plexus:plexus-compiler-javac:jar:2.13.0:runtime
+[[1;36mDEBUG[m] Created new class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0
+[[1;36mDEBUG[m] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0
+[[1;36mDEBUG[m]   Imported:  < maven.api
+[[1;36mDEBUG[m] Populating class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0
+[[1;36mDEBUG[m]   Included: org.apache.maven.plugins:maven-compiler-plugin:jar:3.11.0
+[[1;36mDEBUG[m]   Included: org.apache.maven.shared:maven-shared-utils:jar:3.3.4
+[[1;36mDEBUG[m]   Included: commons-io:commons-io:jar:2.6
+[[1;36mDEBUG[m]   Included: org.apache.maven.shared:maven-shared-incremental:jar:1.1
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.5.5
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-java:jar:1.1.2
+[[1;36mDEBUG[m]   Included: org.ow2.asm:asm:jar:9.4
+[[1;36mDEBUG[m]   Included: com.thoughtworks.qdox:qdox:jar:2.0.3
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-compiler-api:jar:2.13.0
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-utils:jar:3.5.0
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-compiler-manager:jar:2.13.0
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-compiler-javac:jar:2.13.0
+[[1;36mDEBUG[m] Configuring mojo org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@46fbb2c1]
+[[1;36mDEBUG[m] Configuring mojo 'org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile' with basic configurator -->
+[[1;36mDEBUG[m]   (f) basedir = /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend
+[[1;36mDEBUG[m]   (f) buildDirectory = /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target
+[[1;36mDEBUG[m]   (f) compilePath = [/home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/classes, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.1/spring-boot-starter-web-3.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.1/spring-boot-starter-3.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot/3.2.1/spring-boot-3.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.1/spring-boot-autoconfigure-3.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.1/spring-boot-starter-logging-3.2.1.jar, /home/khoaphan/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar, /home/khoaphan/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar, /home/khoaphan/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar, /home/khoaphan/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar, /home/khoaphan/.m2/repository/org/slf4j/jul-to-slf4j/2.0.9/jul-to-slf4j-2.0.9.jar, /home/khoaphan/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar, /home/khoaphan/.m2/repository/org/springframework/spring-core/6.1.2/spring-core-6.1.2.jar, /home/khoaphan/.m2/repository/org/springframework/spring-jcl/6.1.2/spring-jcl-6.1.2.jar, /home/khoaphan/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.1/spring-boot-starter-json-3.2.1.jar, /home/khoaphan/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.3/jackson-datatype-jdk8-2.15.3.jar, /home/khoaphan/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.3/jackson-datatype-jsr310-2.15.3.jar, /home/khoaphan/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.3/jackson-module-parameter-names-2.15.3.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.1/spring-boot-starter-tomcat-3.2.1.jar, /home/khoaphan/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.17/tomcat-embed-core-10.1.17.jar, /home/khoaphan/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.17/tomcat-embed-websocket-10.1.17.jar, /home/khoaphan/.m2/repository/org/springframework/spring-web/6.1.2/spring-web-6.1.2.jar, /home/khoaphan/.m2/repository/org/springframework/spring-beans/6.1.2/spring-beans-6.1.2.jar, /home/khoaphan/.m2/repository/io/micrometer/micrometer-observation/1.12.1/micrometer-observation-1.12.1.jar, /home/khoaphan/.m2/repository/io/micrometer/micrometer-commons/1.12.1/micrometer-commons-1.12.1.jar, /home/khoaphan/.m2/repository/org/springframework/spring-webmvc/6.1.2/spring-webmvc-6.1.2.jar, /home/khoaphan/.m2/repository/org/springframework/spring-context/6.1.2/spring-context-6.1.2.jar, /home/khoaphan/.m2/repository/org/springframework/spring-expression/6.1.2/spring-expression-6.1.2.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.2.1/spring-boot-starter-data-jpa-3.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.2.1/spring-boot-starter-aop-3.2.1.jar, /home/khoaphan/.m2/repository/org/aspectj/aspectjweaver/1.9.21/aspectjweaver-1.9.21.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.1/spring-boot-starter-jdbc-3.2.1.jar, /home/khoaphan/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar, /home/khoaphan/.m2/repository/org/springframework/spring-jdbc/6.1.2/spring-jdbc-6.1.2.jar, /home/khoaphan/.m2/repository/org/hibernate/orm/hibernate-core/6.4.1.Final/hibernate-core-6.4.1.Final.jar, /home/khoaphan/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar, /home/khoaphan/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar, /home/khoaphan/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar, /home/khoaphan/.m2/repository/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar, /home/khoaphan/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar, /home/khoaphan/.m2/repository/org/springframework/data/spring-data-jpa/3.2.1/spring-data-jpa-3.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/data/spring-data-commons/3.2.1/spring-data-commons-3.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/spring-orm/6.1.2/spring-orm-6.1.2.jar, /home/khoaphan/.m2/repository/org/springframework/spring-tx/6.1.2/spring-tx-6.1.2.jar, /home/khoaphan/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar, /home/khoaphan/.m2/repository/org/springframework/spring-aspects/6.1.2/spring-aspects-6.1.2.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.2.1/spring-boot-starter-security-3.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/spring-aop/6.1.2/spring-aop-6.1.2.jar, /home/khoaphan/.m2/repository/org/springframework/security/spring-security-config/6.2.1/spring-security-config-6.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/security/spring-security-core/6.2.1/spring-security-core-6.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/security/spring-security-crypto/6.2.1/spring-security-crypto-6.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/security/spring-security-web/6.2.1/spring-security-web-6.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.2.1/spring-boot-starter-validation-3.2.1.jar, /home/khoaphan/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.17/tomcat-embed-el-10.1.17.jar, /home/khoaphan/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar, /home/khoaphan/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar, /home/khoaphan/.m2/repository/io/jsonwebtoken/jjwt-api/0.11.5/jjwt-api-0.11.5.jar, /home/khoaphan/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.jar, /home/khoaphan/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.jar, /home/khoaphan/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.jar, /home/khoaphan/.m2/repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-configuration-processor/3.2.1/spring-boot-configuration-processor-3.2.1.jar]
+[[1;36mDEBUG[m]   (f) compileSourceRoots = [/home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/src/main/java]
+[[1;36mDEBUG[m]   (f) compilerId = javac
+[[1;36mDEBUG[m]   (f) createMissingPackageInfoClass = true
+[[1;36mDEBUG[m]   (f) debug = true
+[[1;36mDEBUG[m]   (f) debugFileName = javac
+[[1;36mDEBUG[m]   (f) enablePreview = false
+[[1;36mDEBUG[m]   (f) encoding = UTF-8
+[[1;36mDEBUG[m]   (f) failOnError = true
+[[1;36mDEBUG[m]   (f) failOnWarning = false
+[[1;36mDEBUG[m]   (f) forceJavacCompilerUse = false
+[[1;36mDEBUG[m]   (f) fork = false
+[[1;36mDEBUG[m]   (f) generatedSourcesDirectory = /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/generated-sources/annotations
+[[1;36mDEBUG[m]   (f) mojoExecution = org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile {execution: default-compile}
+[[1;36mDEBUG[m]   (f) optimize = false
+[[1;36mDEBUG[m]   (f) outputDirectory = /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/classes
+[[1;36mDEBUG[m]   (f) parameters = true
+[[1;36mDEBUG[m]   (f) project = MavenProject: com.foodapp:food-app:0.0.1-SNAPSHOT @ /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/pom.xml
+[[1;36mDEBUG[m]   (f) projectArtifact = com.foodapp:food-app:jar:0.0.1-SNAPSHOT
+[[1;36mDEBUG[m]   (s) release = 17
+[[1;36mDEBUG[m]   (f) session = org.apache.maven.execution.MavenSession@4ae263bf
+[[1;36mDEBUG[m]   (f) showCompilationChanges = false
+[[1;36mDEBUG[m]   (f) showDeprecation = false
+[[1;36mDEBUG[m]   (f) showWarnings = true
+[[1;36mDEBUG[m]   (f) skipMultiThreadWarning = false
+[[1;36mDEBUG[m]   (f) source = 1.8
+[[1;36mDEBUG[m]   (f) staleMillis = 0
+[[1;36mDEBUG[m]   (s) target = 1.8
+[[1;36mDEBUG[m]   (f) useIncrementalCompilation = true
+[[1;36mDEBUG[m]   (f) verbose = false
+[[1;36mDEBUG[m] -- end configuration --
+[[1;36mDEBUG[m] Using compiler 'javac'.
+[[1;36mDEBUG[m] Adding /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/generated-sources/annotations to compile source roots:
+  /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/src/main/java
+[[1;36mDEBUG[m] New compile source roots:
+  /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/src/main/java
+  /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/generated-sources/annotations
+[[1;36mDEBUG[m] CompilerReuseStrategy: reuseCreated
+[[1;36mDEBUG[m] useIncrementalCompilation enabled
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:testResources[m [1m(default-testResources)[m @ [36mfood-app[0;1m ---[m
+[[1;36mDEBUG[m] Configuring mojo org.apache.maven.plugins:maven-resources-plugin:3.3.1:testResources from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@46fbb2c1]
+[[1;36mDEBUG[m] Configuring mojo 'org.apache.maven.plugins:maven-resources-plugin:3.3.1:testResources' with basic configurator -->
+[[1;36mDEBUG[m]   (f) addDefaultExcludes = true
+[[1;36mDEBUG[m]   (f) buildFilters = []
+[[1;36mDEBUG[m]   (s) delimiters = [@]
+[[1;36mDEBUG[m]   (f) encoding = UTF-8
+[[1;36mDEBUG[m]   (f) escapeWindowsPaths = true
+[[1;36mDEBUG[m]   (f) fileNameFiltering = false
+[[1;36mDEBUG[m]   (s) includeEmptyDirs = false
+[[1;36mDEBUG[m]   (s) outputDirectory = /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/test-classes
+[[1;36mDEBUG[m]   (s) overwrite = false
+[[1;36mDEBUG[m]   (f) project = MavenProject: com.foodapp:food-app:0.0.1-SNAPSHOT @ /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/pom.xml
+[[1;36mDEBUG[m]   (f) propertiesEncoding = UTF-8
+[[1;36mDEBUG[m]   (s) resources = [Resource {targetPath: null, filtering: false, FileSet {directory: /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/src/test/resources, PatternSet [includes: {}, excludes: {}]}}]
+[[1;36mDEBUG[m]   (f) session = org.apache.maven.execution.MavenSession@4ae263bf
+[[1;36mDEBUG[m]   (f) skip = false
+[[1;36mDEBUG[m]   (f) supportMultiLineFiltering = false
+[[1;36mDEBUG[m]   (f) useBuildFilters = true
+[[1;36mDEBUG[m]   (s) useDefaultDelimiters = false
+[[1;36mDEBUG[m] -- end configuration --
+[[1;36mDEBUG[m] properties used:
+[[1;36mDEBUG[m] activemq.version: 5.18.3
+[[1;36mDEBUG[m] angus-mail.version: 2.0.2
+[[1;36mDEBUG[m] artemis.version: 2.31.2
+[[1;36mDEBUG[m] aspectj.version: 1.9.21
+[[1;36mDEBUG[m] assertj.version: 3.24.2
+[[1;36mDEBUG[m] awaitility.version: 4.2.0
+[[1;36mDEBUG[m] brave.version: 5.16.0
+[[1;36mDEBUG[m] build-helper-maven-plugin.version: 3.4.0
+[[1;36mDEBUG[m] byte-buddy.version: 1.14.10
+[[1;36mDEBUG[m] cache2k.version: 2.6.1.Final
+[[1;36mDEBUG[m] caffeine.version: 3.1.8
+[[1;36mDEBUG[m] cassandra-driver.version: 4.17.0
+[[1;36mDEBUG[m] classmate.version: 1.6.0
+[[1;36mDEBUG[m] classworlds.conf: /usr/share/maven/bin/m2.conf
+[[1;36mDEBUG[m] commons-codec.version: 1.16.0
+[[1;36mDEBUG[m] commons-dbcp2.version: 2.10.0
+[[1;36mDEBUG[m] commons-lang3.version: 3.13.0
+[[1;36mDEBUG[m] commons-pool.version: 1.6
+[[1;36mDEBUG[m] commons-pool2.version: 2.12.0
+[[1;36mDEBUG[m] couchbase-client.version: 3.4.11
+[[1;36mDEBUG[m] crac.version: 1.4.0
+[[1;36mDEBUG[m] db2-jdbc.version: 11.5.9.0
+[[1;36mDEBUG[m] dependency-management-plugin.version: 1.1.4
+[[1;36mDEBUG[m] derby.version: 10.16.1.1
+[[1;36mDEBUG[m] dropwizard-metrics.version: 4.2.23
+[[1;36mDEBUG[m] ehcache3.version: 3.10.8
+[[1;36mDEBUG[m] elasticsearch-client.version: 8.10.4
+[[1;36mDEBUG[m] env.ANDROID_HOME: /home/khoaphan/Android/Sdk
+[[1;36mDEBUG[m] env.CHROME_DESKTOP: code.desktop
+[[1;36mDEBUG[m] env.COLORTERM: truecolor
+[[1;36mDEBUG[m] env.DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+[[1;36mDEBUG[m] env.DEBUGINFOD_URLS: https://debuginfod.ubuntu.com 
+[[1;36mDEBUG[m] env.DESKTOP_SESSION: ubuntu
+[[1;36mDEBUG[m] env.DISPLAY: :0
+[[1;36mDEBUG[m] env.GDK_BACKEND: x11
+[[1;36mDEBUG[m] env.GDMSESSION: ubuntu
+[[1;36mDEBUG[m] env.GIO_LAUNCHED_DESKTOP_FILE: /usr/share/applications/code.desktop
+[[1;36mDEBUG[m] env.GIO_LAUNCHED_DESKTOP_FILE_PID: 5164
+[[1;36mDEBUG[m] env.GIT_ASKPASS: /usr/share/code/resources/app/extensions/git/dist/askpass.sh
+[[1;36mDEBUG[m] env.GJS_DEBUG_OUTPUT: stderr
+[[1;36mDEBUG[m] env.GJS_DEBUG_TOPICS: JS ERROR;JS LOG
+[[1;36mDEBUG[m] env.GNOME_DESKTOP_SESSION_ID: this-is-deprecated
+[[1;36mDEBUG[m] env.GNOME_SETUP_DISPLAY: :1
+[[1;36mDEBUG[m] env.GNOME_SHELL_SESSION_MODE: ubuntu
+[[1;36mDEBUG[m] env.GSM_SKIP_SSH_AGENT_WORKAROUND: true
+[[1;36mDEBUG[m] env.GTK_MODULES: gail:atk-bridge
+[[1;36mDEBUG[m] env.HOME: /home/khoaphan
+[[1;36mDEBUG[m] env.IM_CONFIG_PHASE: 1
+[[1;36mDEBUG[m] env.INVOCATION_ID: 035de45ab3f6432d99a1b14e7a927230
+[[1;36mDEBUG[m] env.JOURNAL_STREAM: 9:23125
+[[1;36mDEBUG[m] env.LANG: en_US.UTF-8
+[[1;36mDEBUG[m] env.LESSCLOSE: /usr/bin/lesspipe %s %s
+[[1;36mDEBUG[m] env.LESSOPEN: | /usr/bin/lesspipe %s
+[[1;36mDEBUG[m] env.LOGNAME: khoaphan
+[[1;36mDEBUG[m] env.LS_COLORS: rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:
+[[1;36mDEBUG[m] env.MANAGERPID: 3146
+[[1;36mDEBUG[m] env.MAVEN_CMD_LINE_ARGS:  spring-boot:run -e -X
+[[1;36mDEBUG[m] env.MAVEN_PROJECTBASEDIR: /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend
+[[1;36mDEBUG[m] env.MEMORY_PRESSURE_WATCH: /sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure
+[[1;36mDEBUG[m] env.MEMORY_PRESSURE_WRITE: c29tZSAyMDAwMDAgMjAwMDAwMAA=
+[[1;36mDEBUG[m] env.NODE_OPTIONS: --dns-result-order=ipv4first
+[[1;36mDEBUG[m] env.NVM_BIN: /home/khoaphan/.nvm/versions/node/v18.20.8/bin
+[[1;36mDEBUG[m] env.NVM_CD_FLAGS: 
+[[1;36mDEBUG[m] env.NVM_DIR: /home/khoaphan/.nvm
+[[1;36mDEBUG[m] env.NVM_INC: /home/khoaphan/.nvm/versions/node/v18.20.8/include/node
+[[1;36mDEBUG[m] env.OLDPWD: /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend
+[[1;36mDEBUG[m] env.ORIGINAL_XDG_CURRENT_DESKTOP: Unity
+[[1;36mDEBUG[m] env.PATH: /home/khoaphan/Android/Sdk/emulator:/home/khoaphan/Android/Sdk/tools:/home/khoaphan/Android/Sdk/tools/bin:/home/khoaphan/Android/Sdk/platform-tools:/snap/bin:/home/khoaphan/.nvm/versions/node/v18.20.8/bin:/home/khoaphan/.npm-global/bin:/home/khoaphan/.spicetify:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/khoaphan/.dotnet/tools:/home/khoaphan/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/khoaphan/.spicetify:/home/khoaphan/.yarn/bin
+[[1;36mDEBUG[m] env.PWD: /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend
+[[1;36mDEBUG[m] env.QT_ACCESSIBILITY: 1
+[[1;36mDEBUG[m] env.QT_IM_MODULE: ibus
+[[1;36mDEBUG[m] env.SESSION_MANAGER: local/khoaphan-Aspire-A715-42G:@/tmp/.ICE-unix/3397,unix/khoaphan-Aspire-A715-42G:/tmp/.ICE-unix/3397
+[[1;36mDEBUG[m] env.SHELL: /bin/bash
+[[1;36mDEBUG[m] env.SHLVL: 1
+[[1;36mDEBUG[m] env.SSH_AUTH_SOCK: /run/user/1000/keyring/ssh
+[[1;36mDEBUG[m] env.SYSTEMD_EXEC_PID: 3434
+[[1;36mDEBUG[m] env.TERM: xterm-256color
+[[1;36mDEBUG[m] env.TERM_PROGRAM: vscode
+[[1;36mDEBUG[m] env.TERM_PROGRAM_VERSION: 1.98.2
+[[1;36mDEBUG[m] env.USER: khoaphan
+[[1;36mDEBUG[m] env.USERNAME: khoaphan
+[[1;36mDEBUG[m] env.VSCODE_GIT_ASKPASS_EXTRA_ARGS: 
+[[1;36mDEBUG[m] env.VSCODE_GIT_ASKPASS_MAIN: /usr/share/code/resources/app/extensions/git/dist/askpass-main.js
+[[1;36mDEBUG[m] env.VSCODE_GIT_ASKPASS_NODE: /usr/share/code/code
+[[1;36mDEBUG[m] env.VSCODE_GIT_IPC_HANDLE: /run/user/1000/vscode-git-6de272521c.sock
+[[1;36mDEBUG[m] env.WAYLAND_DISPLAY: wayland-0
+[[1;36mDEBUG[m] env.XAUTHORITY: /run/user/1000/.mutter-Xwaylandauth.Z2RH62
+[[1;36mDEBUG[m] env.XDG_CONFIG_DIRS: /etc/xdg/xdg-ubuntu:/etc/xdg
+[[1;36mDEBUG[m] env.XDG_CURRENT_DESKTOP: Unity
+[[1;36mDEBUG[m] env.XDG_DATA_DIRS: /usr/share/ubuntu:/usr/share/gnome:/home/khoaphan/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+[[1;36mDEBUG[m] env.XDG_MENU_PREFIX: gnome-
+[[1;36mDEBUG[m] env.XDG_RUNTIME_DIR: /run/user/1000
+[[1;36mDEBUG[m] env.XDG_SESSION_CLASS: user
+[[1;36mDEBUG[m] env.XDG_SESSION_DESKTOP: ubuntu
+[[1;36mDEBUG[m] env.XDG_SESSION_TYPE: wayland
+[[1;36mDEBUG[m] env.XMODIFIERS: @im=ibus
+[[1;36mDEBUG[m] env._: /usr/bin/mvn
+[[1;36mDEBUG[m] file.encoding: UTF-8
+[[1;36mDEBUG[m] file.separator: /
+[[1;36mDEBUG[m] flyway.version: 9.22.3
+[[1;36mDEBUG[m] freemarker.version: 2.3.32
+[[1;36mDEBUG[m] git-commit-id-maven-plugin.version: 6.0.0
+[[1;36mDEBUG[m] glassfish-jaxb.version: 4.0.4
+[[1;36mDEBUG[m] glassfish-jstl.version: 3.0.1
+[[1;36mDEBUG[m] graphql-java.version: 21.3
+[[1;36mDEBUG[m] groovy.version: 4.0.16
+[[1;36mDEBUG[m] gson.version: 2.10.1
+[[1;36mDEBUG[m] h2.version: 2.2.224
+[[1;36mDEBUG[m] hamcrest.version: 2.2
+[[1;36mDEBUG[m] hazelcast.version: 5.3.6
+[[1;36mDEBUG[m] hibernate-validator.version: 8.0.1.Final
+[[1;36mDEBUG[m] hibernate.version: 6.4.1.Final
+[[1;36mDEBUG[m] hikaricp.version: 5.0.1
+[[1;36mDEBUG[m] hsqldb.version: 2.7.2
+[[1;36mDEBUG[m] htmlunit.version: 2.70.0
+[[1;36mDEBUG[m] httpasyncclient.version: 4.1.5
+[[1;36mDEBUG[m] httpclient5.version: 5.2.3
+[[1;36mDEBUG[m] httpcore.version: 4.4.16
+[[1;36mDEBUG[m] httpcore5.version: 5.2.4
+[[1;36mDEBUG[m] infinispan.version: 14.0.21.Final
+[[1;36mDEBUG[m] influxdb-java.version: 2.23
+[[1;36mDEBUG[m] jackson-bom.version: 2.15.3
+[[1;36mDEBUG[m] jakarta-activation.version: 2.1.2
+[[1;36mDEBUG[m] jakarta-annotation.version: 2.1.1
+[[1;36mDEBUG[m] jakarta-jms.version: 3.1.0
+[[1;36mDEBUG[m] jakarta-json-bind.version: 3.0.0
+[[1;36mDEBUG[m] jakarta-json.version: 2.1.3
+[[1;36mDEBUG[m] jakarta-mail.version: 2.1.2
+[[1;36mDEBUG[m] jakarta-management.version: 1.1.4
+[[1;36mDEBUG[m] jakarta-persistence.version: 3.1.0
+[[1;36mDEBUG[m] jakarta-servlet-jsp-jstl.version: 3.0.0
+[[1;36mDEBUG[m] jakarta-servlet.version: 6.0.0
+[[1;36mDEBUG[m] jakarta-transaction.version: 2.0.1
+[[1;36mDEBUG[m] jakarta-validation.version: 3.0.2
+[[1;36mDEBUG[m] jakarta-websocket.version: 2.1.1
+[[1;36mDEBUG[m] jakarta-ws-rs.version: 3.1.0
+[[1;36mDEBUG[m] jakarta-xml-bind.version: 4.0.1
+[[1;36mDEBUG[m] jakarta-xml-soap.version: 3.0.1
+[[1;36mDEBUG[m] jakarta-xml-ws.version: 4.0.1
+[[1;36mDEBUG[m] janino.version: 3.1.11
+[[1;36mDEBUG[m] jansi.mode: force
+[[1;36mDEBUG[m] java.class.path: /usr/share/maven/boot/plexus-classworlds-2.x.jar
+[[1;36mDEBUG[m] java.class.version: 61.0
+[[1;36mDEBUG[m] java.home: /usr/lib/jvm/jdk-17.0.12-oracle-x64
+[[1;36mDEBUG[m] java.io.tmpdir: /tmp
+[[1;36mDEBUG[m] java.library.path: /usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+[[1;36mDEBUG[m] java.runtime.name: Java(TM) SE Runtime Environment
+[[1;36mDEBUG[m] java.runtime.version: 17.0.12+8-LTS-286
+[[1;36mDEBUG[m] java.specification.name: Java Platform API Specification
+[[1;36mDEBUG[m] java.specification.vendor: Oracle Corporation
+[[1;36mDEBUG[m] java.specification.version: 17
+[[1;36mDEBUG[m] java.vendor: Oracle Corporation
+[[1;36mDEBUG[m] java.vendor.url: https://java.oracle.com/
+[[1;36mDEBUG[m] java.vendor.url.bug: https://bugreport.java.com/bugreport/
+[[1;36mDEBUG[m] java.version: 17.0.12
+[[1;36mDEBUG[m] java.version.date: 2024-07-16
+[[1;36mDEBUG[m] java.vm.compressedOopsMode: Zero based
+[[1;36mDEBUG[m] java.vm.info: mixed mode, sharing
+[[1;36mDEBUG[m] java.vm.name: Java HotSpot(TM) 64-Bit Server VM
+[[1;36mDEBUG[m] java.vm.specification.name: Java Virtual Machine Specification
+[[1;36mDEBUG[m] java.vm.specification.vendor: Oracle Corporation
+[[1;36mDEBUG[m] java.vm.specification.version: 17
+[[1;36mDEBUG[m] java.vm.vendor: Oracle Corporation
+[[1;36mDEBUG[m] java.vm.version: 17.0.12+8-LTS-286
+[[1;36mDEBUG[m] javax-cache.version: 1.1.1
+[[1;36mDEBUG[m] javax-money.version: 1.1
+[[1;36mDEBUG[m] jaxen.version: 2.0.0
+[[1;36mDEBUG[m] jaybird.version: 5.0.3.java11
+[[1;36mDEBUG[m] jboss-logging.version: 3.5.3.Final
+[[1;36mDEBUG[m] jdk.debug: release
+[[1;36mDEBUG[m] jdom2.version: 2.0.6.1
+[[1;36mDEBUG[m] jedis.version: 5.0.2
+[[1;36mDEBUG[m] jersey.version: 3.1.5
+[[1;36mDEBUG[m] jetty-reactive-httpclient.version: 4.0.1
+[[1;36mDEBUG[m] jetty.version: 12.0.5
+[[1;36mDEBUG[m] jjwt.version: 0.11.5
+[[1;36mDEBUG[m] jmustache.version: 1.15
+[[1;36mDEBUG[m] jooq.version: 3.18.7
+[[1;36mDEBUG[m] json-path.version: 2.8.0
+[[1;36mDEBUG[m] json-smart.version: 2.5.0
+[[1;36mDEBUG[m] jsonassert.version: 1.5.1
+[[1;36mDEBUG[m] jtds.version: 1.3.1
+[[1;36mDEBUG[m] junit-jupiter.version: 5.10.1
+[[1;36mDEBUG[m] junit.version: 4.13.2
+[[1;36mDEBUG[m] kafka.version: 3.6.1
+[[1;36mDEBUG[m] kotlin-coroutines.version: 1.7.3
+[[1;36mDEBUG[m] kotlin-serialization.version: 1.6.2
+[[1;36mDEBUG[m] kotlin.version: 1.9.21
+[[1;36mDEBUG[m] lettuce.version: 6.3.0.RELEASE
+[[1;36mDEBUG[m] library.jansi.path: /usr/share/maven/lib/jansi-native
+[[1;36mDEBUG[m] line.separator: 
+
+[[1;36mDEBUG[m] liquibase.version: 4.24.0
+[[1;36mDEBUG[m] log4j2.version: 2.21.1
+[[1;36mDEBUG[m] logback.version: 1.4.14
+[[1;36mDEBUG[m] lombok.version: 1.18.30
+[[1;36mDEBUG[m] mariadb.version: 3.2.0
+[[1;36mDEBUG[m] maven-antrun-plugin.version: 3.1.0
+[[1;36mDEBUG[m] maven-assembly-plugin.version: 3.6.0
+[[1;36mDEBUG[m] maven-clean-plugin.version: 3.3.2
+[[1;36mDEBUG[m] maven-compiler-plugin.version: 3.11.0
+[[1;36mDEBUG[m] maven-dependency-plugin.version: 3.6.1
+[[1;36mDEBUG[m] maven-deploy-plugin.version: 3.1.1
+[[1;36mDEBUG[m] maven-enforcer-plugin.version: 3.4.1
+[[1;36mDEBUG[m] maven-failsafe-plugin.version: 3.1.2
+[[1;36mDEBUG[m] maven-help-plugin.version: 3.4.0
+[[1;36mDEBUG[m] maven-install-plugin.version: 3.1.1
+[[1;36mDEBUG[m] maven-invoker-plugin.version: 3.6.0
+[[1;36mDEBUG[m] maven-jar-plugin.version: 3.3.0
+[[1;36mDEBUG[m] maven-javadoc-plugin.version: 3.6.3
+[[1;36mDEBUG[m] maven-resources-plugin.version: 3.3.1
+[[1;36mDEBUG[m] maven-shade-plugin.version: 3.5.1
+[[1;36mDEBUG[m] maven-source-plugin.version: 3.3.0
+[[1;36mDEBUG[m] maven-surefire-plugin.version: 3.1.2
+[[1;36mDEBUG[m] maven-war-plugin.version: 3.4.0
+[[1;36mDEBUG[m] maven.build.timestamp: 2025-05-21T06:29:35Z
+[[1;36mDEBUG[m] maven.build.version: Apache Maven 3.8.7
+[[1;36mDEBUG[m] maven.compiler.release: 17
+[[1;36mDEBUG[m] maven.conf: /usr/share/maven/conf
+[[1;36mDEBUG[m] maven.home: /usr/share/maven
+[[1;36mDEBUG[m] maven.multiModuleProjectDirectory: /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend
+[[1;36mDEBUG[m] maven.version: 3.8.7
+[[1;36mDEBUG[m] micrometer-tracing.version: 1.2.1
+[[1;36mDEBUG[m] micrometer.version: 1.12.1
+[[1;36mDEBUG[m] mockito.version: 5.7.0
+[[1;36mDEBUG[m] mongodb.version: 4.11.1
+[[1;36mDEBUG[m] mssql-jdbc.version: 12.4.2.jre11
+[[1;36mDEBUG[m] mysql.version: 8.1.0
+[[1;36mDEBUG[m] native-build-tools-plugin.version: 0.9.28
+[[1;36mDEBUG[m] native.encoding: UTF-8
+[[1;36mDEBUG[m] nekohtml.version: 1.9.22
+[[1;36mDEBUG[m] neo4j-java-driver.version: 5.13.0
+[[1;36mDEBUG[m] netty.version: 4.1.104.Final
+[[1;36mDEBUG[m] okhttp.version: 4.12.0
+[[1;36mDEBUG[m] opentelemetry.version: 1.31.0
+[[1;36mDEBUG[m] oracle-database.version: 23.3.0.23.09
+[[1;36mDEBUG[m] oracle-r2dbc.version: 1.1.1
+[[1;36mDEBUG[m] os.arch: amd64
+[[1;36mDEBUG[m] os.name: Linux
+[[1;36mDEBUG[m] os.version: 6.11.0-19-generic
+[[1;36mDEBUG[m] path.separator: :
+[[1;36mDEBUG[m] pooled-jms.version: 3.1.5
+[[1;36mDEBUG[m] postgresql.version: 42.6.0
+[[1;36mDEBUG[m] project.baseUri: file:/home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/
+[[1;36mDEBUG[m] project.build.sourceEncoding: UTF-8
+[[1;36mDEBUG[m] project.reporting.outputEncoding: UTF-8
+[[1;36mDEBUG[m] prometheus-client.version: 0.16.0
+[[1;36mDEBUG[m] pulsar-reactive.version: 0.5.1
+[[1;36mDEBUG[m] pulsar.version: 3.1.1
+[[1;36mDEBUG[m] quartz.version: 2.3.2
+[[1;36mDEBUG[m] querydsl.version: 5.0.0
+[[1;36mDEBUG[m] r2dbc-h2.version: 1.0.0.RELEASE
+[[1;36mDEBUG[m] r2dbc-mariadb.version: 1.1.4
+[[1;36mDEBUG[m] r2dbc-mssql.version: 1.0.2.RELEASE
+[[1;36mDEBUG[m] r2dbc-mysql.version: 1.0.5
+[[1;36mDEBUG[m] r2dbc-pool.version: 1.0.1.RELEASE
+[[1;36mDEBUG[m] r2dbc-postgresql.version: 1.0.3.RELEASE
+[[1;36mDEBUG[m] r2dbc-proxy.version: 1.1.3.RELEASE
+[[1;36mDEBUG[m] r2dbc-spi.version: 1.0.0.RELEASE
+[[1;36mDEBUG[m] rabbit-amqp-client.version: 5.19.0
+[[1;36mDEBUG[m] rabbit-stream-client.version: 0.14.0
+[[1;36mDEBUG[m] reactive-streams.version: 1.0.4
+[[1;36mDEBUG[m] reactor-bom.version: 2023.0.1
+[[1;36mDEBUG[m] resource.delimiter: @
+[[1;36mDEBUG[m] rest-assured.version: 5.3.2
+[[1;36mDEBUG[m] rsocket.version: 1.1.3
+[[1;36mDEBUG[m] rxjava3.version: 3.1.8
+[[1;36mDEBUG[m] saaj-impl.version: 3.0.3
+[[1;36mDEBUG[m] selenium-htmlunit.version: 4.13.0
+[[1;36mDEBUG[m] selenium.version: 4.14.1
+[[1;36mDEBUG[m] sendgrid.version: 4.9.3
+[[1;36mDEBUG[m] slf4j.version: 2.0.9
+[[1;36mDEBUG[m] snakeyaml.version: 2.2
+[[1;36mDEBUG[m] spring-amqp.version: 3.1.1
+[[1;36mDEBUG[m] spring-authorization-server.version: 1.2.1
+[[1;36mDEBUG[m] spring-batch.version: 5.1.0
+[[1;36mDEBUG[m] spring-data-bom.version: 2023.1.1
+[[1;36mDEBUG[m] spring-framework.version: 6.1.2
+[[1;36mDEBUG[m] spring-graphql.version: 1.2.4
+[[1;36mDEBUG[m] spring-hateoas.version: 2.2.0
+[[1;36mDEBUG[m] spring-integration.version: 6.2.1
+[[1;36mDEBUG[m] spring-kafka.version: 3.1.1
+[[1;36mDEBUG[m] spring-ldap.version: 3.2.1
+[[1;36mDEBUG[m] spring-pulsar.version: 1.0.1
+[[1;36mDEBUG[m] spring-restdocs.version: 3.0.1
+[[1;36mDEBUG[m] spring-retry.version: 2.0.5
+[[1;36mDEBUG[m] spring-security.version: 6.2.1
+[[1;36mDEBUG[m] spring-session.version: 3.2.1
+[[1;36mDEBUG[m] spring-ws.version: 4.0.9
+[[1;36mDEBUG[m] sqlite-jdbc.version: 3.43.2.0
+[[1;36mDEBUG[m] sun.arch.data.model: 64
+[[1;36mDEBUG[m] sun.boot.library.path: /usr/lib/jvm/jdk-17.0.12-oracle-x64/lib
+[[1;36mDEBUG[m] sun.cpu.endian: little
+[[1;36mDEBUG[m] sun.io.unicode.encoding: UnicodeLittle
+[[1;36mDEBUG[m] sun.java.command: org.codehaus.plexus.classworlds.launcher.Launcher spring-boot:run -e -X
+[[1;36mDEBUG[m] sun.java.launcher: SUN_STANDARD
+[[1;36mDEBUG[m] sun.jnu.encoding: UTF-8
+[[1;36mDEBUG[m] sun.management.compiler: HotSpot 64-Bit Tiered Compilers
+[[1;36mDEBUG[m] sun.stderr.encoding: UTF-8
+[[1;36mDEBUG[m] testcontainers.version: 1.19.3
+[[1;36mDEBUG[m] thymeleaf-extras-data-attribute.version: 2.0.1
+[[1;36mDEBUG[m] thymeleaf-extras-springsecurity.version: 3.1.2.RELEASE
+[[1;36mDEBUG[m] thymeleaf-layout-dialect.version: 3.3.0
+[[1;36mDEBUG[m] thymeleaf.version: 3.1.2.RELEASE
+[[1;36mDEBUG[m] tomcat.version: 10.1.17
+[[1;36mDEBUG[m] unboundid-ldapsdk.version: 6.0.11
+[[1;36mDEBUG[m] undertow.version: 2.3.10.Final
+[[1;36mDEBUG[m] user.country: US
+[[1;36mDEBUG[m] user.dir: /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend
+[[1;36mDEBUG[m] user.home: /home/khoaphan
+[[1;36mDEBUG[m] user.language: en
+[[1;36mDEBUG[m] user.name: khoaphan
+[[1;36mDEBUG[m] versions-maven-plugin.version: 2.16.2
+[[1;36mDEBUG[m] webjars-locator-core.version: 0.55
+[[1;36mDEBUG[m] wsdl4j.version: 1.6.3
+[[1;36mDEBUG[m] xml-maven-plugin.version: 1.1.0
+[[1;36mDEBUG[m] xmlunit2.version: 2.9.1
+[[1;36mDEBUG[m] yasson.version: 3.0.3
+[[1;36mDEBUG[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;36mDEBUG[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;36mDEBUG[m] resource with targetPath null
+directory /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/src/test/resources
+excludes []
+includes []
+[[1;34mINFO[m] skip non existing resourceDirectory /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/src/test/resources
+[[1;36mDEBUG[m] no user filter components
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:testCompile[m [1m(default-testCompile)[m @ [36mfood-app[0;1m ---[m
+[[1;36mDEBUG[m] Configuring mojo org.apache.maven.plugins:maven-compiler-plugin:3.11.0:testCompile from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@46fbb2c1]
+[[1;36mDEBUG[m] Configuring mojo 'org.apache.maven.plugins:maven-compiler-plugin:3.11.0:testCompile' with basic configurator -->
+[[1;36mDEBUG[m]   (f) basedir = /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend
+[[1;36mDEBUG[m]   (f) buildDirectory = /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target
+[[1;36mDEBUG[m]   (f) compileSourceRoots = [/home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/src/test/java]
+[[1;36mDEBUG[m]   (f) compilerId = javac
+[[1;36mDEBUG[m]   (f) createMissingPackageInfoClass = true
+[[1;36mDEBUG[m]   (f) debug = true
+[[1;36mDEBUG[m]   (f) debugFileName = javac-test
+[[1;36mDEBUG[m]   (f) enablePreview = false
+[[1;36mDEBUG[m]   (f) encoding = UTF-8
+[[1;36mDEBUG[m]   (f) failOnError = true
+[[1;36mDEBUG[m]   (f) failOnWarning = false
+[[1;36mDEBUG[m]   (f) forceJavacCompilerUse = false
+[[1;36mDEBUG[m]   (f) fork = false
+[[1;36mDEBUG[m]   (f) generatedTestSourcesDirectory = /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/generated-test-sources/test-annotations
+[[1;36mDEBUG[m]   (f) mojoExecution = org.apache.maven.plugins:maven-compiler-plugin:3.11.0:testCompile {execution: default-testCompile}
+[[1;36mDEBUG[m]   (f) optimize = false
+[[1;36mDEBUG[m]   (f) outputDirectory = /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/test-classes
+[[1;36mDEBUG[m]   (f) parameters = true
+[[1;36mDEBUG[m]   (f) project = MavenProject: com.foodapp:food-app:0.0.1-SNAPSHOT @ /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/pom.xml
+[[1;36mDEBUG[m]   (s) release = 17
+[[1;36mDEBUG[m]   (f) session = org.apache.maven.execution.MavenSession@4ae263bf
+[[1;36mDEBUG[m]   (f) showCompilationChanges = false
+[[1;36mDEBUG[m]   (f) showDeprecation = false
+[[1;36mDEBUG[m]   (f) showWarnings = true
+[[1;36mDEBUG[m]   (f) skipMultiThreadWarning = false
+[[1;36mDEBUG[m]   (f) source = 1.8
+[[1;36mDEBUG[m]   (f) staleMillis = 0
+[[1;36mDEBUG[m]   (s) target = 1.8
+[[1;36mDEBUG[m]   (f) testPath = [/home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/test-classes, /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/classes, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.1/spring-boot-starter-web-3.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.1/spring-boot-starter-3.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot/3.2.1/spring-boot-3.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.1/spring-boot-autoconfigure-3.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.1/spring-boot-starter-logging-3.2.1.jar, /home/khoaphan/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar, /home/khoaphan/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar, /home/khoaphan/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar, /home/khoaphan/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar, /home/khoaphan/.m2/repository/org/slf4j/jul-to-slf4j/2.0.9/jul-to-slf4j-2.0.9.jar, /home/khoaphan/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar, /home/khoaphan/.m2/repository/org/springframework/spring-core/6.1.2/spring-core-6.1.2.jar, /home/khoaphan/.m2/repository/org/springframework/spring-jcl/6.1.2/spring-jcl-6.1.2.jar, /home/khoaphan/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.1/spring-boot-starter-json-3.2.1.jar, /home/khoaphan/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.3/jackson-datatype-jdk8-2.15.3.jar, /home/khoaphan/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.3/jackson-datatype-jsr310-2.15.3.jar, /home/khoaphan/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.3/jackson-module-parameter-names-2.15.3.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.1/spring-boot-starter-tomcat-3.2.1.jar, /home/khoaphan/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.17/tomcat-embed-core-10.1.17.jar, /home/khoaphan/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.17/tomcat-embed-websocket-10.1.17.jar, /home/khoaphan/.m2/repository/org/springframework/spring-web/6.1.2/spring-web-6.1.2.jar, /home/khoaphan/.m2/repository/org/springframework/spring-beans/6.1.2/spring-beans-6.1.2.jar, /home/khoaphan/.m2/repository/io/micrometer/micrometer-observation/1.12.1/micrometer-observation-1.12.1.jar, /home/khoaphan/.m2/repository/io/micrometer/micrometer-commons/1.12.1/micrometer-commons-1.12.1.jar, /home/khoaphan/.m2/repository/org/springframework/spring-webmvc/6.1.2/spring-webmvc-6.1.2.jar, /home/khoaphan/.m2/repository/org/springframework/spring-context/6.1.2/spring-context-6.1.2.jar, /home/khoaphan/.m2/repository/org/springframework/spring-expression/6.1.2/spring-expression-6.1.2.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.2.1/spring-boot-starter-data-jpa-3.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.2.1/spring-boot-starter-aop-3.2.1.jar, /home/khoaphan/.m2/repository/org/aspectj/aspectjweaver/1.9.21/aspectjweaver-1.9.21.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.1/spring-boot-starter-jdbc-3.2.1.jar, /home/khoaphan/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar, /home/khoaphan/.m2/repository/org/springframework/spring-jdbc/6.1.2/spring-jdbc-6.1.2.jar, /home/khoaphan/.m2/repository/org/hibernate/orm/hibernate-core/6.4.1.Final/hibernate-core-6.4.1.Final.jar, /home/khoaphan/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar, /home/khoaphan/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar, /home/khoaphan/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar, /home/khoaphan/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar, /home/khoaphan/.m2/repository/io/smallrye/jandex/3.1.2/jandex-3.1.2.jar, /home/khoaphan/.m2/repository/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar, /home/khoaphan/.m2/repository/net/bytebuddy/byte-buddy/1.14.10/byte-buddy-1.14.10.jar, /home/khoaphan/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.1/jakarta.xml.bind-api-4.0.1.jar, /home/khoaphan/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar, /home/khoaphan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.4/jaxb-runtime-4.0.4.jar, /home/khoaphan/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.4/jaxb-core-4.0.4.jar, /home/khoaphan/.m2/repository/org/eclipse/angus/angus-activation/2.0.1/angus-activation-2.0.1.jar, /home/khoaphan/.m2/repository/org/glassfish/jaxb/txw2/4.0.4/txw2-4.0.4.jar, /home/khoaphan/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar, /home/khoaphan/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar, /home/khoaphan/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar, /home/khoaphan/.m2/repository/org/springframework/data/spring-data-jpa/3.2.1/spring-data-jpa-3.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/data/spring-data-commons/3.2.1/spring-data-commons-3.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/spring-orm/6.1.2/spring-orm-6.1.2.jar, /home/khoaphan/.m2/repository/org/springframework/spring-tx/6.1.2/spring-tx-6.1.2.jar, /home/khoaphan/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar, /home/khoaphan/.m2/repository/org/springframework/spring-aspects/6.1.2/spring-aspects-6.1.2.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.2.1/spring-boot-starter-security-3.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/spring-aop/6.1.2/spring-aop-6.1.2.jar, /home/khoaphan/.m2/repository/org/springframework/security/spring-security-config/6.2.1/spring-security-config-6.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/security/spring-security-core/6.2.1/spring-security-core-6.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/security/spring-security-crypto/6.2.1/spring-security-crypto-6.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/security/spring-security-web/6.2.1/spring-security-web-6.2.1.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.2.1/spring-boot-starter-validation-3.2.1.jar, /home/khoaphan/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.17/tomcat-embed-el-10.1.17.jar, /home/khoaphan/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar, /home/khoaphan/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar, /home/khoaphan/.m2/repository/com/mysql/mysql-connector-j/8.1.0/mysql-connector-j-8.1.0.jar, /home/khoaphan/.m2/repository/io/jsonwebtoken/jjwt-api/0.11.5/jjwt-api-0.11.5.jar, /home/khoaphan/.m2/repository/io/jsonwebtoken/jjwt-impl/0.11.5/jjwt-impl-0.11.5.jar, /home/khoaphan/.m2/repository/io/jsonwebtoken/jjwt-jackson/0.11.5/jjwt-jackson-0.11.5.jar, /home/khoaphan/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.jar, /home/khoaphan/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.jar, /home/khoaphan/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.jar, /home/khoaphan/.m2/repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar, /home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-configuration-processor/3.2.1/spring-boot-configuration-processor-3.2.1.jar]
+[[1;36mDEBUG[m]   (f) useIncrementalCompilation = true
+[[1;36mDEBUG[m]   (f) useModulePath = true
+[[1;36mDEBUG[m]   (f) verbose = false
+[[1;36mDEBUG[m] -- end configuration --
+[[1;36mDEBUG[m] Using compiler 'javac'.
+[[1;36mDEBUG[m] Adding /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/generated-test-sources/test-annotations to test-compile source roots:
+  /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/src/test/java
+[[1;36mDEBUG[m] New test-compile source roots:
+  /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/src/test/java
+  /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/generated-test-sources/test-annotations
+[[1;36mDEBUG[m] CompilerReuseStrategy: reuseCreated
+[[1;36mDEBUG[m] useIncrementalCompilation enabled
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mspring-boot-maven-plugin:3.2.1:run[m [1m(default-cli)[0;1m < [0;1mtest-compile[m @ [36mfood-app[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mspring-boot-maven-plugin:3.2.1:run[m [1m(default-cli)[m @ [36mfood-app[0;1m ---[m
+[[1;36mDEBUG[m] Dependency collection stats {ConflictMarker.analyzeTime=217814, ConflictMarker.markTime=71186, ConflictMarker.nodeCount=56, ConflictIdSorter.graphTime=61638, ConflictIdSorter.topsortTime=33463, ConflictIdSorter.conflictIdCount=39, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=682478, ConflictResolver.conflictItemCount=55, DefaultDependencyCollector.collectTime=65260794, DefaultDependencyCollector.transformTime=1105924}
+[[1;36mDEBUG[m] org.springframework.boot:spring-boot-maven-plugin:jar:3.2.1
+[[1;36mDEBUG[m]    org.springframework.boot:spring-boot-buildpack-platform:jar:3.2.1:runtime
+[[1;36mDEBUG[m]       com.fasterxml.jackson.core:jackson-databind:jar:2.14.2:runtime
+[[1;36mDEBUG[m]          com.fasterxml.jackson.core:jackson-annotations:jar:2.14.2:runtime
+[[1;36mDEBUG[m]          com.fasterxml.jackson.core:jackson-core:jar:2.14.2:runtime
+[[1;36mDEBUG[m]       com.fasterxml.jackson.module:jackson-module-parameter-names:jar:2.14.2:runtime
+[[1;36mDEBUG[m]       net.java.dev.jna:jna-platform:jar:5.13.0:runtime
+[[1;36mDEBUG[m]          net.java.dev.jna:jna:jar:5.13.0:runtime
+[[1;36mDEBUG[m]       org.apache.commons:commons-compress:jar:1.23.0:runtime
+[[1;36mDEBUG[m]       org.apache.httpcomponents.client5:httpclient5:jar:5.2.3:runtime
+[[1;36mDEBUG[m]          org.apache.httpcomponents.core5:httpcore5:jar:5.2.4:runtime
+[[1;36mDEBUG[m]          org.apache.httpcomponents.core5:httpcore5-h2:jar:5.2.4:runtime
+[[1;36mDEBUG[m]       org.springframework:spring-core:jar:6.0.10:runtime
+[[1;36mDEBUG[m]          org.springframework:spring-jcl:jar:6.0.10:runtime
+[[1;36mDEBUG[m]       org.tomlj:tomlj:jar:1.0.0:runtime
+[[1;36mDEBUG[m]          org.antlr:antlr4-runtime:jar:4.7.2:runtime
+[[1;36mDEBUG[m]          com.google.code.findbugs:jsr305:jar:3.0.2:runtime
+[[1;36mDEBUG[m]    org.springframework.boot:spring-boot-loader-tools:jar:3.2.1:runtime
+[[1;36mDEBUG[m]    org.apache.maven.shared:maven-common-artifact-filters:jar:3.3.2:runtime
+[[1;36mDEBUG[m]       org.slf4j:slf4j-api:jar:1.7.36:compile
+[[1;36mDEBUG[m]    org.springframework:spring-context:jar:6.1.2:runtime
+[[1;36mDEBUG[m]       org.springframework:spring-aop:jar:6.1.2:runtime
+[[1;36mDEBUG[m]       org.springframework:spring-beans:jar:6.1.2:runtime
+[[1;36mDEBUG[m]       org.springframework:spring-expression:jar:6.1.2:runtime
+[[1;36mDEBUG[m]       io.micrometer:micrometer-observation:jar:1.12.1:runtime
+[[1;36mDEBUG[m]          io.micrometer:micrometer-commons:jar:1.12.1:runtime
+[[1;36mDEBUG[m]    org.sonatype.plexus:plexus-build-api:jar:0.0.7:runtime
+[[1;36mDEBUG[m]       org.codehaus.plexus:plexus-utils:jar:1.5.8:compile
+[[1;36mDEBUG[m]    org.apache.maven.plugins:maven-shade-plugin:jar:3.5.0:compile (optional)
+[[1;36mDEBUG[m]       org.ow2.asm:asm:jar:9.5:compile (optional)
+[[1;36mDEBUG[m]       org.ow2.asm:asm-commons:jar:9.5:compile (optional)
+[[1;36mDEBUG[m]          org.ow2.asm:asm-tree:jar:9.5:compile (optional)
+[[1;36mDEBUG[m]       org.jdom:jdom2:jar:2.0.6.1:compile (optional)
+[[1;36mDEBUG[m]       org.apache.maven.shared:maven-dependency-tree:jar:3.2.1:compile (optional)
+[[1;36mDEBUG[m]          org.eclipse.aether:aether-util:jar:1.0.0.v20140518:compile (optional)
+[[1;36mDEBUG[m]             org.eclipse.aether:aether-api:jar:1.0.0.v20140518:compile (optional)
+[[1;36mDEBUG[m]       commons-io:commons-io:jar:2.13.0:compile (optional)
+[[1;36mDEBUG[m]       org.vafer:jdependency:jar:2.8.0:compile (optional)
+[[1;36mDEBUG[m]       org.apache.commons:commons-collections4:jar:4.4:compile (optional)
+[[1;36mDEBUG[m] Created new class realm plugin>org.springframework.boot:spring-boot-maven-plugin:3.2.1
+[[1;36mDEBUG[m] Importing foreign packages into class realm plugin>org.springframework.boot:spring-boot-maven-plugin:3.2.1
+[[1;36mDEBUG[m]   Imported:  < maven.api
+[[1;36mDEBUG[m] Populating class realm plugin>org.springframework.boot:spring-boot-maven-plugin:3.2.1
+[[1;36mDEBUG[m]   Included: org.springframework.boot:spring-boot-maven-plugin:jar:3.2.1
+[[1;36mDEBUG[m]   Included: org.springframework.boot:spring-boot-buildpack-platform:jar:3.2.1
+[[1;36mDEBUG[m]   Included: com.fasterxml.jackson.core:jackson-databind:jar:2.14.2
+[[1;36mDEBUG[m]   Included: com.fasterxml.jackson.core:jackson-annotations:jar:2.14.2
+[[1;36mDEBUG[m]   Included: com.fasterxml.jackson.core:jackson-core:jar:2.14.2
+[[1;36mDEBUG[m]   Included: com.fasterxml.jackson.module:jackson-module-parameter-names:jar:2.14.2
+[[1;36mDEBUG[m]   Included: net.java.dev.jna:jna-platform:jar:5.13.0
+[[1;36mDEBUG[m]   Included: net.java.dev.jna:jna:jar:5.13.0
+[[1;36mDEBUG[m]   Included: org.apache.commons:commons-compress:jar:1.23.0
+[[1;36mDEBUG[m]   Included: org.apache.httpcomponents.client5:httpclient5:jar:5.2.3
+[[1;36mDEBUG[m]   Included: org.apache.httpcomponents.core5:httpcore5:jar:5.2.4
+[[1;36mDEBUG[m]   Included: org.apache.httpcomponents.core5:httpcore5-h2:jar:5.2.4
+[[1;36mDEBUG[m]   Included: org.springframework:spring-core:jar:6.0.10
+[[1;36mDEBUG[m]   Included: org.springframework:spring-jcl:jar:6.0.10
+[[1;36mDEBUG[m]   Included: org.tomlj:tomlj:jar:1.0.0
+[[1;36mDEBUG[m]   Included: org.antlr:antlr4-runtime:jar:4.7.2
+[[1;36mDEBUG[m]   Included: com.google.code.findbugs:jsr305:jar:3.0.2
+[[1;36mDEBUG[m]   Included: org.springframework.boot:spring-boot-loader-tools:jar:3.2.1
+[[1;36mDEBUG[m]   Included: org.apache.maven.shared:maven-common-artifact-filters:jar:3.3.2
+[[1;36mDEBUG[m]   Included: org.springframework:spring-context:jar:6.1.2
+[[1;36mDEBUG[m]   Included: org.springframework:spring-aop:jar:6.1.2
+[[1;36mDEBUG[m]   Included: org.springframework:spring-beans:jar:6.1.2
+[[1;36mDEBUG[m]   Included: org.springframework:spring-expression:jar:6.1.2
+[[1;36mDEBUG[m]   Included: io.micrometer:micrometer-observation:jar:1.12.1
+[[1;36mDEBUG[m]   Included: io.micrometer:micrometer-commons:jar:1.12.1
+[[1;36mDEBUG[m]   Included: org.sonatype.plexus:plexus-build-api:jar:0.0.7
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-utils:jar:1.5.8
+[[1;36mDEBUG[m]   Included: org.apache.maven.plugins:maven-shade-plugin:jar:3.5.0
+[[1;36mDEBUG[m]   Included: org.ow2.asm:asm:jar:9.5
+[[1;36mDEBUG[m]   Included: org.ow2.asm:asm-commons:jar:9.5
+[[1;36mDEBUG[m]   Included: org.ow2.asm:asm-tree:jar:9.5
+[[1;36mDEBUG[m]   Included: org.jdom:jdom2:jar:2.0.6.1
+[[1;36mDEBUG[m]   Included: org.apache.maven.shared:maven-dependency-tree:jar:3.2.1
+[[1;36mDEBUG[m]   Included: org.eclipse.aether:aether-util:jar:1.0.0.v20140518
+[[1;36mDEBUG[m]   Included: commons-io:commons-io:jar:2.13.0
+[[1;36mDEBUG[m]   Included: org.vafer:jdependency:jar:2.8.0
+[[1;36mDEBUG[m]   Included: org.apache.commons:commons-collections4:jar:4.4
+[[1;36mDEBUG[m] Configuring mojo org.springframework.boot:spring-boot-maven-plugin:3.2.1:run from plugin realm ClassRealm[plugin>org.springframework.boot:spring-boot-maven-plugin:3.2.1, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@46fbb2c1]
+[[1;36mDEBUG[m] Configuring mojo 'org.springframework.boot:spring-boot-maven-plugin:3.2.1:run' with basic configurator -->
+[[1;36mDEBUG[m]   (f) addResources = false
+[[1;36mDEBUG[m]   (f) additionalClasspathElements = []
+[[1;36mDEBUG[m]   (f) agents = []
+[[1;36mDEBUG[m]   (f) classesDirectory = /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/classes
+[[1;36mDEBUG[m]   (f) directories = []
+[[1;36mDEBUG[m]   (f) groupId = org.projectlombok
+[[1;36mDEBUG[m]   (f) artifactId = lombok
+[[1;36mDEBUG[m]   (f) excludes = [org.springframework.boot.maven.Exclude@4e1459ea]
+[[1;36mDEBUG[m]   (f) includes = []
+[[1;36mDEBUG[m]   (f) optimizedLaunch = true
+[[1;36mDEBUG[m]   (f) profiles = []
+[[1;36mDEBUG[m]   (f) project = MavenProject: com.foodapp:food-app:0.0.1-SNAPSHOT @ /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/pom.xml
+[[1;36mDEBUG[m]   (f) session = org.apache.maven.execution.MavenSession@4ae263bf
+[[1;36mDEBUG[m]   (f) skip = false
+[[1;36mDEBUG[m]   (f) useTestClasspath = false
+[[1;36mDEBUG[m] -- end configuration --
+[[1;34mINFO[m] Attaching agents: []
+[[1;36mDEBUG[m] JVM argument(s): -XX:TieredStopAtLevel=1
+[[1;36mDEBUG[m] Classpath for forked process: /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/classes:/home/khoaphan/.m2/repository/org/springframework/boot/spring-boot/3.2.1/spring-boot-3.2.1.jar:/home/khoaphan/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.1/spring-boot-autoconfigure-3.2.1.jar:/home/khoaphan/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar:/home/khoaphan/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:/home/khoaphan/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar:/home/khoaphan/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/home/khoaphan/.m2/repository/org/slf4j/jul-to-slf4j/2.0.9/jul-to-slf4j-2.0.9.jar:/home/khoaphan/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/home/khoaphan/.m2/repository/org/springframework/spring-core/6.1.2/spring-core-6.1.2.jar:/home/khoaphan/.m2/repository/org/springframework/spring-jcl/6.1.2/spring-jcl-6.1.2.jar:/home/khoaphan/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/home/khoaphan/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.3/jackson-datatype-jdk8-2.15.3.jar:/home/khoaphan/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.3/jackson-datatype-jsr310-2.15.3.jar:/home/khoaphan/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.3/jackson-module-parameter-names-2.15.3.jar:/home/khoaphan/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.17/tomcat-embed-core-10.1.17.jar:/home/khoaphan/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.17/tomcat-embed-websocket-10.1.17.jar:/home/khoaphan/.m2/repository/org/springframework/spring-web/6.1.2/spring-web-6.1.2.jar:/home/khoaphan/.m2/repository/org/springframework/spring-beans/6.1.2/spring-beans-6.1.2.jar:/home/khoaphan/.m2/repository/io/micrometer/micrometer-observation/1.12.1/micrometer-observation-1.12.1.jar:/home/khoaphan/.m2/repository/io/micrometer/micrometer-commons/1.12.1/micrometer-commons-1.12.1.jar:/home/khoaphan/.m2/repository/org/springframework/spring-webmvc/6.1.2/spring-webmvc-6.1.2.jar:/home/khoaphan/.m2/repository/org/springframework/spring-context/6.1.2/spring-context-6.1.2.jar:/home/khoaphan/.m2/repository/org/springframework/spring-expression/6.1.2/spring-expression-6.1.2.jar:/home/khoaphan/.m2/repository/org/aspectj/aspectjweaver/1.9.21/aspectjweaver-1.9.21.jar:/home/khoaphan/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar:/home/khoaphan/.m2/repository/org/springframework/spring-jdbc/6.1.2/spring-jdbc-6.1.2.jar:/home/khoaphan/.m2/repository/org/hibernate/orm/hibernate-core/6.4.1.Final/hibernate-core-6.4.1.Final.jar:/home/khoaphan/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/khoaphan/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/khoaphan/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/home/khoaphan/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/home/khoaphan/.m2/repository/io/smallrye/jandex/3.1.2/jandex-3.1.2.jar:/home/khoaphan/.m2/repository/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar:/home/khoaphan/.m2/repository/net/bytebuddy/byte-buddy/1.14.10/byte-buddy-1.14.10.jar:/home/khoaphan/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.1/jakarta.xml.bind-api-4.0.1.jar:/home/khoaphan/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar:/home/khoaphan/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.4/jaxb-runtime-4.0.4.jar:/home/khoaphan/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.4/jaxb-core-4.0.4.jar:/home/khoaphan/.m2/repository/org/eclipse/angus/angus-activation/2.0.1/angus-activation-2.0.1.jar:/home/khoaphan/.m2/repository/org/glassfish/jaxb/txw2/4.0.4/txw2-4.0.4.jar:/home/khoaphan/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/home/khoaphan/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/khoaphan/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/home/khoaphan/.m2/repository/org/springframework/data/spring-data-jpa/3.2.1/spring-data-jpa-3.2.1.jar:/home/khoaphan/.m2/repository/org/springframework/data/spring-data-commons/3.2.1/spring-data-commons-3.2.1.jar:/home/khoaphan/.m2/repository/org/springframework/spring-orm/6.1.2/spring-orm-6.1.2.jar:/home/khoaphan/.m2/repository/org/springframework/spring-tx/6.1.2/spring-tx-6.1.2.jar:/home/khoaphan/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/home/khoaphan/.m2/repository/org/springframework/spring-aspects/6.1.2/spring-aspects-6.1.2.jar:/home/khoaphan/.m2/repository/org/springframework/spring-aop/6.1.2/spring-aop-6.1.2.jar:/home/khoaphan/.m2/repository/org/springframework/security/spring-security-config/6.2.1/spring-security-config-6.2.1.jar:/home/khoaphan/.m2/repository/org/springframework/security/spring-security-core/6.2.1/spring-security-core-6.2.1.jar:/home/khoaphan/.m2/repository/org/springframework/security/spring-security-crypto/6.2.1/spring-security-crypto-6.2.1.jar:/home/khoaphan/.m2/repository/org/springframework/security/spring-security-web/6.2.1/spring-security-web-6.2.1.jar:/home/khoaphan/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.17/tomcat-embed-el-10.1.17.jar:/home/khoaphan/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar:/home/khoaphan/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/home/khoaphan/.m2/repository/com/mysql/mysql-connector-j/8.1.0/mysql-connector-j-8.1.0.jar:/home/khoaphan/.m2/repository/io/jsonwebtoken/jjwt-api/0.11.5/jjwt-api-0.11.5.jar:/home/khoaphan/.m2/repository/io/jsonwebtoken/jjwt-impl/0.11.5/jjwt-impl-0.11.5.jar:/home/khoaphan/.m2/repository/io/jsonwebtoken/jjwt-jackson/0.11.5/jjwt-jackson-0.11.5.jar:/home/khoaphan/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.jar:/home/khoaphan/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.jar:/home/khoaphan/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.jar
+[[1;36mDEBUG[m] Application argument(s): 
+[[1;36mDEBUG[m] Environment variable(s): 
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.1)
+
+2025-05-21T13:29:36.623+07:00  INFO 144056 --- [           main] com.foodapp.FoodAppApplication           : Starting FoodAppApplication using Java 17.0.12 with PID 144056 (/home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/classes started by khoaphan in /home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend)
+2025-05-21T13:29:36.624+07:00 DEBUG 144056 --- [           main] com.foodapp.FoodAppApplication           : Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-05-21T13:29:36.625+07:00  INFO 144056 --- [           main] com.foodapp.FoodAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-05-21T13:29:36.945+07:00  INFO 144056 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-21T13:29:36.982+07:00  INFO 144056 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 3 JPA repository interfaces.
+2025-05-21T13:29:37.522+07:00  INFO 144056 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-21T13:29:37.530+07:00  INFO 144056 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-21T13:29:37.530+07:00  INFO 144056 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-05-21T13:29:37.569+07:00  INFO 144056 --- [           main] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2025-05-21T13:29:37.570+07:00  INFO 144056 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 907 ms
+2025-05-21T13:29:37.660+07:00  INFO 144056 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-21T13:29:37.693+07:00  INFO 144056 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-05-21T13:29:37.715+07:00  INFO 144056 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-21T13:29:37.858+07:00  INFO 144056 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-21T13:29:37.875+07:00  INFO 144056 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-21T13:29:37.997+07:00  INFO 144056 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3070f3e6
+2025-05-21T13:29:37.999+07:00  INFO 144056 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-21T13:29:38.028+07:00  WARN 144056 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-21T13:29:38.029+07:00  WARN 144056 --- [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-05-21T13:29:38.188+07:00 ERROR 144056 --- [           main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Collection 'com.foodapp.model.FoodType.foods' is 'mappedBy' a property named 'foodType' which does not exist in the target entity 'com.foodapp.model.Food'
+2025-05-21T13:29:38.190+07:00 ERROR 144056 --- [           main] o.s.b.web.embedded.tomcat.TomcatStarter  : Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthenticationFilter' defined in file [/home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/classes/com/foodapp/config/JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'securityConfig' defined in file [/home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/classes/com/foodapp/config/SecurityConfig.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.foodapp.repository.UserRepository defined in @EnableJpaRepositories declared on FoodAppApplication: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2025-05-21T13:29:38.210+07:00  INFO 144056 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-05-21T13:29:38.212+07:00  WARN 144056 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [api#v1] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.12/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.12/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.12/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.12/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.12/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.12/java.lang.Thread.run(Thread.java:842)
+2025-05-21T13:29:38.213+07:00  WARN 144056 --- [           main] o.a.c.loader.WebappClassLoaderBase       : The web application [api#v1] appears to have started a thread named [HikariPool-1 connection adder] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.12/java.lang.Thread.sleep(Native Method)
+ app//com.zaxxer.hikari.util.UtilityElf.quietlySleep(UtilityElf.java:53)
+ app//com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:745)
+ app//com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712)
+ java.base@17.0.12/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+ java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.12/java.lang.Thread.run(Thread.java:842)
+2025-05-21T13:29:38.214+07:00  WARN 144056 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-05-21T13:29:38.215+07:00  INFO 144056 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-21T13:29:38.223+07:00  INFO 144056 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-21T13:29:38.231+07:00  INFO 144056 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-21T13:29:38.240+07:00 ERROR 144056 --- [           main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:619) ~[spring-context-6.1.2.jar:6.1.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:464) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347) ~[spring-boot-3.2.1.jar:3.2.1]
+	at com.foodapp.FoodAppApplication.main(FoodAppApplication.java:19) ~[classes/:na]
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:145) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:105) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:499) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:218) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162) ~[spring-boot-3.2.1.jar:3.2.1]
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthenticationFilter' defined in file [/home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/classes/com/foodapp/config/JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'securityConfig' defined in file [/home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/classes/com/foodapp/config/SecurityConfig.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.foodapp.repository.UserRepository defined in @EnableJpaRepositories declared on FoodAppApplication: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:210) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:173) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:168) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:153) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4850) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:845) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:240) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:917) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:488) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:126) ~[spring-boot-3.2.1.jar:3.2.1]
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig' defined in file [/home/khoaphan/Khoa/Java/DoAn/SE310-FoodApp/java-backend/target/classes/com/foodapp/config/SecurityConfig.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.foodapp.repository.UserRepository defined in @EnableJpaRepositories declared on FoodAppApplication: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:413) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789) ~[spring-beans-6.1.2.jar:6.1.2]
+	... 54 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.foodapp.repository.UserRepository defined in @EnableJpaRepositories declared on FoodAppApplication: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1684) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1433) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789) ~[spring-beans-6.1.2.jar:6.1.2]
+	... 77 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:689) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.1.2.jar:6.1.2]
+	... 91 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Collection 'com.foodapp.model.FoodType.foods' is 'mappedBy' a property named 'foodType' which does not exist in the target entity 'com.foodapp.model.Food'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1773) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.1.2.jar:6.1.2]
+	... 103 common frames omitted
+Caused by: org.hibernate.AnnotationException: Collection 'com.foodapp.model.FoodType.foods' is 'mappedBy' a property named 'foodType' which does not exist in the target entity 'com.foodapp.model.Food'
+	at org.hibernate.boot.model.internal.CollectionBinder.isReversePropertyInJoin(CollectionBinder.java:1622) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.noAssociationTable(CollectionBinder.java:1636) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:1597) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder$1.secondPass(CollectionBinder.java:1588) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.model.internal.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:45) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1815) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1774) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:332) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1820) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1769) ~[spring-beans-6.1.2.jar:6.1.2]
+	... 110 common frames omitted
+
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  3.053 s
+[[1;34mINFO[m] Finished at: 2025-05-21T13:29:38+07:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.springframework.boot:spring-boot-maven-plugin:3.2.1:run[m [1m(default-cli)[m on project [36mfood-app[m: [1;31mProcess terminated with exit code: 1[m -> [1m[Help 1][m
+[1;31morg.apache.maven.lifecycle.LifecycleExecutionException[m: [1;31mFailed to execute goal [32morg.springframework.boot:spring-boot-maven-plugin:3.2.1:run[m [1m(default-cli)[m on project [36mfood-app[m: [1;31mProcess terminated with exit code: 1[m[m
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 ([1mMojoExecutor.java:375[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.doExecute ([1mMojoExecutor.java:351[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.execute ([1mMojoExecutor.java:215[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.execute ([1mMojoExecutor.java:171[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.execute ([1mMojoExecutor.java:163[m)
+    [1mat[m org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject ([1mLifecycleModuleBuilder.java:117[m)
+    [1mat[m org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject ([1mLifecycleModuleBuilder.java:81[m)
+    [1mat[m org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build ([1mSingleThreadedBuilder.java:56[m)
+    [1mat[m org.apache.maven.lifecycle.internal.LifecycleStarter.execute ([1mLifecycleStarter.java:128[m)
+    [1mat[m org.apache.maven.DefaultMaven.doExecute ([1mDefaultMaven.java:298[m)
+    [1mat[m org.apache.maven.DefaultMaven.doExecute ([1mDefaultMaven.java:192[m)
+    [1mat[m org.apache.maven.DefaultMaven.execute ([1mDefaultMaven.java:105[m)
+    [1mat[m org.apache.maven.cli.MavenCli.execute ([1mMavenCli.java:960[m)
+    [1mat[m org.apache.maven.cli.MavenCli.doMain ([1mMavenCli.java:293[m)
+    [1mat[m org.apache.maven.cli.MavenCli.main ([1mMavenCli.java:196[m)
+    [1mat[m jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 ([1mNative Method[m)
+    [1mat[m jdk.internal.reflect.NativeMethodAccessorImpl.invoke ([1mNativeMethodAccessorImpl.java:77[m)
+    [1mat[m jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke ([1mDelegatingMethodAccessorImpl.java:43[m)
+    [1mat[m java.lang.reflect.Method.invoke ([1mMethod.java:568[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced ([1mLauncher.java:283[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.launch ([1mLauncher.java:226[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode ([1mLauncher.java:407[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.main ([1mLauncher.java:348[m)
+[1mCaused by[m: org.apache.maven.plugin.MojoExecutionException: [1;31mProcess terminated with exit code: 1[m
+    [1mat[m org.springframework.boot.maven.JavaProcessExecutor.run ([1mJavaProcessExecutor.java:74[m)
+    [1mat[m org.springframework.boot.maven.RunMojo.run ([1mRunMojo.java:76[m)
+    [1mat[m org.springframework.boot.maven.AbstractRunMojo.run ([1mAbstractRunMojo.java:242[m)
+    [1mat[m org.springframework.boot.maven.AbstractRunMojo.execute ([1mAbstractRunMojo.java:209[m)
+    [1mat[m org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo ([1mDefaultBuildPluginManager.java:137[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 ([1mMojoExecutor.java:370[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.doExecute ([1mMojoExecutor.java:351[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.execute ([1mMojoExecutor.java:215[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.execute ([1mMojoExecutor.java:171[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.execute ([1mMojoExecutor.java:163[m)
+    [1mat[m org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject ([1mLifecycleModuleBuilder.java:117[m)
+    [1mat[m org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject ([1mLifecycleModuleBuilder.java:81[m)
+    [1mat[m org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build ([1mSingleThreadedBuilder.java:56[m)
+    [1mat[m org.apache.maven.lifecycle.internal.LifecycleStarter.execute ([1mLifecycleStarter.java:128[m)
+    [1mat[m org.apache.maven.DefaultMaven.doExecute ([1mDefaultMaven.java:298[m)
+    [1mat[m org.apache.maven.DefaultMaven.doExecute ([1mDefaultMaven.java:192[m)
+    [1mat[m org.apache.maven.DefaultMaven.execute ([1mDefaultMaven.java:105[m)
+    [1mat[m org.apache.maven.cli.MavenCli.execute ([1mMavenCli.java:960[m)
+    [1mat[m org.apache.maven.cli.MavenCli.doMain ([1mMavenCli.java:293[m)
+    [1mat[m org.apache.maven.cli.MavenCli.main ([1mMavenCli.java:196[m)
+    [1mat[m jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 ([1mNative Method[m)
+    [1mat[m jdk.internal.reflect.NativeMethodAccessorImpl.invoke ([1mNativeMethodAccessorImpl.java:77[m)
+    [1mat[m jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke ([1mDelegatingMethodAccessorImpl.java:43[m)
+    [1mat[m java.lang.reflect.Method.invoke ([1mMethod.java:568[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced ([1mLauncher.java:283[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.launch ([1mLauncher.java:226[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode ([1mLauncher.java:407[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.main ([1mLauncher.java:348[m)
+[[1;31mERROR[m] 
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
