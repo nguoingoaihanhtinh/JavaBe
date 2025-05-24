@@ -1,6 +1,8 @@
 package com.foodapp.controller;
 
 import com.foodapp.dto.CreateFoodDto;
+import java.util.Map;
+import java.math.BigDecimal;
 import com.foodapp.dto.FoodResponseDto;
 import com.foodapp.dto.PaginationDto;
 import com.foodapp.model.Food;
@@ -18,7 +20,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/food")
+@RequestMapping("/Food")
 public class FoodController {
 
     private final FoodRepository foodRepository;
@@ -62,7 +64,7 @@ public class FoodController {
         ));
     }
 
-    @GetMapping("/newest")
+    @GetMapping("/Newest")
     public ResponseEntity<?> getNewestFood(
             @RequestParam(defaultValue = "1") int page,
             @RequestParam(defaultValue = "10") int limit) {
@@ -83,25 +85,31 @@ public class FoodController {
         ));
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<?> getFoodById(@PathVariable Long id) {
+    @GetMapping("/getfood")
+    public ResponseEntity<?> getFoodById(@RequestParam("id") Long id) {
         Food food = foodRepository.findByIdWithRelationships(id);
         
         if (food == null) {
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.ok(Map.of(
+                "status", "error",
+                "message", "Food not found"
+            ));
         }
 
-        return ResponseEntity.ok(mapToFoodResponse(food));
+        return ResponseEntity.ok(Map.of(
+            "status", "success",
+            "data", mapToFoodResponse(food)
+        ));
     }
 
-    @GetMapping("/search")
+    @GetMapping("/Search")
     public ResponseEntity<?> searchFood(
             @RequestParam(defaultValue = "1") int page,
             @RequestParam(defaultValue = "10") int limit,
-            @RequestParam(required = false) String keyword) {
+            @RequestParam(required = false) String kw) {
 
         Page<Food> foodPage = foodRepository.findByNameContainingIgnoreCase(
-            keyword == null ? "" : keyword.trim(),
+            kw == null ? "" : kw.trim(),
             PageRequest.of(page - 1, limit, Sort.by("foodId").descending())
         );
 
@@ -117,49 +125,55 @@ public class FoodController {
         ));
     }
 
-    @PostMapping
-    public ResponseEntity<?> addFood(@Valid @RequestBody CreateFoodDto createFoodDto) {
-        FoodType foodType = foodTypeRepository.findById(createFoodDto.foodTypeId)
+    @PostMapping("/addFood")
+    public ResponseEntity<?> addFood(@RequestBody Map<String, Object> createFoodDto) {
+        FoodType foodType = foodTypeRepository.findById(Long.parseLong(createFoodDto.get("TypeId").toString()))
             .orElseThrow(() -> new IllegalArgumentException("Food type not found"));
 
         Food food = new Food();
-        food.setName(createFoodDto.name.trim());
-        food.setImage1(createFoodDto.image1);
-        food.setImage2(createFoodDto.image2);
-        food.setImage3(createFoodDto.image3);
-        food.setDescription(createFoodDto.description);
-        food.setPrice(createFoodDto.price);
-        food.setItemleft(createFoodDto.itemleft);
+        food.setName(createFoodDto.get("Name").toString().trim());
+        food.setImage1(createFoodDto.get("Image1").toString());
+        food.setImage2(createFoodDto.get("Image2").toString());
+        food.setImage3(createFoodDto.get("Image3").toString());
+        food.setDescription(createFoodDto.get("Description").toString());
+        food.setPrice(new BigDecimal(createFoodDto.get("Price").toString()));
+        food.setItemleft(Integer.parseInt(createFoodDto.get("Itemleft").toString()));
         food.setFoodType(foodType);
         food.setRating(0.0);
         food.setNumberRating(0);
 
         Food savedFood = foodRepository.save(food);
-        return ResponseEntity.ok(mapToFoodResponse(savedFood));
+        return ResponseEntity.ok(Map.of(
+            "status", "success",
+            "data", mapToFoodResponse(savedFood)
+        ));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> updateFood(
             @PathVariable Long id,
-            @Valid @RequestBody CreateFoodDto updateFoodDto) {
+            @RequestBody Map<String, Object> updateFoodDto) {
         
         Food existingFood = foodRepository.findById(id)
             .orElseThrow(() -> new IllegalArgumentException("Food not found"));
 
-        FoodType foodType = foodTypeRepository.findById(updateFoodDto.foodTypeId)
+        FoodType foodType = foodTypeRepository.findById(Long.parseLong(updateFoodDto.get("TypeId").toString()))
             .orElseThrow(() -> new IllegalArgumentException("Food type not found"));
 
-        existingFood.setName(updateFoodDto.name.trim());
-        existingFood.setImage1(updateFoodDto.image1);
-        existingFood.setImage2(updateFoodDto.image2);
-        existingFood.setImage3(updateFoodDto.image3);
-        existingFood.setDescription(updateFoodDto.description);
-        existingFood.setPrice(updateFoodDto.price);
-        existingFood.setItemleft(updateFoodDto.itemleft);
+        existingFood.setName(updateFoodDto.get("Name").toString().trim());
+        existingFood.setImage1(updateFoodDto.get("Image1").toString());
+        existingFood.setImage2(updateFoodDto.get("Image2").toString());
+        existingFood.setImage3(updateFoodDto.get("Image3").toString());
+        existingFood.setDescription(updateFoodDto.get("Description").toString());
+        existingFood.setPrice(new BigDecimal(updateFoodDto.get("Price").toString()));
+        existingFood.setItemleft(Integer.parseInt(updateFoodDto.get("Itemleft").toString()));
         existingFood.setFoodType(foodType);
 
         Food updatedFood = foodRepository.save(existingFood);
-        return ResponseEntity.ok(mapToFoodResponse(updatedFood));
+        return ResponseEntity.ok(Map.of(
+            "status", "success",
+            "data", mapToFoodResponse(updatedFood)
+        ));
     }
 
     @DeleteMapping("/{id}")
@@ -169,7 +183,10 @@ public class FoodController {
         }
 
         foodRepository.deleteById(id);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(Map.of(
+            "status", "success",
+            "message", "Food deleted successfully"
+        ));
     }
 
     private FoodResponseDto mapToFoodResponse(Food food) {

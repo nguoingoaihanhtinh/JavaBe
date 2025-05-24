@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/category")
+@RequestMapping("/Category")
 public class CategoryController {
 
     private final FoodTypeRepository foodTypeRepository;
@@ -51,8 +51,8 @@ public class CategoryController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/getFoodTypeById/{id}")
-    public ResponseEntity<?> getFoodTypeById(@PathVariable Long id) {
+    @GetMapping("/getFoodTypeById")
+    public ResponseEntity<?> getFoodTypeById(@RequestParam("id") Long id) {
         return foodTypeRepository.findById(id)
             .map(ft -> {
                 Map<String, Object> response = new HashMap<>();
@@ -123,15 +123,18 @@ public class CategoryController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateFoodType(@PathVariable Long id, @Valid @RequestBody CreateFoodTypeDto updateFoodTypeDto) {
-        if (updateFoodTypeDto.nameType == null || updateFoodTypeDto.nameType.trim().isEmpty()) {
+    public ResponseEntity<?> updateFoodType(@PathVariable Long id, @RequestBody Map<String, Object> updateFoodTypeDto) {
+        String nameType = (String) updateFoodTypeDto.get("nameType");
+        if (nameType == null || nameType.trim().isEmpty()) {
             return ResponseEntity.badRequest().body("Invalid food type data.");
         }
 
         return foodTypeRepository.findById(id)
             .map(foodType -> {
-                if (updateFoodTypeDto.parentId != null) {
-                    foodTypeRepository.findById(updateFoodTypeDto.parentId)
+                Long parentId = updateFoodTypeDto.get("parentId") != null ?
+                    Long.parseLong(updateFoodTypeDto.get("parentId").toString()) : null;
+                if (parentId != null) {
+                    foodTypeRepository.findById(parentId)
                         .ifPresent(parent -> {
                             if (parent.getParentId() != null && parent.getParentId() != 0) {
                                 throw new IllegalArgumentException("Parent type is a child type.");
@@ -139,8 +142,8 @@ public class CategoryController {
                         });
                 }
 
-                foodType.setNameType(updateFoodTypeDto.nameType.trim());
-                foodType.setParentId(updateFoodTypeDto.parentId);
+                foodType.setNameType(nameType.trim());
+                foodType.setParentId(parentId);
 
                 FoodType updatedType = foodTypeRepository.save(foodType);
                 

@@ -17,6 +17,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -28,6 +30,7 @@ public class UserController {
     private final UserFoodSavedRepository userFoodSavedRepository;
     private final FoodRepository foodRepository;
     private final PasswordEncoder passwordEncoder;
+    private final UserFoodOrderRepository userFoodOrderRepository;
 
     @Value("${jwt.secret}")
     private String jwtSecret;
@@ -39,11 +42,13 @@ public class UserController {
             UserRepository userRepository,
             UserFoodSavedRepository userFoodSavedRepository,
             FoodRepository foodRepository,
-            PasswordEncoder passwordEncoder) {
+            PasswordEncoder passwordEncoder,
+            UserFoodOrderRepository userFoodOrderRepository) { // Inject new repository
         this.userRepository = userRepository;
         this.userFoodSavedRepository = userFoodSavedRepository;
         this.foodRepository = foodRepository;
         this.passwordEncoder = passwordEncoder;
+        this.userFoodOrderRepository = userFoodOrderRepository;
     }
 
     @PostMapping("/register")
@@ -99,6 +104,84 @@ public class UserController {
             "status", "success",
             "message", "Login successfully"
         ));
+    }
+
+    @GetMapping("/checkjwt")
+    public ResponseEntity<?> checkJwt(@CookieValue(name = "jwt", required = false) String jwt) {
+        if (jwt == null) {
+            System.err.println("checkJwt: No JWT cookie found");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of(
+                "status", "failed",
+                "message", "No token found"
+            ));
+        }
+
+        try {
+            var claims = Jwts.parserBuilder()
+                .setSigningKey(Keys.hmacShaKeyFor(jwtSecret.getBytes()))
+                .build()
+                .parseClaimsJws(jwt)
+                .getBody();
+
+            String email = claims.getSubject();
+            User user = userRepository.findByEmail(email).orElseThrow(() -> new RuntimeException("User not found"));
+
+            // Fetch saved food IDs
+            List<Long> savedFoodIds = userFoodSavedRepository.findByUser_UserId(user.getUserId())
+                .stream()
+                .map(ufs -> ufs.getFood().getFoodId())
+                .collect(Collectors.toList());
+
+            // Fetch cart items
+            List<UserFoodOrder> cartItems = userFoodOrderRepository.findByUserUserId(user.getUserId());
+            List<Map<String, Object>> userCart = cartItems.stream()
+                .map(order -> {
+                    Food food = order.getFood();
+                    Map<String, Object> cartItem = new HashMap<>();
+                    cartItem.put("orderId", order.getOrderId());
+                    cartItem.put("foodId", food.getFoodId());
+                    cartItem.put("quantity", order.getQuantity());
+                    cartItem.put("note", order.getNote() != null ? order.getNote() : "");
+                    
+                    Map<String, Object> foodDetails = new HashMap<>();
+                    foodDetails.put("typeId", food.getFoodType().getTypeId());
+                    foodDetails.put("name", food.getName());
+                    foodDetails.put("nameType", food.getFoodType().getNameType());
+                    foodDetails.put("description", food.getDescription() != null ? food.getDescription() : "");
+                    foodDetails.put("image1", food.getImage1() != null ? food.getImage1() : "");
+                    foodDetails.put("image2", food.getImage2() != null ? food.getImage2() : "");
+                    foodDetails.put("image3", food.getImage3() != null ? food.getImage3() : "");
+                    foodDetails.put("price", food.getPrice());
+                    foodDetails.put("itemleft", food.getItemleft());
+                    foodDetails.put("rating", food.getRating());
+                    foodDetails.put("numberRating", food.getNumberRating());
+                    
+                    cartItem.put("foodDetails", foodDetails);
+                    return cartItem;
+                })
+                .collect(Collectors.toList());
+
+            System.out.println("checkJwt: User data - userId: " + user.getUserId() + ", userCart: " + userCart);
+
+            return ResponseEntity.ok(Map.of(
+                "message", "success",
+                "user", Map.of(
+                    "userId", user.getUserId(),
+                    "email", user.getEmail(),
+                    "username", user.getUsername(),
+                    "address", user.getAddress() != null ? user.getAddress() : "",
+                    "avatar", user.getAvatar() != null ? user.getAvatar() : "",
+                    "userSaved", savedFoodIds,
+                    "userCart", userCart
+                )
+            ));
+        } catch (Exception e) {
+            System.err.println("checkJwt: Error: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of(
+                "status", "failed",
+                "message", "Token validation failed: " + e.getMessage()
+            ));
+        }
     }
 
     @GetMapping("/logout")
@@ -217,7 +300,6 @@ public class UserController {
             "message", "User updated successfully."
         ));
     }
-
     private String generateToken(User user) {
         Date now = new Date();
         Date expiryDate = new Date(now.getTime() + jwtExpiration);

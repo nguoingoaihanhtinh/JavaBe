@@ -1,7 +1,6 @@
 package com.foodapp.controller;
 
-import com.foodapp.dto.CartBodyDto;
-import com.foodapp.dto.CartRequestDto;
+import java.util.Map;
 import com.foodapp.model.UserFoodOrder;
 import com.foodapp.repository.UserFoodOrderRepository;
 import com.foodapp.repository.UserRepository;
@@ -14,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/cart")
+@RequestMapping("/Cart")
 public class CartController {
 
     private final UserFoodOrderRepository userFoodOrderRepository;
@@ -30,8 +29,9 @@ public class CartController {
     }
 
     @PostMapping("/addQuantity")
-    public ResponseEntity<?> addQuantity(@Valid @RequestBody CartRequestDto request) {
-        return userFoodOrderRepository.findById(request.orderId)
+    public ResponseEntity<?> addQuantity(@RequestBody Map<String, Object> request) {
+        Long orderId = Long.parseLong(request.get("orderId").toString());
+        return userFoodOrderRepository.findById(orderId)
             .map(order -> {
                 order.setQuantity(order.getQuantity() + 1);
                 UserFoodOrder updatedOrder = userFoodOrderRepository.save(order);
@@ -47,8 +47,9 @@ public class CartController {
     }
 
     @PostMapping("/subQuantity")
-    public ResponseEntity<?> subQuantity(@Valid @RequestBody CartRequestDto request) {
-        return userFoodOrderRepository.findById(request.orderId)
+    public ResponseEntity<?> subQuantity(@RequestBody Map<String, Object> request) {
+        Long orderId = Long.parseLong(request.get("orderId").toString());
+        return userFoodOrderRepository.findById(orderId)
             .map(order -> {
                 if (order.getQuantity() > 1) {
                     order.setQuantity(order.getQuantity() - 1);
@@ -68,8 +69,9 @@ public class CartController {
     }
 
     @PostMapping("/deleteCart")
-    public ResponseEntity<?> deleteCart(@Valid @RequestBody CartRequestDto request) {
-        return userFoodOrderRepository.findById(request.orderId)
+    public ResponseEntity<?> deleteCart(@RequestBody Map<String, Object> request) {
+        Long orderId = Long.parseLong(request.get("orderId").toString());
+        return userFoodOrderRepository.findById(orderId)
             .map(order -> {
                 userFoodOrderRepository.delete(order);
 
@@ -83,31 +85,57 @@ public class CartController {
     }
 
     @PostMapping("/addCart")
-    public ResponseEntity<?> addCart(@Valid @RequestBody CartBodyDto body) {
-        if (body.getUserId() == null || body.getFoodId() == null || body.getQuantity() <= 0) {
-            return ResponseEntity.badRequest().body("Invalid input data.");
+    public ResponseEntity<?> addCart(@RequestBody Map<String, Object> body) {
+        try {
+            System.out.println("Received cart request body: " + body);
+            
+            Long userId = Long.parseLong(body.get("userId").toString());
+            Long foodId = Long.parseLong(body.get("foodId").toString());
+            Integer quantity = Integer.parseInt(body.get("quantity").toString());
+            String note = body.get("note") != null ? body.get("note").toString() : null;
+
+            System.out.println("Parsed values: userId=" + userId + ", foodId=" + foodId + ", quantity=" + quantity + ", note=" + note);
+
+            if (userId == null || foodId == null || quantity <= 0) {
+                return ResponseEntity.ok(Map.of(
+                    "status", "error",
+                    "message", "Invalid input data"
+                ));
+            }
+
+            return userRepository.findById(userId)
+                .map(user ->
+                    foodRepository.findById(foodId)
+                        .map(food -> {
+                            UserFoodOrder order = new UserFoodOrder();
+                            order.setUser(user);
+                            order.setFood(food);
+                            order.setQuantity(quantity);
+                            order.setNote(note);
+
+                            UserFoodOrder savedOrder = userFoodOrderRepository.save(order);
+
+                            Map<String, Object> response = new HashMap<>();
+                            response.put("status", "success");
+                            response.put("message", "Cart item added successfully.");
+                            response.put("orderId", savedOrder.getOrderId());
+                            return ResponseEntity.ok(response);
+                        })
+                        .orElse(ResponseEntity.ok(Map.of(
+                            "status", "error",
+                            "message", "Food not found"
+                        )))
+                )
+                .orElse(ResponseEntity.ok(Map.of(
+                    "status", "error",
+                    "message", "User not found"
+                )));
+        } catch (Exception e) {
+            System.err.println("Error adding to cart: " + e.getMessage());
+            return ResponseEntity.ok(Map.of(
+                "status", "error",
+                "message", "Failed to add item to cart: " + e.getMessage()
+            ));
         }
-
-        return userRepository.findById(body.getUserId())
-            .map(user -> 
-                foodRepository.findById(body.getFoodId())
-                    .map(food -> {
-                        UserFoodOrder order = new UserFoodOrder();
-                        order.setUser(user);
-                        order.setFood(food);
-                        order.setQuantity(body.getQuantity());
-                        order.setNote(body.getNote());
-
-                        UserFoodOrder savedOrder = userFoodOrderRepository.save(order);
-
-                        Map<String, Object> response = new HashMap<>();
-                        response.put("status", "success");
-                        response.put("message", "Cart item added successfully.");
-                        response.put("orderId", savedOrder.getOrderId());
-                        return ResponseEntity.ok(response);
-                    })
-                    .orElse(ResponseEntity.notFound().build())
-            )
-            .orElse(ResponseEntity.notFound().build());
     }
 }

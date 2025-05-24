@@ -44,13 +44,12 @@ public class SecurityConfig {
             .sessionManagement(session -> 
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
-            .authorizeHttpRequests(auth -> 
+            .authorizeHttpRequests(auth ->
                 auth
                     .requestMatchers("/user/**").permitAll()
-                    .requestMatchers(HttpMethod.GET, "/food/**").permitAll()
-                    .requestMatchers(HttpMethod.GET, "/category/**").permitAll()
-                    .requestMatchers(HttpMethod.GET, "/api/v1/category/getFoodTypeById/**").permitAll()
-                    .requestMatchers("/cart/**").authenticated()
+                    .requestMatchers(HttpMethod.GET, "/Food/**").permitAll()
+                    .requestMatchers(HttpMethod.GET, "/Category/**").permitAll()
+                    .requestMatchers("/Cart/**").authenticated()
                     .anyRequest().authenticated()
             )
         
@@ -62,7 +61,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000", "http://localhost:8080"));
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
         configuration.setAllowedHeaders(Collections.singletonList("*"));
         configuration.setAllowCredentials(true);
