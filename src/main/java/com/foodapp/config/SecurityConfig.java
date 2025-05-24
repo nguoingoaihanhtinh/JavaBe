@@ -46,10 +46,12 @@ public class SecurityConfig {
             )
             .authorizeHttpRequests(auth ->
                 auth
-                    .requestMatchers("/user/**").permitAll()
+                    .requestMatchers("/user/register", "/user/login", "/user/checkjwt").permitAll()
                     .requestMatchers(HttpMethod.GET, "/Food/**").permitAll()
                     .requestMatchers(HttpMethod.GET, "/Category/**").permitAll()
                     .requestMatchers("/Cart/**").authenticated()
+                    .requestMatchers("/User/**").authenticated()
+                    .requestMatchers("/user/**").authenticated()
                     .anyRequest().authenticated()
             )
         

@@ -9,8 +9,6 @@ import io.jsonwebtoken.security.Keys;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -43,7 +41,7 @@ public class UserController {
             UserFoodSavedRepository userFoodSavedRepository,
             FoodRepository foodRepository,
             PasswordEncoder passwordEncoder,
-            UserFoodOrderRepository userFoodOrderRepository) { // Inject new repository
+            UserFoodOrderRepository userFoodOrderRepository) {
         this.userRepository = userRepository;
         this.userFoodSavedRepository = userFoodSavedRepository;
         this.foodRepository = foodRepository;
@@ -198,84 +196,6 @@ public class UserController {
         ));
     }
 
-    @PostMapping("/removeFoodSaved")
-    public ResponseEntity<?> removeFoodSaved(@RequestBody UserFoodDto userFood) {
-        var savedFood = userFoodSavedRepository
-            .findByUser_UserIdAndFood_FoodId(userFood.userId, userFood.foodId)
-            .orElse(null);
-
-        if (savedFood == null) {
-            return ResponseEntity.notFound().build();
-        }
-
-        userFoodSavedRepository.delete(savedFood);
-        return ResponseEntity.ok(Map.of(
-            "message", "Food item removed from saved foods successfully."
-        ));
-    }
-
-    @PostMapping("/addFoodSaved")
-    public ResponseEntity<?> addFoodSaved(@RequestBody UserFoodDto userFood) {
-        if (userFoodSavedRepository.findByUser_UserIdAndFood_FoodId(
-                userFood.userId, userFood.foodId).isPresent()) {
-            return ResponseEntity.status(HttpStatus.CONFLICT)
-                .body("This food item is already saved for the user.");
-        }
-
-        User user = userRepository.findById(userFood.userId).orElseThrow();
-        Food food = foodRepository.findById(userFood.foodId).orElseThrow();
-
-        UserFoodSaved savedFood = new UserFoodSaved();
-        savedFood.setUser(user);
-        savedFood.setFood(food);
-        userFoodSavedRepository.save(savedFood);
-
-        return ResponseEntity.ok("Food item successfully saved for the user.");
-    }
-
-    @GetMapping("/getAllFoodSaved")
-    public ResponseEntity<?> getAllFoodSaved(
-            @RequestParam Long userId,
-            @RequestParam(defaultValue = "1") int page,
-            @RequestParam(defaultValue = "10") int limit) {
-
-        if (userId <= 0) {
-            return ResponseEntity.badRequest().body(Map.of(
-                "status", "error",
-                "message", "Invalid user ID."
-            ));
-        }
-
-        PageRequest pageRequest = PageRequest.of(page - 1, limit);
-        Page<UserFoodSaved> savedFoodsPage = userFoodSavedRepository.findByUser_UserId(userId, pageRequest);
-
-        var savedFoods = savedFoodsPage.getContent().stream()
-            .map(ufs -> Map.of(
-                "foodId", ufs.getFood().getFoodId(),
-                "foodName", ufs.getFood().getName(),
-                "image1", ufs.getFood().getImage1(),
-                "image2", ufs.getFood().getImage2(),
-                "image3", ufs.getFood().getImage3(),
-                "price", ufs.getFood().getPrice(),
-                "itemleft", ufs.getFood().getItemleft(),
-                "rating", ufs.getFood().getRating(),
-                "numberRating", ufs.getFood().getNumberRating(),
-                "description", ufs.getFood().getDescription()
-            ))
-            .collect(Collectors.toList());
-
-        return ResponseEntity.ok(Map.of(
-            "status", "success",
-            "data", savedFoods,
-            "pagination", Map.of(
-                "currentPage", page,
-                "pageSize", limit,
-                "totalItems", savedFoodsPage.getTotalElements(),
-                "totalPages", savedFoodsPage.getTotalPages()
-            )
-        ));
-    }
-
     @PutMapping("/updateUser")
     public ResponseEntity<?> updateUser(@RequestBody UpdateUserDto updateUser) {
         User user = userRepository.findById(updateUser.userId)
@@ -300,6 +220,7 @@ public class UserController {
             "message", "User updated successfully."
         ));
     }
+
     private String generateToken(User user) {
         Date now = new Date();
         Date expiryDate = new Date(now.getTime() + jwtExpiration);
