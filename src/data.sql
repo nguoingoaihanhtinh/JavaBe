@@ -85,3 +85,44 @@ INSERT INTO ratings (user_id, food_id, content, date, rating_value, reply, date_
 (1, 9, 'Very disappointing.', '2024-10-29 12:15:00', 1, NULL, NULL),
 (1, 10, 'Excellent service and food!', '2024-10-30 13:30:00', 5, NULL, NULL);
 
+INSERT INTO food (food_id, name, image1, image2, image3, food_type_id, rating, number_rating, price, itemleft,description) VALUES
+-- Vietnamese Noodles
+(11, 'Bánh canh cua', 'https://dienmaythiennamhoa.vn/static/images/Hinh%20Bai%20Ve%20Tinh/VAO%20BEP/3(14).PNG', 'https://dienmaythiennamhoa.vn/static/images/Hinh%20Bai%20Ve%20Tinh/VAO%20BEP/3(14).PNG', 'https://cdn.tgdd.vn/2021/05/CookRecipe/GalleryStep/thanh-pham-239.jpg', 1, 0, 0, 60000, 20, 'Bánh canh cua với nước dùng đậm đà từ cua và tôm, sợi bánh canh dai mềm và thịt cua tươi ngon.'),
+(12, 'Mì Quảng', 'https://cdn.tgdd.vn/2021/02/CookProduct/1200-1200x676-16.jpg', 'https://hapinut.com/wp-content/uploads/2022/03/mi-quang-quang-nam.jpg', 'https://daubepgiadinh.vn/wp-content/uploads/2017/12/mi-quang-thit-heo.jpg', 1, 0, 0, 55000, 15, 'Mì Quảng với nước dùng sánh mịn, thịt gà, tôm, trứng, và rau sống. Món ăn mang đậm hương vị miền Trung.'),
+
+-- Grilled Dishes
+(13, 'Gà nướng mật ong', 'https://reviewamthuc.net/wp-content/uploads/2024/04/ga-nuong-mat-ong.jpg', 'https://cdn.tgdd.vn/2020/09/CookProduct/1-1200x676-24.jpg', 'https://nhahangphuongnguyen.com.vn/images/upload/mon-dac-biet/ga-nuong-mat-ong.jpg', 2, 0, 0, 80000, 18, 'Gà nướng mật ong với lớp da giòn, thịt mềm ngọt, và hương vị đậm đà từ mật ong và gia vị.'),
+(14, 'Thịt xiên nướng', 'https://thucthan.com/media/2018/05/thit-xien-nuong/cach-lam-thit-xien-nuong.jpg', 'https://www.huongnghiepaau.com/wp-content/uploads/2022/08/thit-xien-nuong-bang-noi-chien-khong-dau.jpg', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxqmbB2F0QgYfpGapP-zUfq4_IwEQliZMHgA&s', 2, 0, 0, 30000, 25, 'Thịt xiên nướng với gia vị đặc trưng, được nướng vàng thơm, thích hợp cho các bữa ăn nhanh.'),
+
+-- Rice Dishes
+(15, 'Cơm gà xối mỡ', 'https://barona.vn/storage/meo-vat/83/com-ga-xoi-mo.jpg', 'https://i.ytimg.com/vi/P0NgzDow6jk/maxresdefault.jpg', 'https://i.ytimg.com/vi/Qn9VCUpKLHk/maxresdefault.jpg', 3, 0, 0, 70000, 16, 'Cơm gà xối mỡ với gà giòn rụm, cơm nóng và nước chấm chua ngọt. Món ăn hấp dẫn và đầy đủ dinh dưỡng.'),
+(16, 'Cơm niêu', 'https://duonggiahotel.vn/wp-content/uploads/2023/10/nha-hang-com-nieu-da-nang-AB.jpg', 'https://cdn.tgdd.vn/Files/2022/01/19/1411567/10-quan-com-nieu-sai-gon-ngon-noi-tieng-gia-binh-dan-202201190540589736.jpg', 'https://nhahangcontoc.com/wp-content/uploads/2023/02/com-nieu-ca-kho-scaled.jpg', 3, 0, 0, 75000, 14, 'Cơm niêu với món thịt kho, rau luộc mang đến trải nghiệm bữa ăn gia đình.'),
+
+-- Vegetarian
+(17, 'Bánh xèo chay', 'https://cdn.tgdd.vn/Files/2020/03/25/1244527/cach-lam-banh-xeo-chay-thom-ngon-gion-rum-don-gian-13-760x367.jpg', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi1mP-Ckl59VlEOJE2kKSNiz35-SVP5YzMqg&s', 'https://cdn.prod.website-files.com/5ef016ce2ee92e3ee3fdfe51/5ef07e9b39ecc00a5a4dd691_banh-xeo-chay-1.jpeg', 4, 0, 0, 40000, 20, 'Bánh xèo chay với nhân rau củ và nấm, ăn kèm rau sống và nước mắm chay.'),
+(18, 'Đậu hũ kho nấm', 'https://i.ytimg.com/vi/lLrJmH1rxrI/maxresdefault.jpg', 'https://i.ytimg.com/vi/m1NMP_mo-9c/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB_whLNrdkJuQMiMbODromc7yQNuA', 'https://cdn.tgdd.vn/2020/09/CookRecipe/GalleryStep/nam-rom-kho-dau-hu-10.jpg', 4, 0, 0, 50000, 22, 'Đậu hũ kho nấm với nước sốt đậm đà, hương vị thanh đạm và giàu dinh dưỡng.'),
+
+-- Soups
+(19, 'Súp cua', 'https://thucthan.com/media/2019/06/sup-cua/sup-cua.jpg', 'https://i.ytimg.com/vi/8eBq1lCZ5l8/maxresdefault.jpg', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToeNeiMm43dhwkTVRaIlsJ7owlnOnOrvqTHw&s', 5, 0, 0, 35000, 30, 'Súp cua thơm ngon, sánh mịn, với thịt cua tươi, trứng cút, và rau mùi.'),
+(20, 'Súp gà', 'https://cdn.tgdd.vn/2021/10/CookRecipe/GalleryStep/thanh-pham-1640.jpg', 'https://heyyofoods.com/wp-content/uploads/2023/10/2-6.jpg', 'https://file.hstatic.net/200000385717/article/sup-ga_d1cb563a007346f0b8d4c8504fc1c678.jpg', 5, 0, 0, 30000, 28, 'Súp gà với thịt gà mềm, ngô ngọt, và nước súp thanh nhẹ, bổ dưỡng.'),
+
+-- Seafood
+(21, 'Tôm hấp nước dừa', 'https://cdn.pastaxi-manager.onepas.vn/content/uploads/articles/hoamkt35/Blog/tom-hap-nuoc-dua.jpg', 'https://cdn.tgdd.vn/Files/2017/03/12/960051/cach-lam-banh-trang-nuong-ngon-cuc-nhanh-voi-chao-chong-dinh-202112282139542041.jpg', 'https://www.cotrang.org/public/images/tin_dang/6/270_banh-trang-nuong-da-lat-bk-1.jpg', 6, 0, 0, 90000, 12, 'Tôm hấp nước dừa với hương vị ngọt thanh, giữ nguyên vị tươi ngon của tôm.'),
+(22, 'Mực xào sa tế', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2pEq10RPhlp_WpiEeA3ZM6YlAmae6phMjDg&s', 'https://cdn.pastaxi-manager.onepas.vn/content/uploads/articles/huyendt/mucxaosate/1.png', 'https://www.cet.edu.vn/wp-content/uploads/2018/04/muc-xao-sa-te.jpg', 6, 0, 0, 85000, 10, 'Mực xào sa tế cay nồng, hấp dẫn với vị mực tươi giòn và gia vị đậm đà.'),
+
+-- Snacks
+(23, 'Bánh tráng nướng', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYetw3xJK0UnHQLaFjtTqshnn-oMrcEmQJmw&s', 'https://example.com/banh-trang-2.jpg', 'https://example.com/banh-trang-3.jpg', 7, 0, 0, 20000, 40, 'Bánh tráng nướng giòn tan với topping đa dạng như trứng, xúc xích, và phô mai.'),
+(24, 'Bánh bao ', 'https://meizanclv.com.vn/wp-content/uploads/2022/04/1-Banh-bao-nhan-thit.jpg', 'https://i.ytimg.com/vi/Fdt4IOyRcsU/maxresdefault.jpg', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbcN4pGcSFyl6YdxQg5XcWdVN5i82Wxbvqwg&s', 7, 0, 0, 15000, 35, 'Bánh bao với lớp vỏ mềm mỏng, nhân thịt heo và trứng cút đậm đà.'),
+(25, 'Bánh bao chiên', 'https://i.ytimg.com/vi/uL9GgD0apUI/maxresdefault.jpg', 'https://static-images.vnncdn.net/files/publish/2023/8/14/banh-bao-chien-2-597.jpg', 'https://daylambanh.edu.vn/wp-content/uploads/2017/02/banh-bao-chien-nhan-thit.jpg', 7, 0, 0, 15000, 35, 'Bánh bao chiên với lớp vỏ giòn rụm, nhân thịt heo và trứng cút đậm đà.'),
+
+-- Desserts
+(31, 'Chè ba màu', 'https://bizweb.dktcdn.net/100/004/714/articles/che-ba-mau-cach-lam-ngon-mieng-dep-mat-ngay-tai-nha.png?v=1592454972940', 'https://bizweb.dktcdn.net/100/004/714/articles/che-ba-mau-cach-lam-ngon-mieng-dep-mat-ngay-tai-nha.png?v=1592454972940', 'https://bizweb.dktcdn.net/100/004/714/articles/che-ba-mau-cach-lam-ngon-mieng-dep-mat-ngay-tai-nha.png?v=1592454972940', 8, 0, 0, 25000, 30, 'Chè ba màu với đậu xanh, đậu đỏ, và nước cốt dừa béo ngậy.'),
+(26, 'Bánh flan', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrZmdSfcu4EhhRohcxzCmlsRiddpfs7nmiQQ&s', 'https://file.hstatic.net/1000396324/file/banh-flan-socola-2_71a4b9be8ddc459c9be9a7226ae74476.jpg', 'https://cdn.buffetposeidon.com/app/media/Kham-pha-am-thuc/11.2023/251123-cach-lam-banh-flan-buffet-poseidon-02-jpg.jpg', 8, 0, 0, 20000, 50, 'Bánh flan mềm mịn, thơm ngậy, với vị caramel ngọt ngào.'),
+
+-- Beverages
+(27, 'Trà sữa trân châu', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuwRLHc8a9yDj-DLKJTIcJCRcKcm8UfFUrog&s', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLHO57_3w-vpSoTtlqCGlO2NiunXvdfDDAxQ&s', 'https://cdn.nguyenkimmall.com/images/companies/_1/tin-tuc/kinh-nghiem-meo-hay/n%E1%BA%A5u%20%C4%83n/cach-lam-tran-chau-tra-sua_1.jpg', 9, 0, 0, 40000, 60, 'Trà sữa trân châu với vị trà thơm ngon, sữa béo ngậy, và trân châu dai dai.'),
+(28, 'Nước mía', 'https://droh.co/wp-content/uploads/2020/02/9-tac-dung-cua-nuoc-mia-khien-ban.jpg', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8jJtRFSVSzK1vYheGYs5KpXlzFUlscHxBTQ&s', 'https://droh.co/wp-content/uploads/2020/02/9-tac-dung-cua-nuoc-mia-khien-ban1.jpg', 9, 0, 0, 15000, 100, 'Nước mía tươi mát, ngọt thanh, giải khát tuyệt vời cho ngày hè.'),
+
+-- Salads
+(29, 'Gỏi ngó sen tôm thịt', 'https://netspace.edu.vn/upload/images/2018/07/26/cach-lam-goi-ngo-sen-tom-thit-6-600x424.jpg', 'https://www.unileverfoodsolutions.com.vn/dam/global-ufs/mcos/phvn/vietnam/calcmenu/recipes/VN-recipes/vegetables-&-vegetable-dishes/g%E1%BB%8Fi-ng%C3%B3-sen-t%C3%B4m-th%E1%BB%8Bt/Goi-Ngo-Sen_Web.jpg', 'https://daynauan.info.vn/wp-content/uploads/2015/06/goi-ngo-sen-tom-thit.jpg', 10, 0, 0, 60000, 18, 'Gỏi ngó sen tôm thịt giòn tươi, vị chua ngọt hài hòa, và hương thơm hấp dẫn.'),
+(30, 'Gỏi bưởi', 'https://www.nhahangquangon.com/wp-content/uploads/2021/09/cach-lam-goi-buoi2-1.jpg','https://www.nhahangquangon.com/wp-content/uploads/2021/09/cach-lam-goi-buoi2-1.jpg', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ81ZqQ_m4sgu5-Uvn1YJQ_CA2gdWRE9vT3QQ&s', 10, 0, 0, 50000, 20, 'Gỏi bưởi thanh mát với vị ngọt của bưởi, tôm, thịt, và nước mắm pha chua ngọt.');
