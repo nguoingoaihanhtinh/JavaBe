@@ -28,3 +28,60 @@ INSERT INTO food (food_id, name, image1, image2, image3, food_type_id, rating, n
 (9, 'Canh chua cá', 'https://i.ytimg.com/vi/zNhazi2P4yI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCGDf9GlJVxCRR7KD0LBzoFAwEO-Q', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldivONiT8mdxnMuWY5m3dyCYjMPToTjWKDg&s', 'https://static-images.vnncdn.net/files/publish/2023/3/14/canh-ca-a-1024.jpg', 5, 0, 0, 55000, 32,'Canh chua cá là món ăn truyền thống với nước dùng chua ngọt từ me và thơm, kết hợp cùng cá tươi. Món canh có vị chua nhẹ, thơm ngon, là lựa chọn lý tưởng cho bữa cơm gia đình.'),
 (10, 'Bò Kho', 'https://i-giadinh.vnecdn.net/2021/03/15/1-1615818742-7067-1615818945.jpg', 'https://i-giadinh.vnecdn.net/2021/03/15/1-1615818742-7067-1615818945.jpg', 'https://i.ytimg.com/vi/FXSTfjiEA0M/maxresdefault.jpg', 5, 0, 0, 60000, 12,'Bò kho là món ăn đậm đà với thịt bò được hầm mềm cùng các loại gia vị như quế, hồi, sả, tạo hương thơm nồng nàn. Món ăn có thể ăn kèm bánh mì hoặc cơm, thích hợp cho những bữa ăn ấm áp.');
 
+-- cập nhật lại data cho foods khi thêm rating từ sql
+DELIMITER $$
+
+CREATE TRIGGER UpdateFoodRating AFTER INSERT ON ratings
+FOR EACH ROW
+BEGIN
+    DECLARE new_avg_rating FLOAT;
+    DECLARE total_ratings INT;
+
+    SELECT COUNT(*) INTO total_ratings
+    FROM ratings
+    WHERE food_id = NEW.food_id;
+
+    SELECT AVG(rating_value) INTO new_avg_rating
+    FROM ratings
+    WHERE food_id = NEW.food_id;
+
+    UPDATE food
+    SET rating = new_avg_rating,
+        number_rating = total_ratings
+    WHERE food_id = NEW.food_id;
+END$$
+
+DELIMITER ;
+
+INSERT INTO ratings (user_id, food_id, content, date, rating_value, reply, date_reply) VALUES
+(1, 1, 'Delicious food, would recommend!', '2024-10-01 12:30:00', 5, NULL, NULL),
+(1, 1, 'Not bad, but could be better.', '2024-10-02 14:00:00', 3, NULL, NULL),
+(1, 2, 'Absolutely loved it!', '2024-10-03 16:15:00', 5, NULL, NULL),
+(1, 2, 'Too spicy for my taste.', '2024-10-04 17:45:00', 2, NULL, NULL),
+(1, 3, 'Great portion size!', '2024-10-05 18:30:00', 4, NULL, NULL),
+(1, 3, 'Would not order again.', '2024-10-06 19:00:00', 1, NULL, NULL),
+(1, 4, 'Perfectly cooked!', '2024-10-07 20:30:00', 5, NULL, NULL),
+(1, 4, 'Very average experience.', '2024-10-08 21:45:00', 3, NULL, NULL),
+(1, 5, 'Too oily for my liking.', '2024-10-09 22:00:00', 2, NULL, NULL),
+(1, 5, 'Loved the flavor!', '2024-10-10 23:15:00', 5, NULL, NULL),
+(1, 6, 'Would recommend for special occasions.', '2024-10-11 09:30:00', 4, NULL, NULL),
+(1, 6, 'Not worth the price.', '2024-10-12 10:45:00', 2, NULL, NULL),
+(1, 7, 'Best meal I had this week!', '2024-10-13 11:00:00', 5, NULL, NULL),
+(1, 7, 'The service was slow.', '2024-10-14 12:15:00', 3, NULL, NULL),
+(1, 8, 'Amazing dessert!', '2024-10-15 13:30:00', 5, NULL, NULL),
+(1, 8, 'Too sweet for my taste.', '2024-10-16 14:45:00', 2, NULL, NULL),
+(1, 9, 'A must-try dish!', '2024-10-17 15:00:00', 5, NULL, NULL),
+(1, 9, 'Not impressed at all.', '2024-10-18 16:15:00', 1, NULL, NULL),
+(1, 10, 'Very filling and tasty!', '2024-10-19 17:30:00', 4, NULL, NULL),
+(1, 10, 'The atmosphere was great!', '2024-10-20 18:00:00', 5, NULL, NULL),
+(1, 1, 'Perfect for lunch!', '2024-10-21 19:30:00', 4, NULL, NULL),
+(1, 2, 'Could use more seasoning.', '2024-10-22 20:00:00', 3, NULL, NULL),
+(1, 3, 'My favorite place to eat!', '2024-10-23 21:15:00', 5, NULL, NULL),
+(1, 4, 'Not fresh at all.', '2024-10-24 22:30:00', 1, NULL, NULL),
+(1, 5, 'Wonderful presentation!', '2024-10-25 23:00:00', 5, NULL, NULL),
+(1, 6, 'Nice ambiance.', '2024-10-26 09:30:00', 4, NULL, NULL),
+(1, 7, 'Too salty for my liking.', '2024-10-27 10:45:00', 2, NULL, NULL),
+(1, 8, 'Best pasta I’ve ever had!', '2024-10-28 11:00:00', 5, NULL, NULL),
+(1, 9, 'Very disappointing.', '2024-10-29 12:15:00', 1, NULL, NULL),
+(1, 10, 'Excellent service and food!', '2024-10-30 13:30:00', 5, NULL, NULL);
+
