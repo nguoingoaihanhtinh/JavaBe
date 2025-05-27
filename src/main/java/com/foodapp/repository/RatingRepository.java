@@ -14,4 +14,6 @@ public interface RatingRepository extends CrudRepository<Rating, Long> {
 
     @Query("SELECT r FROM Rating r JOIN FETCH r.user WHERE r.food.foodId = :foodId")
     List<Rating> findByFoodIdWithUser(@Param("foodId") int foodId, Pageable pageable);
+
+    List<Rating> findByFood_FoodId(Long foodId);
 }

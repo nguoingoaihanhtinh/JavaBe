@@ -1,11 +1,19 @@
 package com.foodapp.controller;
 
 import java.util.Map;
+import java.util.Optional;
 import java.math.BigDecimal;
-import com.foodapp.dto.PaginationDto;
+import java.math.RoundingMode;
+
+import com.foodapp.dto.RatingBodyDto;
+import com.foodapp.model.Food;
+import com.foodapp.model.Rating;
+import com.foodapp.repository.FoodRepository;
 import com.foodapp.repository.RatingRepository;
+import com.foodapp.repository.UserRepository;
+
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
@@ -13,16 +21,20 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/Rating")
 public class RatingController {
 
     private final RatingRepository ratingRepository;
+    private final FoodRepository foodRepository;
+    private final UserRepository userRepository;
 
-    public RatingController(RatingRepository ratingRepository) {
+
+    public RatingController(RatingRepository ratingRepository, UserRepository userRepository, FoodRepository foodRepository) {
         this.ratingRepository = ratingRepository;
+        this.foodRepository = foodRepository;
+        this.userRepository = userRepository;
     }
 
     @GetMapping
@@ -79,6 +91,73 @@ public class RatingController {
                         "totalPages", totalPages
                 )
         ));
+    }
+
+    @PostMapping
+    public ResponseEntity<?> createRating(@RequestBody @Valid RatingBodyDto ratingBody) {
+        boolean userExists = userRepository.existsById(ratingBody.getUserId());
+        boolean foodExists = foodRepository.existsById(ratingBody.getFoodId());
+
+        if (!userExists) {
+            return ResponseEntity.badRequest().body(Map.of("message", "User does not exist."));
+        }
+
+        if (!foodExists) {
+            return ResponseEntity.badRequest().body(Map.of("message", "Food item does not exist."));
+        }
+
+        Rating newRating = new Rating();
+        newRating.setUser(userRepository.findById(ratingBody.getUserId()).orElseThrow());
+        newRating.setFood(foodRepository.findById(ratingBody.getFoodId()).orElseThrow());
+        newRating.setContent(ratingBody.getContent());
+        newRating.setRatingValue((double) ratingBody.getRatingValue());
+        newRating.setDate(java.time.LocalDateTime.now());
+
+        ratingRepository.save(newRating);
+
+        updateFoodRatingAndStats(ratingBody.getFoodId());
+
+        return ResponseEntity.ok(Map.of(
+                "status", "success",
+                "message", "Rating created successfully.",
+                "data", newRating
+        ));
+    }
+    @Transactional
+    public void updateFoodRatingAndStats(Long foodId) {
+        try {
+            List<Rating> foodRatings = ratingRepository.findByFood_FoodId(foodId);
+
+            Optional<Food> optionalFood = foodRepository.findById(foodId);
+
+            if (optionalFood.isEmpty()) {
+                return;
+            }
+
+            Food food = optionalFood.get();
+
+            if (foodRatings.isEmpty()) {
+                food.setRating(0.0);
+                food.setNumberRating(0);
+                foodRepository.save(food);
+                return;
+            }
+
+            double average = foodRatings.stream()
+                    .mapToDouble(Rating::getRatingValue)
+                    .average()
+                    .orElse(0.0);
+
+            int numberOfRatings = foodRatings.size();
+
+            food.setRating(BigDecimal.valueOf(average).setScale(2, RoundingMode.HALF_UP).doubleValue());
+            food.setNumberRating(numberOfRatings);
+            foodRepository.save(food);
+
+        } catch (Exception ex) {
+           
+            throw ex;
+        }
     }
 
 }
