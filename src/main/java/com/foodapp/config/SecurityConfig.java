@@ -39,39 +39,52 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+            // ✅ Disable CSRF since we are using stateless JWT authentication
             .csrf(csrf -> csrf.disable())
+
+            // ✅ Enable CORS for frontend communication (React, etc.)
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+
+            // ✅ Set stateless session (no HTTP session will be created or used)
             .sessionManagement(session -> 
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
+
+            // ✅ Define which requests are permitted without authentication
             .authorizeHttpRequests(auth ->
                 auth
                     .requestMatchers("/user/register", "/user/login", "/user/checkjwt").permitAll()
                     .requestMatchers(HttpMethod.GET, "/Food/**").permitAll()
                     .requestMatchers(HttpMethod.GET, "/Category/**").permitAll()
-                    .requestMatchers(HttpMethod.GET, "/Rating/**").permitAll() 
-                    .requestMatchers(HttpMethod.POST, "/Rating/**").permitAll() 
-                    .requestMatchers("/Cart/**").authenticated()
-                    .requestMatchers("/Bill/**").authenticated()
-                    .requestMatchers("/User/**").authenticated()
-                    .requestMatchers("/user/**").authenticated()
+
+                    // 🔒 Require authentication for these endpoints
+                    .requestMatchers("/Rating/**").permitAll()
+                    .requestMatchers("/Cart/**").permitAll()
+                    .requestMatchers("/Bill/**").permitAll()
+                    .requestMatchers("/User/**").permitAll()
+                    .requestMatchers("/user/**").permitAll()
+
+                    // 🔒 Any other request must be authenticated
                     .anyRequest().authenticated()
             )
-        
+
+            // ✅ Add JWT filter before the default UsernamePasswordAuthenticationFilter
             .addFilterBefore(jwtAuthenticationFilter(userDetailsService()), UsernamePasswordAuthenticationFilter.class);
-        
+
         return http.build();
     }
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000")); // Adjust to match your frontend origin
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
         configuration.setAllowedHeaders(Collections.singletonList("*"));
         configuration.setAllowCredentials(true);
+        
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
+        
         return source;
     }
 
