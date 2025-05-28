@@ -4,6 +4,8 @@ import com.foodapp.model.*;
 import com.foodapp.repository.*;
 import com.foodapp.dto.*;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +16,10 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/bill")
+@RequestMapping("/Bill") 
 public class BillController {
     
+    private static final Logger log = LoggerFactory.getLogger(BillController.class);
     private final BillRepository billRepository;
     private final UserRepository userRepository;
     private final FoodRepository foodRepository;
@@ -43,8 +46,10 @@ public class BillController {
     @Transactional
     public ResponseEntity<?> addBill(@Valid @RequestBody BillRequestDto body) {
         try {
-            List<OrderInfoDto> foodInfoList = objectMapper.readValue(body.getFoodInfo(), 
-                objectMapper.getTypeFactory().constructCollectionType(List.class, OrderInfoDto.class));
+            List<OrderInfoDto> foodInfoList = objectMapper.readValue(
+                body.getFoodInfo(),
+                objectMapper.getTypeFactory().constructCollectionType(List.class, OrderInfoDto.class)
+            );
 
             if (foodInfoList == null || foodInfoList.isEmpty()) {
                 return ResponseEntity.badRequest().body(Map.of(
@@ -57,12 +62,10 @@ public class BillController {
             for (OrderInfoDto order : foodInfoList) {
                 Food food = foodRepository.findById(order.getFoodId())
                     .orElseThrow(() -> new RuntimeException("Food not found with id: " + order.getFoodId()));
-
                 if (food.getItemleft() < order.getQuantity()) {
-                    throw new RuntimeException("Not enough quantity for food ID " + order.getFoodId() + 
+                    throw new RuntimeException("Not enough quantity for food ID " + order.getFoodId() +
                         ". Available: " + food.getItemleft());
                 }
-
                 food.setItemleft(food.getItemleft() - order.getQuantity());
                 foodRepository.save(food);
             }
@@ -73,30 +76,38 @@ public class BillController {
                 .collect(Collectors.toList());
             userFoodOrderRepository.deleteAllById(orderIds);
 
+            // Extract phone from address JSON
+            AddressDto addressDto = objectMapper.readValue(body.getAddress(), AddressDto.class);
+            String phone = addressDto.getPhonenumber();
+
             // Create new bill
             Bill newBill = new Bill();
             newBill.setTotalPrice(body.getTotalPrice());
             newBill.setAddress(body.getAddress());
             newBill.setFoodInfo(body.getFoodInfo());
             newBill.setDate(LocalDateTime.now());
+            newBill.setCreatedAt(LocalDateTime.now());
             newBill.setStatus("Pending");
+            newBill.setPhone(phone);
             newBill.setUser(userRepository.findById(body.getUserId())
                 .orElseThrow(() -> new RuntimeException("User not found")));
 
             Bill savedBill = billRepository.save(newBill);
 
             // Create notification
-            createNotification("Đơn hàng được chấp nhận", 
+            createNotification(
+                "Đơn hàng được chấp nhận",
                 "Đơn hàng #" + savedBill.getBillId() + " đã được tạo.",
-                body.getUserId());
+                body.getUserId()
+            );
 
             return ResponseEntity.ok(Map.of(
                 "status", "success",
                 "message", "Bill created successfully",
-                "billId", savedBill.getBillId()
+                "bill", mapToBillResponse(savedBill)
             ));
-
         } catch (Exception e) {
+            log.error("Error creating bill", e);
             return ResponseEntity.badRequest().body(Map.of(
                 "status", "error",
                 "message", e.getMessage()
@@ -113,10 +124,12 @@ public class BillController {
         int skip = (page - 1) * limit;
         List<Bill> bills = billRepository.findByUserUserId(userId);
         
-        // Apply pagination manually
         int fromIndex = Math.min(skip, bills.size());
         int toIndex = Math.min(skip + limit, bills.size());
-        List<Bill> paginatedBills = bills.subList(fromIndex, toIndex);
+        List<BillResponseDto> paginatedBills = bills.subList(fromIndex, toIndex)
+            .stream()
+            .map(this::mapToBillResponse)
+            .collect(Collectors.toList());
         
         int totalBills = bills.size();
         int totalPages = (int) Math.ceil((double) totalBills / limit);
@@ -137,7 +150,11 @@ public class BillController {
     @GetMapping("/getAll")
     public ResponseEntity<?> getAllBills() {
         try {
-            List<Bill> bills = billRepository.findAll();
+            List<BillResponseDto> bills = billRepository.findAll()
+                .stream()
+                .map(this::mapToBillResponse)
+                .collect(Collectors.toList());
+
             return ResponseEntity.ok(Map.of(
                 "status", "success",
                 "data", bills
@@ -153,8 +170,14 @@ public class BillController {
     @GetMapping("/getCompleted")
     public ResponseEntity<?> getCompletedBills() {
         try {
-            List<Bill> bills = billRepository.findByStatus("Completed");
-            bills.forEach(bill -> bill.setTotalPrice(bill.getTotalPrice() - 12000));
+            List<BillResponseDto> bills = billRepository.findByStatus("Completed")
+                .stream()
+                .map(bill -> {
+                    BillResponseDto dto = mapToBillResponse(bill);
+                    dto.setTotalPrice(dto.getTotalPrice() - 12000); // Subtract delivery fee
+                    return dto;
+                })
+                .collect(Collectors.toList());
             
             return ResponseEntity.ok(Map.of(
                 "status", "success",
@@ -177,7 +200,7 @@ public class BillController {
                 .orElseThrow(() -> new RuntimeException("Bill not found"));
 
             bill.setStatus(status);
-            billRepository.save(bill);
+            Bill updatedBill = billRepository.save(bill);
 
             String header = "Đơn hàng được cập nhật";
             String content = switch (status) {
@@ -192,12 +215,8 @@ public class BillController {
 
             return ResponseEntity.ok(Map.of(
                 "status", "success",
-                "data", Map.of(
-                    "billId", bill.getBillId(),
-                    "status", bill.getStatus()
-                )
+                "data", mapToBillResponse(updatedBill)
             ));
-
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(Map.of(
                 "status", "error",
@@ -217,7 +236,6 @@ public class BillController {
             return ResponseEntity.ok(Map.of(
                 "status", "success"
             ));
-
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(Map.of(
                 "status", "error",
@@ -232,54 +250,69 @@ public class BillController {
             List<User> users = userRepository.findAll();
             List<Bill> completedBills = billRepository.findByStatus("Completed");
             
-            // Subtract delivery fee from total price
-            completedBills.forEach(bill -> bill.setTotalPrice(bill.getTotalPrice() - 12000));
+            List<HashMap<String, Object>> result = new ArrayList<>();
+            
+            for (User user : users) {
+                List<Bill> userBills = completedBills.stream()
+                    .filter(b -> b.getUser().getUserId().equals(user.getUserId()))
+                    .collect(Collectors.toList());
 
-            List<Map<String, Object>> result = users.stream()
-                .map(user -> {
-                    List<Bill> userBills = completedBills.stream()
-                        .filter(b -> b.getUser().getUserId().equals(user.getUserId()))
-                        .collect(Collectors.toList());
+                long totalSpend = userBills.stream()
+                    .mapToLong(Bill::getTotalPrice)
+                    .sum() - (userBills.size() * 12000L);
 
-                    long totalSpend = userBills.stream()
-                        .mapToLong(Bill::getTotalPrice)
-                        .sum();
+                int totalQuantity = userBills.stream()
+                    .mapToInt(bill -> {
+                        try {
+                            List<OrderInfoDto> foodInfo = objectMapper.readValue(bill.getFoodInfo(),
+                                objectMapper.getTypeFactory().constructCollectionType(List.class, OrderInfoDto.class));
+                            return foodInfo.stream()
+                                .mapToInt(OrderInfoDto::getQuantity)
+                                .sum();
+                        } catch (Exception e) {
+                            return 0;
+                        }
+                    })
+                    .sum();
 
-                    int totalQuantity = userBills.stream()
-                        .mapToInt(bill -> {
-                            try {
-                                List<OrderInfoDto> foodInfo = objectMapper.readValue(bill.getFoodInfo(),
-                                    objectMapper.getTypeFactory().constructCollectionType(List.class, OrderInfoDto.class));
-                                return foodInfo.stream()
-                                    .mapToInt(OrderInfoDto::getQuantity)
-                                    .sum();
-                            } catch (Exception e) {
-                                return 0;
-                            }
-                        })
-                        .sum();
-
-                    return Map.of(
-                        "userId", user.getUserId(),
-                        "username", user.getUsername(),
-                        "email", user.getEmail(),
-                        "totalSpend", totalSpend,
-                        "totalQuantity", totalQuantity
-                    );
-                })
-                .collect(Collectors.toList());
+                HashMap<String, Object> userSummary = new HashMap<>();
+                userSummary.put("userId", user.getUserId());
+                userSummary.put("username", user.getUsername());
+                userSummary.put("email", user.getEmail());
+                userSummary.put("totalSpend", totalSpend);
+                userSummary.put("totalQuantity", totalQuantity);
+                
+                result.add(userSummary);
+            }
 
             return ResponseEntity.ok(Map.of(
                 "status", "success",
                 "data", result
             ));
-
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(Map.of(
                 "status", "error",
                 "message", e.getMessage()
             ));
         }
+    }
+
+    private BillResponseDto mapToBillResponse(Bill bill) {
+        BillResponseDto dto = new BillResponseDto();
+        dto.setBillId(bill.getBillId());
+        dto.setDate(bill.getDate());
+        dto.setTotalPrice(bill.getTotalPrice());
+        dto.setAddress(bill.getAddress());
+        dto.setStatus(bill.getStatus());
+        dto.setFoodInfo(bill.getFoodInfo());
+        
+        BillResponseDto.UserDto userDto = new BillResponseDto.UserDto();
+        userDto.setUserId(bill.getUser().getUserId());
+        userDto.setUsername(bill.getUser().getUsername());
+        userDto.setEmail(bill.getUser().getEmail());
+        dto.setUser(userDto);
+        
+        return dto;
     }
 
     private void createNotification(String header, String content, Long userId) {

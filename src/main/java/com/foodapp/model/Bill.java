@@ -9,26 +9,33 @@ public class Bill {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "bill_id")
     private Long billId;
     
     @Column(nullable = false)
     private LocalDateTime date;
     
-    @Column(nullable = false)
+    @Column(name = "total_price", nullable = false)
     private Long totalPrice;
     
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String address;
     
     @Column(nullable = false)
     private String status;
     
-    @Column(columnDefinition = "TEXT")
+    @Column(name = "food_info", columnDefinition = "TEXT")
     private String foodInfo;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+    
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime createdAt;
+    
+    @Column(nullable = false)
+    private String phone;
 
     // Getters and Setters
     public Long getBillId() { return billId; }
@@ -51,4 +58,10 @@ public class Bill {
     
     public User getUser() { return user; }
     public void setUser(User user) { this.user = user; }
+    
+    public LocalDateTime getCreatedAt() { return createdAt; }
+    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    
+    public String getPhone() { return phone; }
+    public void setPhone(String phone) { this.phone = phone; }
 }
