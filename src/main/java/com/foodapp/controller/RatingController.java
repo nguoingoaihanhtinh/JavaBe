@@ -18,6 +18,7 @@ import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
@@ -122,7 +123,7 @@ public class RatingController {
         return ResponseEntity.ok(Map.of(
                 "status", "success",
                 "message", "Rating created successfully.",
-                "data", newRating
+                "data", "das"
         ));
     }
     @PostMapping("/update")
@@ -178,7 +179,40 @@ public class RatingController {
             errorResponse.put("message", "An error occurred while updating the rating.");
             return ResponseEntity.status(500).body(errorResponse);
         }
-}
+    }
+    
+    @DeleteMapping
+    public ResponseEntity<?> deleteRating(@RequestParam("ratingId") int ratingId) {
+        try {
+            Optional<Rating> optionalRating = ratingRepository.findById((long) ratingId);
+
+            if (optionalRating.isEmpty()) {
+                Map<String, Object> notFoundResponse = new HashMap<>();
+                notFoundResponse.put("message", "Rating not found for the given ID.");
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(notFoundResponse);
+            }
+
+            Rating rating = optionalRating.get();
+            Long originalFoodId = rating.getFood().getFoodId();
+
+            ratingRepository.delete(rating);
+            ratingRepository.flush(); // Ensure deletion is executed immediately
+
+            // Update food stats after deletion
+            updateFoodRatingAndStats(originalFoodId);
+
+            Map<String, Object> successResponse = new HashMap<>();
+            successResponse.put("status", "success");
+            successResponse.put("message", "Rating deleted successfully.");
+            return ResponseEntity.ok(successResponse);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            Map<String, Object> errorResponse = new HashMap<>();
+            errorResponse.put("message", "An error occurred while deleting the rating.");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
+        }
+    }   
     @Transactional
     public void updateFoodRatingAndStats(Long foodId) {
         try {
