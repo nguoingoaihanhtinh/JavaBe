@@ -4,8 +4,10 @@ import java.util.Map;
 import java.util.Optional;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDateTime;
 
 import com.foodapp.dto.RatingBodyDto;
+import com.foodapp.dto.UpdateRatingDto;
 import com.foodapp.model.Food;
 import com.foodapp.model.Rating;
 import com.foodapp.repository.FoodRepository;
@@ -123,6 +125,60 @@ public class RatingController {
                 "data", newRating
         ));
     }
+    @PostMapping("/update")
+    public ResponseEntity<?> updateRating(@RequestBody @Valid UpdateRatingDto ratingBody) {
+        try {
+            Optional<Rating> optionalRating = ratingRepository.findById(ratingBody.getRatingId());
+
+            if (optionalRating.isEmpty()) {
+                Map<String, Object> response = new HashMap<>();
+                response.put("message", "Rating not found for the given ID.");
+                return ResponseEntity.status(404).body(response);
+            }
+
+            Rating rating = optionalRating.get();
+            Long originalFoodId = rating.getFood() != null ? rating.getFood().getFoodId() : null;
+
+            rating.setContent(ratingBody.getContent());
+            rating.setRatingValue((double) ratingBody.getRatingValue());
+            rating.setDate(LocalDateTime.now());
+
+            ratingRepository.save(rating);
+            updateFoodRatingAndStats(originalFoodId);
+
+            Map<String, Object> data = new HashMap<>();
+            data.put("ratingId", rating.getRatingId());
+            data.put("userId", rating.getUser() != null ? rating.getUser().getUserId() : null);
+            data.put("foodId", rating.getFood() != null ? rating.getFood().getFoodId() : null);
+            data.put("content", rating.getContent());
+            data.put("ratingValue", rating.getRatingValue());
+            data.put("date", rating.getDate());
+            data.put("reply", rating.getReply());
+            data.put("dateReply", rating.getDateReply());
+
+            if (rating.getUser() != null) {
+                Map<String, Object> userMap = new HashMap<>();
+                userMap.put("userId", rating.getUser().getUserId());
+                userMap.put("username", rating.getUser().getUsername());
+                userMap.put("email", rating.getUser().getEmail());
+                userMap.put("avatar", rating.getUser().getAvatar());
+                data.put("user", userMap);
+            }
+
+            Map<String, Object> response = new HashMap<>();
+            response.put("status", "success");
+            response.put("message", "Rating updated successfully.");
+            response.put("data", data);
+
+            return ResponseEntity.ok(response);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            Map<String, Object> errorResponse = new HashMap<>();
+            errorResponse.put("message", "An error occurred while updating the rating.");
+            return ResponseEntity.status(500).body(errorResponse);
+        }
+}
     @Transactional
     public void updateFoodRatingAndStats(Long foodId) {
         try {
