@@ -52,7 +52,7 @@ public class SecurityConfig {
                     .requestMatchers(HttpMethod.GET, "/Rating/**").permitAll()
                     .requestMatchers(HttpMethod.POST, "/Rating/**").permitAll()
                     .requestMatchers("/Cart/**").authenticated()
-                    // .requestMatchers("/Bill/**").authenticated()
+                    .requestMatchers("/Bill/**").authenticated()
                     .requestMatchers("/User/**").authenticated()
                     .requestMatchers("/user/**").authenticated()
                     .anyRequest().authenticated()
