@@ -3,6 +3,7 @@ package com.foodapp.controller;
 import com.foodapp.model.*;
 import com.foodapp.repository.*;
 import com.foodapp.dto.*;
+import java.util.Arrays;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -193,9 +194,32 @@ public class BillController {
 
     @PutMapping("/updateStatus")
     public ResponseEntity<?> updateBillStatus(
-            @RequestParam Long id,
+            @RequestParam("Id") Long id,
             @RequestParam String status) {
         try {
+            // Validate input parameters
+            if (id == null) {
+                return ResponseEntity.badRequest().body(Map.of(
+                    "status", "error",
+                    "message", "Bill ID is required"
+                ));
+            }
+
+            if (status == null || status.trim().isEmpty()) {
+                return ResponseEntity.badRequest().body(Map.of(
+                    "status", "error",
+                    "message", "Status is required"
+                ));
+            }
+
+            // Validate status value
+            if (!Arrays.asList("Failed", "Pending", "Ongoing", "Completed").contains(status)) {
+                return ResponseEntity.badRequest().body(Map.of(
+                    "status", "error",
+                    "message", "Invalid status. Must be one of: Failed, Pending, Ongoing, Completed"
+                ));
+            }
+
             Bill bill = billRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Bill not found"));
 

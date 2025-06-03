@@ -126,54 +126,67 @@ public class FoodController {
     }
 
     @PostMapping("/addFood")
-    public ResponseEntity<?> addFood(@RequestBody Map<String, Object> createFoodDto) {
-        FoodType foodType = foodTypeRepository.findById(Long.parseLong(createFoodDto.get("TypeId").toString()))
-            .orElseThrow(() -> new IllegalArgumentException("Food type not found"));
+    public ResponseEntity<?> addFood(@Valid @RequestBody CreateFoodDto createFoodDto) {
+        try {
+            FoodType foodType = foodTypeRepository.findById(createFoodDto.TypeId)
+                .orElseThrow(() -> new IllegalArgumentException("Food type not found"));
 
-        Food food = new Food();
-        food.setName(createFoodDto.get("Name").toString().trim());
-        food.setImage1(createFoodDto.get("Image1").toString());
-        food.setImage2(createFoodDto.get("Image2").toString());
-        food.setImage3(createFoodDto.get("Image3").toString());
-        food.setDescription(createFoodDto.get("Description").toString());
-        food.setPrice(new BigDecimal(createFoodDto.get("Price").toString()));
-        food.setItemleft(Integer.parseInt(createFoodDto.get("Itemleft").toString()));
-        food.setFoodType(foodType);
-        food.setRating(0.0);
-        food.setNumberRating(0);
+            Food food = new Food();
+            food.setName(createFoodDto.Name.trim());
+            food.setImage1(createFoodDto.Image1);
+            food.setImage2(createFoodDto.Image2);
+            food.setImage3(createFoodDto.Image3);
+            food.setDescription(createFoodDto.Description);
+            food.setPrice(createFoodDto.Price);
+            food.setItemleft(createFoodDto.Itemleft);
+            food.setFoodType(foodType);
+            food.setRating(0.0);
+            food.setNumberRating(0);
 
-        Food savedFood = foodRepository.save(food);
-        return ResponseEntity.ok(Map.of(
-            "status", "success",
-            "data", mapToFoodResponse(savedFood)
-        ));
+            Food savedFood = foodRepository.save(food);
+            return ResponseEntity.ok(Map.of(
+                "status", "success",
+                "data", mapToFoodResponse(savedFood)
+            ));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of(
+                "status", "error",
+                "message", e.getMessage()
+            ));
+        }
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> updateFood(
             @PathVariable Long id,
-            @RequestBody Map<String, Object> updateFoodDto) {
-        
-        Food existingFood = foodRepository.findById(id)
-            .orElseThrow(() -> new IllegalArgumentException("Food not found"));
+            @Valid @RequestBody CreateFoodDto updateFoodDto) {
+        try {
+            Food existingFood = foodRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Food not found"));
 
-        FoodType foodType = foodTypeRepository.findById(Long.parseLong(updateFoodDto.get("TypeId").toString()))
-            .orElseThrow(() -> new IllegalArgumentException("Food type not found"));
+            FoodType foodType = foodTypeRepository.findById(updateFoodDto.TypeId)
+                .orElseThrow(() -> new IllegalArgumentException("Food type not found"));
 
-        existingFood.setName(updateFoodDto.get("Name").toString().trim());
-        existingFood.setImage1(updateFoodDto.get("Image1").toString());
-        existingFood.setImage2(updateFoodDto.get("Image2").toString());
-        existingFood.setImage3(updateFoodDto.get("Image3").toString());
-        existingFood.setDescription(updateFoodDto.get("Description").toString());
-        existingFood.setPrice(new BigDecimal(updateFoodDto.get("Price").toString()));
-        existingFood.setItemleft(Integer.parseInt(updateFoodDto.get("Itemleft").toString()));
-        existingFood.setFoodType(foodType);
+            existingFood.setName(updateFoodDto.Name.trim());
+            existingFood.setImage1(updateFoodDto.Image1);
+            existingFood.setImage2(updateFoodDto.Image2);
+            existingFood.setImage3(updateFoodDto.Image3);
+            existingFood.setDescription(updateFoodDto.Description);
+            existingFood.setPrice(updateFoodDto.Price);
+            existingFood.setItemleft(updateFoodDto.Itemleft);
+            existingFood.setFoodType(foodType);
 
-        Food updatedFood = foodRepository.save(existingFood);
-        return ResponseEntity.ok(Map.of(
-            "status", "success",
-            "data", mapToFoodResponse(updatedFood)
-        ));
+            Food updatedFood = foodRepository.save(existingFood);
+            return ResponseEntity.ok(Map.of(
+                "status", "success",
+                "data", mapToFoodResponse(updatedFood)
+            ));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of(
+                "status", "error",
+                "message", e.getMessage()
+            ));
+        }
     }
 
     @DeleteMapping("/{id}")

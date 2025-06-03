@@ -15,10 +15,13 @@ public class Food {
     @Column(nullable = false)
     private String name;
     
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String image1;
     
+    @Column(columnDefinition = "TEXT")
     private String image2;
+    
+    @Column(columnDefinition = "TEXT")
     private String image3;
     
     @Column(nullable = false)

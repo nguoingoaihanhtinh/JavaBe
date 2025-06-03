@@ -56,7 +56,6 @@ public class SecurityConfig {
                     .requestMatchers("/user/register", "/user/login", "/user/checkjwt").permitAll()
                     .requestMatchers(HttpMethod.GET, "/Food/**").permitAll()
                     .requestMatchers(HttpMethod.GET, "/Category/**").permitAll()
-
                     // 🔒 Require authentication for these endpoints
                     .requestMatchers("/Rating/**").permitAll()
                     .requestMatchers("/Cart/**").permitAll()
@@ -65,7 +64,7 @@ public class SecurityConfig {
                     .requestMatchers("/user/**").permitAll()
 
                     // 🔒 Any other request must be authenticated
-                    .anyRequest().authenticated()
+                    .anyRequest().permitAll()
             )
 
             // ✅ Add JWT filter before the default UsernamePasswordAuthenticationFilter
