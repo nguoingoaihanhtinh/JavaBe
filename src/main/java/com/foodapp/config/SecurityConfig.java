@@ -51,11 +51,11 @@ public class SecurityConfig {
                     .requestMatchers(HttpMethod.GET, "/Category/**").permitAll()
                     .requestMatchers(HttpMethod.GET, "/Rating/**").permitAll()
                     .requestMatchers(HttpMethod.POST, "/Rating/**").permitAll()
-                    .requestMatchers("/Cart/**").authenticated()
-                    .requestMatchers("/Bill/**").authenticated()
-                    .requestMatchers("/User/**").authenticated()
-                    .requestMatchers("/user/**").authenticated()
-                    .anyRequest().authenticated()
+                    .requestMatchers("/Cart/**").permitAll()
+                    .requestMatchers("/Bill/**").permitAll()
+                    .requestMatchers("/User/**").permitAll()
+                    .requestMatchers("/user/**").permitAll()
+                    .anyRequest().permitAll()
             )
         
             .addFilterBefore(jwtAuthenticationFilter(userDetailsService()), UsernamePasswordAuthenticationFilter.class);
