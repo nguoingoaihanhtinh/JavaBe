@@ -180,7 +180,65 @@ public class RatingController {
             return ResponseEntity.status(500).body(errorResponse);
         }
     }
-    
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<?> getRatingsByUserId(
+            @PathVariable int userId,
+            @RequestParam(defaultValue = "1") int page,
+            @RequestParam(defaultValue = "10") int limit
+    ) {
+        if (userId <= 0) {
+            return ResponseEntity.badRequest().body("Invalid user ID.");
+        }
+
+        if (page <= 0 || limit <= 0) {
+            return ResponseEntity.badRequest().body("Page and limit must be greater than zero.");
+        }
+
+        int totalItems = ratingRepository.countByUser_UserId(userId);
+        int totalPages = (int) Math.ceil((double) totalItems / limit);
+
+        List<Rating> ratings = ratingRepository.findByUserId(
+                userId,
+                PageRequest.of(page - 1, limit, Sort.by("date").descending())
+        );
+
+        if (ratings == null || ratings.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No ratings found for user ID " + userId + ".");
+        }
+
+        List<Map<String, Object>> ratingData = ratings.stream().map(r -> {
+            Map<String, Object> ratingMap = new HashMap<>();
+            ratingMap.put("ratingId", r.getRatingId());
+            ratingMap.put("userId", r.getUser().getUserId());
+            ratingMap.put("foodId", r.getFood().getFoodId());
+            ratingMap.put("content", r.getContent());
+            ratingMap.put("date", r.getDate());
+            ratingMap.put("ratingValue", r.getRatingValue());
+            ratingMap.put("reply", r.getReply());
+            ratingMap.put("dateReply", r.getDateReply());
+
+            Map<String, Object> foodMap = new HashMap<>();
+            foodMap.put("foodId", r.getFood().getFoodId());
+            foodMap.put("name", r.getFood().getName());
+            foodMap.put("description", r.getFood().getDescription());
+
+            ratingMap.put("food", foodMap);
+            return ratingMap;
+        }).toList();
+
+        Map<String, Object> pagination = new HashMap<>();
+        pagination.put("currentPage", page);
+        pagination.put("pageSize", limit);
+        pagination.put("totalItems", totalItems);
+        pagination.put("totalPages", totalPages);
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("status", "success");
+        response.put("data", ratingData);
+        response.put("pagination", pagination);
+
+        return ResponseEntity.ok(response);
+    }
     @DeleteMapping
     public ResponseEntity<?> deleteRating(@RequestParam("ratingId") int ratingId) {
         try {
