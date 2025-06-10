@@ -61,6 +61,7 @@ public class SecurityConfig {
                     .requestMatchers("/Cart/**").permitAll()
                     .requestMatchers("/Bill/**").permitAll()
                     .requestMatchers("/User/**").permitAll()
+                    .requestMatchers("/Noti/**").permitAll()
                     .requestMatchers("/user/**").permitAll()
 
                     // 🔒 Any other request must be authenticated
